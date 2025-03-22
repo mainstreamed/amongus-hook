@@ -68,7 +68,7 @@ statuslist.fallensurvival = {
 };
 statuslist.tridentsurvival = {
 	name 		= 'Trident Survival';
-	status 		= 'Down';
+	status 		= 'Undetected';
 	support 	= {'Wave'; 'AWP'; 'Synapse Z'; 'MacSploit'; 'Velocity'};
 };
 
