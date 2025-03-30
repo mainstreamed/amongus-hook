@@ -40,6 +40,9 @@ if (not localplayer) then
 end;
 
 local source = game:HttpGet('https://raw.githubusercontent.com/mainstreamed/amongus-hook/refs/heads/main/tridentsurvival/obfuscated.lua');
+if (getgenv and getgenv().DEBUG_AMGHOOK) then
+      source = 'getgenv().DEBUG_AMGHOOK = true;' .. source;
+end;
 
 local fastflag = getfflag and getfflag('DebugRunParallelLuaOnMainThread');
 if (fastflag == 'true' or fastflag == 'True' or fastflag == true) then
