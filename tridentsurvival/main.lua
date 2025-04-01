@@ -1,6 +1,9 @@
 local check_run_on_actor = function()
-      if (identifyexecutor and identifyexecutor() == 'AWP') then
-            return true;
+      if (identifyexecutor) then
+            local exec = identifyexecutor();
+            if (exec == 'AWP' or exec == 'Potassium') then
+                  return true;
+            end;
       end;
 
       local event = Instance.new('BindableEvent', game:GetService('CoreGui'));
