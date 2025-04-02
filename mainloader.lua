@@ -83,7 +83,6 @@ local load = function(name)
 	) then
 		return;
 	end;
-	protectedLoad(`https://raw.githubusercontent.com/mainstreamed/amongus-hook/refs/heads/main/assets/required.lua`);
 	protectedLoad(`{dir}{name}/main.lua`);
 end;
 
