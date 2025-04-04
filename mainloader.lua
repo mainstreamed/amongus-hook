@@ -69,7 +69,7 @@ statuslist.fallensurvival = {
 statuslist.tridentsurvival = {
 	name 		= 'Trident Survival';
 	status 		= 'Undetected';
-	support 	= {'Wave'; 'AWP'; 'Synapse Z'; 'MacSploit'; 'Velocity'; 'Potassium'};
+	support 	= {'Wave'; 'AWP'; 'Synapse Z'; 'MacSploit'; 'Velocity'; 'Potassium'; 'Swift'};
 };
 
 local load = function(name)
