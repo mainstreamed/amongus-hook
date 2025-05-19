@@ -28,6 +28,12 @@ local worldToViewPoint = function(position)
       return Vector2.new(pos.X, pos.Y), onscreen, pos.Z;
 end;
 
+local executor 	= identifyexecutor and identifyexecutor() or 'unknown';
+
+local GLOBAL_FONT = executor == 'AWP' and 0 or 1;
+local GLOBAL_SIZE	= executor == 'AWP' and 15 or 13;
+
+
 local espLibrary = {};
 
 
@@ -136,9 +142,9 @@ do
                         OutlineColor      = Color3.new(0, 0, 0);
                         Color             = Color3.new(1, 1, 1);
                         Transparency      = 1;
-                        Size              = 13;
+                        Size              = GLOBAL_SIZE;
                         Text              = self.player.DisplayName;
-                        Font              = 1;
+                        Font              = GLOBAL_FONT;
                         ZIndex            = 1;
                   }, allDrawings);
                   distance = createDrawing('Text', {
@@ -148,8 +154,8 @@ do
                         OutlineColor      = Color3.new(0, 0, 0);
                         Color             = Color3.new(1, 1, 1);
                         Transparency      = 1;
-                        Size              = 13;
-                        Font              = 1;
+                        Size              = GLOBAL_SIZE;
+                        Font              = GLOBAL_FONT;
                         ZIndex            = 1;
                   }, allDrawings);
                   weapon = createDrawing('Text', {
@@ -159,8 +165,8 @@ do
                         OutlineColor      = Color3.new(0, 0, 0);
                         Color             = Color3.new(1, 1, 1);
                         Transparency      = 1;
-                        Size              = 13;
-                        Font              = 1;
+                        Size              = GLOBAL_SIZE;
+                        Font              = GLOBAL_FONT;
                         ZIndex            = 1;
                   }, allDrawings);
             };
@@ -503,9 +509,9 @@ do
                         OutlineColor      = Color3.new(0, 0, 0);
                         Color             = self.colour;
                         Transparency      = 1;
-                        Size              = 13;
+                        Size              = GLOBAL_SIZE;
                         Text              = self.name;
-                        Font              = 1;
+                        Font              = GLOBAL_FONT;
                         ZIndex            = 0;
                   }, allDrawings);
                   distance = createDrawing('Text', {
@@ -515,8 +521,8 @@ do
                         OutlineColor      = Color3.new(0, 0, 0);
                         Color             = self.colour;
                         Transparency      = 1;
-                        Size              = 13;
-                        Font              = 1;
+                        Size              = GLOBAL_SIZE;
+                        Font              = GLOBAL_FONT;
                         ZIndex            = 0;
                   }, allDrawings);
             };
@@ -718,9 +724,9 @@ do
                         OutlineColor      = Color3.new(0, 0, 0);
                         Color             = self.colour;
                         Transparency      = 1;
-                        Size              = 13;
+                        Size              = GLOBAL_SIZE;
                         Text              = self.name;
-                        Font              = 1;
+                        Font              = GLOBAL_FONT;
                         ZIndex            = 0;
                   }, allDrawings);
                   distance = createDrawing('Text', {
@@ -730,8 +736,8 @@ do
                         OutlineColor      = Color3.new(0, 0, 0);
                         Color             = self.colour;
                         Transparency      = 1;
-                        Size              = 13;
-                        Font              = 1;
+                        Size              = GLOBAL_SIZE;
+                        Font              = GLOBAL_FONT;
                         ZIndex            = 0;
                   }, allDrawings);
 
