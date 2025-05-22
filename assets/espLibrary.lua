@@ -650,7 +650,7 @@ do
             end;
 
             local humanoid = entity:FindFirstChildOfClass('Humanoid');
-            if (humanoid) then
+            if (humanoid and humanoid.Health > 0) then
                   
                   self.humanoid = humanoid;
                   table.insert(self.connections, entity.AncestryChanged:Connect(function(child, parent)
@@ -658,10 +658,14 @@ do
                               return self:remove();
                         end;
                   end));
+                  table.insert(self.connections, humanoid:GetPropertyChangedSignal('Health'):Connect(function()
+                        if (humanoid.Health <= 0) then
+                              return self:remove();
+                        end;
+                  end));
 
                   npcESP.npcCache[entity] = self;
                   self:setupHumanoid(humanoid);
-
                   return;
             end;
 
