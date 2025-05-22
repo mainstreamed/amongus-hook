@@ -56,7 +56,7 @@ local KEY_CONVERSION = {
 local executor 	= identifyexecutor and identifyexecutor() or 'unknown';
 
 local GLOBAL_FONT = executor == 'AWP' and 0 or 1;
-local GLOBAL_SIZE	= executor == 'AWP' and 15 or 13;
+local GLOBAL_SIZE	= executor == 'AWP' and 16 or 13;
 
 -- local Drawing = require(script.Drawing);
 
@@ -131,6 +131,7 @@ end;
 
 -- class DEFIITIONS (yea!)
 local notifyClass		= createClass();
+local boardClass 		= createClass();
 
 local windowClass       = createClass({
 	index 		= 0;
@@ -232,6 +233,134 @@ notifyClass.new = function(window, text, time)
 
 	return notification;
 end;
+boardClass.new = function(options: table)
+	local BASE_ZINDEX = 0;
+
+	local board 	= setmetatable({
+		active 	      = options.active;
+		title 	      = options.title;
+		size		      = options.size;
+		position 		= options.position or vector2(camera.ViewportSize.X - options.size.X - 10, camera.ViewportSize.Y / 2 - options.size.Y / 2);
+            mouseHeld         = false;
+
+            storage           = {};
+            storedText        = {};
+            clickDetectors    = {};
+
+		drawings 	      = {};
+            cachedDrawings    = {};
+            allDrawings       = {};
+            
+	}, boardClass);
+      
+	-- drawings
+	do
+            local drawings	= board.drawings;
+
+		drawings.base	= createDrawing('Square', {
+			Visible           = board.active;
+			Filled            = true;
+			Transparency      = 1;
+			Thickness         = 1;
+			Color             = color_rgb(39, 39, 39);
+			Position          = board.position;
+			Size              = board.size;
+			ZIndex            = 8;
+		}, board.allDrawings);
+
+		-- print(board.position);
+
+		drawings.onDrag	= createDrawing('Square', {
+			Visible           = board.active;
+			Filled            = false;
+			Transparency      = 1;
+			Thickness         = 1;
+			Color             = color_rgb(255, 42, 191);
+			Position          = drawings.base.Position;
+			Size              = vector2(board.size.X, 22);
+			ZIndex            = 0;
+		},  board.allDrawings);
+
+		drawings.baseOutline = createDrawing('Square', {
+			Visible           = board.active;
+			Filled            = false;
+			Transparency      = 1;
+			Thickness         = 1;
+			Color             = color_rgb(7, 7, 7);
+			Position          = drawings.base.Position - vector2(1, 1);
+			Size              = drawings.base.Size + vector2(2, 2);
+			ZIndex            = 9;
+		}, board.allDrawings);
+
+		drawings.title = createDrawing('Text', {
+			Visible           = board.active;
+			Center            = true;
+			Outline           = true;
+			Transparency      = 1;
+			Size              = GLOBAL_SIZE;
+			Font              = GLOBAL_FONT;
+			Text              = board.title;
+			Color             = color_rgb(255, 255, 255);
+			OutlineColor      = color_rgb(0, 0, 0);
+			Position          = drawings.base.Position + vector2(drawings.base.Size.X / 2, 2);
+			ZIndex            = 9;
+		}, board.allDrawings);
+	end;
+
+	-- setup
+	do
+            local clickDetectors = board.clickDetectors;
+
+
+            userInputService.InputBegan:Connect(function(input, gameProcessed)
+                  if (input.UserInputType ~= Enum.UserInputType.MouseButton1) then
+				return;
+			end;
+			board.mouseHeld = true;
+
+			local mousePosition = userInputService:GetMouseLocation();
+			for i = 1, #clickDetectors do
+				clickDetectors[i](mousePosition);
+			end;
+		end);
+
+		userInputService.InputEnded:Connect(function(input, gameProcessed)
+			if (input.UserInputType ~= Enum.UserInputType.MouseButton1) then
+				return;
+			end;
+			board.mouseHeld = false;
+		end);
+
+            local onDrag = function(mousePosition)
+
+			local positions = {};
+			for i = 1, #board.allDrawings do
+				positions[i] = board.allDrawings[i].Position;
+			end;
+
+
+			local connection;
+			connection = runService.RenderStepped:Connect(function()
+				if (not board.mouseHeld) then
+					return connection:Disconnect();
+				end;
+
+				local offset = userInputService:GetMouseLocation() - mousePosition;
+
+				for i = 1, #positions do
+					board.allDrawings[i].Position = positions[i] + offset;
+				end;
+			end);
+
+		end;
+
+		board:onClick(board.drawings.onDrag, onDrag);
+	end;
+
+      return board;
+end;
+
+
 windowClass.new = function(options: table)
 	assert(type(options) == 'table', `invalid argument #1 to 'windowClass.new' (table expected, got {type(options)})`);
 	windowClass.index += 1;
@@ -239,6 +368,8 @@ windowClass.new = function(options: table)
 	loadAssets();
 
 	local window = setmetatable({
+		baseZindex 		= 10;
+
 		id                = windowClass.index;
 		active            = true;
 		title             = options.title or 'amongus.hook';
@@ -273,7 +404,7 @@ windowClass.new = function(options: table)
 			Color             = color_rgb(39, 39, 39);
 			Position          = window.position - window.size / 2;
 			Size              = window.size;
-			ZIndex            = 10;
+			ZIndex            = window.baseZindex + 1;
 		}, window.allDrawings);
 
 		drawings.onDrag	= createDrawing('Square', {
@@ -284,7 +415,7 @@ windowClass.new = function(options: table)
 			Color             = color_rgb(255, 42, 191);
 			Position          = drawings.base.Position;
 			Size              = vector2(window.size.X, 20);
-			ZIndex            = -999;
+			ZIndex            = 0;
 		},  window.allDrawings);
 
 
@@ -297,7 +428,7 @@ windowClass.new = function(options: table)
 			Color             = color_rgb(7, 7, 7);
 			Position          = drawings.base.Position - vector2(1, 1);
 			Size              = drawings.base.Size + vector2(2, 2);
-			ZIndex            = 11;
+			ZIndex            = window.baseZindex + 2;
 		}, window.allDrawings);
 
 		drawings.innerOutline = createDrawing('Square', {
@@ -308,7 +439,7 @@ windowClass.new = function(options: table)
 			Color             = color_rgb(7, 7, 7);
 			Position          = drawings.baseOutline.Position + vector2(0, 20);
 			Size              = drawings.base.Size + vector2(2, 2) - vector2(0, 20);
-			ZIndex            = 11;
+			ZIndex            = window.baseZindex + 2;
 		}, window.allDrawings);
 		drawings.innerOutline2 = createDrawing('Square', {
 			Visible           = window.active;
@@ -318,7 +449,7 @@ windowClass.new = function(options: table)
 			Color             = color_rgb(7, 7, 7);
 			Position          = drawings.innerOutline.Position + vector2(0, 40);
 			Size              = drawings.innerOutline.Size - vector2(0, 40);
-			ZIndex            = 11;
+			ZIndex            = window.baseZindex + 2;
 		}, window.allDrawings);
 		drawings.sectionOutline1 = createDrawing('Square', {
 			Visible           = window.active;
@@ -328,7 +459,7 @@ windowClass.new = function(options: table)
 			Color             = color_rgb(7, 7, 7);
 			Position          = drawings.innerOutline2.Position + vector2(16, 16);
 			Size              = drawings.innerOutline2.Size - vector2(drawings.innerOutline2.Size.X / 2 + 24, 32);
-			ZIndex            = 11;
+			ZIndex            = window.baseZindex + 2;
 		}, window.allDrawings);
 		drawings.sectionOutline2 = createDrawing('Square', {
 			Visible           = window.active;
@@ -338,7 +469,7 @@ windowClass.new = function(options: table)
 			Color             = color_rgb(7, 7, 7);
 			Position          = drawings.innerOutline2.Position + vector2(drawings.innerOutline2.Size.X / 2 + 8, 16);
 			Size              = drawings.sectionOutline1.Size;
-			ZIndex            = 11;
+			ZIndex            = window.baseZindex + 2;
 		}, window.allDrawings);
 
 		drawings.title = createDrawing('Text', {
@@ -352,7 +483,7 @@ windowClass.new = function(options: table)
 			Color             = color_rgb(195, 195, 195);
 			OutlineColor      = color_rgb(0, 0, 0);
 			Position          = drawings.base.Position + vector2(2, 2);
-			ZIndex            = 11;
+			ZIndex            = window.baseZindex + 2;
 		}, window.allDrawings);
 	end;
 
@@ -459,7 +590,7 @@ tabClass.new = function(window, tabName: string)
 			Color             = --[[tab.id == 2 and color_rgb(255, 0, 0) or ]]color_rgb(7, 7, 7);
 			-- Position          = window.drawings.base.Position - vector2(1, 1);
 			-- Size              = drawings.base.Size + vector2(2, 2);
-			ZIndex            = 11;
+			ZIndex            = window.baseZindex + 2;
 		}, window.allDrawings);
 
 		drawings.text = createDrawing('Text', {
@@ -473,7 +604,7 @@ tabClass.new = function(window, tabName: string)
 			Color             = color_rgb(195, 195, 195);
 			OutlineColor      = color_rgb(0, 0, 0);
 			-- Position          = drawings.base.Position + vector2(2, 2);
-			ZIndex            = 11;
+			ZIndex            = window.baseZindex + 2;
 		}, window.allDrawings);
 	end;
 
@@ -520,14 +651,20 @@ toggleClass.new = function(tab, options: table, offset: number)
 	-- flags
 	do
 		toggle.flag = {
-			type = 'toggle';
-			value = toggle.enabled;
-			self = toggle;
+			type 		= 'toggle';
+			value 	= toggle.enabled;
+			funcs 	= {};
+			self 		= toggle;
 		}
-		toggle.flag.Changed = function(...) end
+		toggle.flag.Changed = function(...)
+			local funcs = toggle.flag.funcs;
+			for i = 1, #funcs do
+				funcs[i](...);
+			end;
+		end;
 		if (options.flag) then
 			function toggle.flag:OnChanged(_function)
-				toggle.flag.Changed = _function;
+				table_insert(toggle.flag.funcs, _function);
 				_function(toggle.flag.value);
 			end;
 			toggle.window.flags[options.flag] = toggle.flag;
@@ -546,7 +683,7 @@ toggleClass.new = function(tab, options: table, offset: number)
 			Color             = color_rgb(7, 7, 7);
 			Position          = toggle.window.drawings[`sectionOutline{offset}`].Position + vector2(15, tab.offsets[offset]);
 			Size              = vector2(15, 15);
-			ZIndex            = 11;
+			ZIndex            = toggle.window.baseZindex + 2;
 		}, toggle.window.allDrawings, tab.allDrawings);
 
 		drawings.accent = createDrawing('Square', {
@@ -557,7 +694,7 @@ toggleClass.new = function(tab, options: table, offset: number)
 			Color             = color_rgb(255, 0, 0);
 			Position          = drawings.outline.Position + vector2(1, 1);
 			Size              = vector2(13.5, 13);
-			ZIndex            = 11;
+			ZIndex            = toggle.window.baseZindex + 2;
 		}, toggle.window.allDrawings, tab.allDrawings);
 
 		drawings.text = createDrawing('Text', {
@@ -571,7 +708,7 @@ toggleClass.new = function(tab, options: table, offset: number)
 			Color             = color_rgb(195, 195, 195);
 			OutlineColor      = color_rgb(0, 0, 0);
 			Position          = drawings.outline.Position + vector2(20, 1);
-			ZIndex            = 11;
+			ZIndex            = toggle.window.baseZindex + 2;
 		}, toggle.window.allDrawings, tab.allDrawings);
 
 		drawings.clickDetector = createDrawing('Square', {
@@ -582,7 +719,7 @@ toggleClass.new = function(tab, options: table, offset: number)
 			Color             = color_rgb(255, 42, 191);
 			Position          = drawings.outline.Position;
 			Size              = vector2(22 + drawings.text.TextBounds.X, 15);
-			ZIndex            = -999;
+			ZIndex            = 0;
 		}, toggle.window.allDrawings, tab.allDrawings);
 	end;
 
@@ -668,7 +805,7 @@ sliderClass.new = function(tab, options: table, offset: number)
 			Color             = color_rgb(7, 7, 7);
 			Position          = slider.window.drawings[`sectionOutline{offset}`].Position + vector2(15, tab.offsets[offset] + 15);
 			Size              = vector2(slider.window.drawings.sectionOutline1.Size.X - 30, 15);
-			ZIndex            = 11;
+			ZIndex            = slider.window.baseZindex + 2;
 		}, slider.window.allDrawings, tab.allDrawings);
 
 		drawings.accent 	= createDrawing('Square', {
@@ -679,7 +816,7 @@ sliderClass.new = function(tab, options: table, offset: number)
 			Color             = color_rgb(255, 0, 0);
 			Position          = drawings.outline.Position + vector2(1, 1);
 			Size              = vector2( (drawings.outline.Size.X - 2) * (slider.value - slider.min) / slider.range, drawings.outline.Size.Y - 2);
-			ZIndex            = 11;
+			ZIndex            = slider.window.baseZindex + 2;
 		}, slider.window.allDrawings, tab.allDrawings);
 
 		drawings.text 	= createDrawing('Text', {
@@ -693,7 +830,7 @@ sliderClass.new = function(tab, options: table, offset: number)
 			Color             = color_rgb(195, 195, 195);
 			OutlineColor      = color_rgb(0, 0, 0);
 			Position          = drawings.outline.Position + vector2(1, -15);
-			ZIndex            = 11;
+			ZIndex            = slider.window.baseZindex + 2;
 		}, slider.window.allDrawings, tab.allDrawings);
 
 		drawings.value 	= createDrawing('Text', {
@@ -707,7 +844,7 @@ sliderClass.new = function(tab, options: table, offset: number)
 			Color             = color_rgb(195, 195, 195);
 			OutlineColor      = color_rgb(0, 0, 0);
 			Position          = drawings.outline.Position + vector2(drawings.outline.Size.X / 2, 1);
-			ZIndex            = 12;
+			ZIndex            = slider.window.baseZindex + 3;
 		}, slider.window.allDrawings, tab.allDrawings);
 	end;
 
@@ -810,7 +947,7 @@ dropdownClass.new = function(tab, options: table, offset: number)
 			Color             = color_rgb(7, 7, 7);
 			Position          = dropdown.window.drawings[`sectionOutline{offset}`].Position + vector2(15, tab.offsets[offset] + 15);
 			Size              = vector2(dropdown.window.drawings.sectionOutline1.Size.X - 30, 15);
-			ZIndex            = 11;
+			ZIndex            = dropdown.window.baseZindex + 2;
 		}, dropdown.window.allDrawings, tab.allDrawings);
 
 		drawings.text 	= createDrawing('Text', {
@@ -824,7 +961,7 @@ dropdownClass.new = function(tab, options: table, offset: number)
 			Color             = color_rgb(195, 195, 195);
 			OutlineColor      = color_rgb(0, 0, 0);
 			Position          = drawings.outline.Position + vector2(1, -15);
-			ZIndex            = 11;
+			ZIndex            = dropdown.window.baseZindex + 2;
 		}, dropdown.window.allDrawings, tab.allDrawings);
 
 		drawings.value 	= createDrawing('Text', {
@@ -838,7 +975,7 @@ dropdownClass.new = function(tab, options: table, offset: number)
 			Color             = color_rgb(195, 195, 195);
 			OutlineColor      = color_rgb(0, 0, 0);
 			Position          = drawings.outline.Position + vector2(drawings.outline.Size.X / 2, 1);
-			ZIndex            = 11;
+			ZIndex            = dropdown.window.baseZindex + 2;
 		}, dropdown.window.allDrawings, tab.allDrawings);
 		drawings.rightText = createDrawing('Text', {
 			Visible           = tab.active;
@@ -851,7 +988,7 @@ dropdownClass.new = function(tab, options: table, offset: number)
 			Color             = color_rgb(195, 195, 195);
 			OutlineColor      = color_rgb(0, 0, 0);
 			Position          = vector2(drawings.outline.Position.X + drawings.outline.Size.X - 10, drawings.value.Position.Y);
-			ZIndex            = 11;
+			ZIndex            = dropdown.window.baseZindex + 2;
 		}, dropdown.window.allDrawings, tab.allDrawings);
 
 		drawings.leftText = createDrawing('Text', {
@@ -865,7 +1002,7 @@ dropdownClass.new = function(tab, options: table, offset: number)
 			Color             = color_rgb(195, 195, 195);
 			OutlineColor      = color_rgb(0, 0, 0);
 			Position          = vector2(drawings.outline.Position.X + 10, drawings.value.Position.Y);
-			ZIndex            = 11;
+			ZIndex            = dropdown.window.baseZindex + 2;
 		}, dropdown.window.allDrawings, tab.allDrawings);
 
 		drawings.rightClick = createDrawing('Square', {
@@ -876,7 +1013,7 @@ dropdownClass.new = function(tab, options: table, offset: number)
 			Color             = color_rgb(255, 42, 191);
 			Position          = drawings.rightText.Position - vector2(drawings.rightText.TextBounds.X / 2 + 2, 0);
 			Size              = vector2(13, 13);
-			ZIndex            = -999;
+			ZIndex            = 0;
 		}, dropdown.window.allDrawings, tab.allDrawings);
 
 		drawings.leftClick = createDrawing('Square', {
@@ -887,7 +1024,7 @@ dropdownClass.new = function(tab, options: table, offset: number)
 			Color             = color_rgb(255, 42, 191);
 			Position          = drawings.leftText.Position - vector2(drawings.leftText.TextBounds.X / 2 + 2, 0);
 			Size              = vector2(13, 13);
-			ZIndex            = -999;
+			ZIndex            = 0;
 		}, dropdown.window.allDrawings, tab.allDrawings);
 	end;
 
@@ -962,7 +1099,7 @@ buttonClass.new = function(tab, text: string, onClick, offset: number)
 			Color             = color_rgb(7, 7, 7);
 			Position          = button.window.drawings[`sectionOutline{offset}`].Position + vector2(15, tab.offsets[offset]);
 			Size              = vector2(button.window.drawings.sectionOutline1.Size.X - 30, 15);
-			ZIndex            = 11;
+			ZIndex            = button.window.baseZindex + 2;
 		}, button.window.allDrawings, tab.allDrawings);
 
 		drawings.text 	= createDrawing('Text', {
@@ -976,7 +1113,7 @@ buttonClass.new = function(tab, text: string, onClick, offset: number)
 			Color             = color_rgb(195, 195, 195);
 			OutlineColor      = color_rgb(0, 0, 0);
 			Position          = drawings.outline.Position + vector2(drawings.outline.Size.X / 2, 1);
-			ZIndex            = 12;
+			ZIndex            = button.window.baseZindex + 3;
 		}, button.window.allDrawings, tab.allDrawings);
 	end;
 
@@ -1021,12 +1158,19 @@ keypickerClass.new = function(toggle, options: table)
 			value = false;
 			self 	= keypicker;
 		}
-		keypicker.flag.Changed = function(...) end
+
+		keypicker.flag.KeyChanged 	= function(...) end;
+		keypicker.flag.Changed 		= function(...) end;
 		if (options.flag) then
 			function keypicker.flag:OnChanged(_function)
 				keypicker.flag.Changed = _function;
 				_function(keypicker.flag.value);
 			end;
+			function keypicker.flag:OnKeyChanged(_function)
+				keypicker.flag.KeyChanged = _function;
+				_function(keypicker.flag.key);
+			end;
+
 			keypicker.window.flags[options.flag] = keypicker.flag;
 		end;
 	end;
@@ -1046,7 +1190,7 @@ keypickerClass.new = function(toggle, options: table)
 			Color             = color_rgb(195, 195, 195);
 			OutlineColor      = color_rgb(0, 0, 0);
 			-- Position          = drawings.outline.Position + vector2(drawings.outline.Size.X / 2, 1);
-			ZIndex            = 12;
+			ZIndex            = keypicker.window.baseZindex + 3;
 		}, keypicker.window.allDrawings, keypicker.tab.allDrawings);
 
 		drawings.clickDetector 	= createDrawing('Square', {
@@ -1057,7 +1201,7 @@ keypickerClass.new = function(toggle, options: table)
 			Color             = color_rgb(255, 42, 191);
 			Position          = nil; --button.window.drawings[`sectionOutline{offset}`].Position + vector2(15, tab.offsets[offset]);
 			Size              = nil;--vector2(button.window.drawings.sectionOutline1.Size.X - 30, 15);
-			ZIndex            = -999;
+			ZIndex            = 0;
 		}, keypicker.window.allDrawings, keypicker.tab.allDrawings);
 	end;
 
@@ -1083,6 +1227,7 @@ keypickerClass.new = function(toggle, options: table)
 			keypicker.active 		= false;
 			keypicker.value 		= KEY_CONVERSION[keyValue] or keyValue;
 			keypicker.flag.key 	= keypicker.value;
+			keypicker.flag.KeyChanged(keypicker.value);
 			keypicker:update();
 
 			return;
@@ -1134,11 +1279,14 @@ keypickerClass.new = function(toggle, options: table)
 
 	local onClicked = function()
 		keypicker.flag.value = false;
+            keypicker.flag.Changed(false);
 
 		if (keypicker.active) then
 
-			keypicker.active = false;
-			keypicker.value = 'None';
+			keypicker.active 		= false;
+			keypicker.value 		= 'None';
+			keypicker.flag.key 	= 'None'
+			keypicker.flag.KeyChanged(keypicker.value);
 			keypicker:update();
 
 			return;
@@ -1156,10 +1304,12 @@ keypickerClass.new = function(toggle, options: table)
 	keypicker:update();
 	keypicker.setValue = function(value, key)
 		
-		keypicker.value = key;
-		keypicker.flag.value = value;
-		keypicker.flag.Changed(value);
+		keypicker.value 		= key;
 
+		keypicker.flag.value 	= value;
+		keypicker.flag.key 	= key;
+		keypicker.flag.Changed(value);
+		keypicker.flag.KeyChanged(key);
 		keypicker:update();
 	end;
 
@@ -1214,7 +1364,7 @@ colourpickerClass.new = function(toggle, options: table)
 			Color             = colourpicker.value;
 			Position          = colourpicker.toggle.drawings.outline.Position + vector2(colourpicker.window.drawings.sectionOutline1.Size.X - 60, 0);
 			Size              = vector2(30, 15);
-			ZIndex            = 11;
+			ZIndex            = colourpicker.window.baseZindex + 2;
 		}, toggle.window.allDrawings, colourpicker.tab.allDrawings);
 
 		drawings.colour_outline = createDrawing('Square', {
@@ -1225,7 +1375,7 @@ colourpickerClass.new = function(toggle, options: table)
 			Color             = color_rgb(0, 0, 0);
 			Position          = drawings.colour_fill.Position;
 			Size              = drawings.colour_fill.Size;
-			ZIndex            = 12;
+			ZIndex            = colourpicker.window.baseZindex + 3;
 		}, toggle.window.allDrawings, colourpicker.tab.allDrawings);
 
 
@@ -1241,7 +1391,7 @@ colourpickerClass.new = function(toggle, options: table)
 			Color             = color_rgb(39, 39, 39);
 			Position          = drawings.colour_outline.Position + vector2(0, 20);
 			Size              = vector2(150, 150);
-			ZIndex            = 13;
+			ZIndex            = colourpicker.window.baseZindex + 4;
 		}, toggle.window.allDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
 
 		drawings.background_outline = createDrawing('Square', {
@@ -1252,7 +1402,7 @@ colourpickerClass.new = function(toggle, options: table)
 			Color             = color_rgb(0, 0, 0);
 			Position          = drawings.background_fill.Position;
 			Size              = drawings.background_fill.Size;
-			ZIndex            = 14;
+			ZIndex            = colourpicker.window.baseZindex + 5;
 		}, toggle.window.allDrawings, colourpicker.window.overlapDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
 
 		drawings.colourpicker_fill = createDrawing('Square', {
@@ -1263,7 +1413,7 @@ colourpickerClass.new = function(toggle, options: table)
 			Color             = color_hsv(colourpicker.h, 1, 1);
 			Position          = drawings.background_fill.Position + vector2(5, 5);
 			Size              = vector2(125, 125);
-			ZIndex            = 14;
+			ZIndex            = colourpicker.window.baseZindex + 5;
 		}, toggle.window.allDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
 
 		drawings.colourpicker_overlay = createDrawing('Image', {
@@ -1274,7 +1424,7 @@ colourpickerClass.new = function(toggle, options: table)
 			Data             	= readfile('amghook\\assets\\overlay.png');
 			Position          = drawings.background_fill.Position + vector2(5, 5);
 			Size              = vector2(125, 125);
-			ZIndex            = 15;
+			ZIndex            = colourpicker.window.baseZindex + 6;
 		}, toggle.window.allDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
 
 		drawings.colourpicker_outline = createDrawing('Square', {
@@ -1285,7 +1435,7 @@ colourpickerClass.new = function(toggle, options: table)
 			Color             = color_rgb(1, 1, 1);
 			Position          = drawings.colourpicker_fill.Position;
 			Size              = drawings.colourpicker_fill.Size;
-			ZIndex            = 16;
+			ZIndex            = colourpicker.window.baseZindex + 7;
 		}, toggle.window.allDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
 
 		drawings.hue_fill = createDrawing('Image', {
@@ -1296,7 +1446,7 @@ colourpickerClass.new = function(toggle, options: table)
 			Data             	= readfile('amghook\\assets\\hue.png');
 			Position          = drawings.colourpicker_fill.Position + vector2(drawings.colourpicker_fill.Size.X + 5, 0);
 			Size              = vector2(10, drawings.colourpicker_fill.Size.Y);
-			ZIndex            = 14;
+			ZIndex            = colourpicker.window.baseZindex + 5;
 		}, toggle.window.allDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
 
 		drawings.hue_outline = createDrawing('Square', {
@@ -1307,7 +1457,7 @@ colourpickerClass.new = function(toggle, options: table)
 			Color             = color_rgb(0, 0, 0);
 			Position          = drawings.hue_fill.Position;
 			Size              = drawings.hue_fill.Size;
-			ZIndex            = 15;
+			ZIndex            = colourpicker.window.baseZindex + 6;
 		}, toggle.window.allDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
 
 		drawings.huepicker = createDrawing('Square', {
@@ -1318,7 +1468,7 @@ colourpickerClass.new = function(toggle, options: table)
 			Color             = color_rgb(255, 255, 255);
 			-- Position          = drawings.hue_fill.Position;
 			Size              = vector2(14, 6);
-			ZIndex            = 16;
+			ZIndex            = colourpicker.window.baseZindex + 7;
 		}, toggle.window.allDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
 		drawings.huepicker_outline = createDrawing('Square', {
 			Visible           = false;
@@ -1328,7 +1478,7 @@ colourpickerClass.new = function(toggle, options: table)
 			Color             = color_rgb(0, 0, 0);
 			-- Position          = drawings.hue_fill.Position;
 			Size              = drawings.huepicker.Size;
-			ZIndex            = 17;
+			ZIndex            = colourpicker.window.baseZindex + 8;
 		}, toggle.window.allDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
 
 
@@ -1340,7 +1490,7 @@ colourpickerClass.new = function(toggle, options: table)
 			Color             = color_rgb(255, 255, 255);
 			-- Position          = drawings.hue_fill.Position;
 			Size              = vector2(6, 6);
-			ZIndex            = 16;
+			ZIndex            = colourpicker.window.baseZindex + 7;
 		}, toggle.window.allDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
 		drawings.colourpick_outline = createDrawing('Square', {
 			Visible           = false;
@@ -1350,7 +1500,7 @@ colourpickerClass.new = function(toggle, options: table)
 			Color             = color_rgb(0, 0, 0);
 			-- Position          = drawings.hue_fill.Position;
 			Size              = drawings.colourpick.Size;
-			ZIndex            = 17;
+			ZIndex            = colourpicker.window.baseZindex + 8;
 		}, toggle.window.allDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
 
 	end;
@@ -1500,6 +1650,141 @@ do
 			notification:moveTo(notification.goalPos, 0.05);
 		end;
 	end;
+end;
+
+-- boardClass function
+do
+      function boardClass:toggle(enabled)
+		if (enabled == nil) then
+			enabled = not self.active;
+		end;
+		self.active       = enabled;
+            self.mouseHeld    = false;
+
+		for i = 1, #self.allDrawings do
+			self.allDrawings[i].Visible = enabled;
+		end;
+      end;
+
+      function boardClass:isWithin(drawing, mousePosition)
+		local size 		= drawing.Size;
+		local offset 	= mousePosition - drawing.Position;
+
+		return (
+			offset.X > 0 and offset.Y > 0 and
+			offset.X < size.X and offset.Y < size.Y
+		);
+	end;
+      function boardClass:onClick(drawing, onClick)
+		local onClicked = function(mousePosition)
+			if (drawing.Visible and self:isWithin(drawing, mousePosition)) then
+				return onClick(mousePosition);
+			end;
+		end;
+		table_insert(self.clickDetectors, onClicked);
+	end;
+      function boardClass:addText(side, text, colour)
+            
+            local textInfo = {
+                  side        = side;
+                  text        = text;
+                  colour      = colour;
+                  drawing     = self.cachedDrawings[1];
+            };
+
+            if (not textInfo.drawing) then -- drawing cacher
+                  textInfo.drawing = createDrawing('Text', {
+                        Visible           = self.active;
+                        Center            = false;
+                        Outline           = true;
+                        Transparency      = 1;
+                        Size              = GLOBAL_SIZE;
+                        Font              = GLOBAL_FONT;
+                        Text              = textInfo.text;
+                        Color             = textInfo.colour;
+                        OutlineColor      = color_rgb(0, 0, 0);
+                        -- Position          = drawings.base.Position + vector2(drawings.base.Size.X / 2, 2);
+                        ZIndex            = 9;
+                  }, self.allDrawings);
+            else
+                  table_remove(self.cachedDrawings, 1);
+
+                  textInfo.drawing.Visible      = self.active;
+                  textInfo.drawing.Color        = textInfo.colour;
+                  textInfo.drawing.Text         = textInfo.text;
+            end;
+
+            local index = 0;
+            for i = 1, #self.storedText do
+                  if (self.storedText[i].side == textInfo.side) then
+                        index += 1;
+                  end;
+            end;
+
+            textInfo.drawing.Position = self.drawings.base.Position + vector2(
+                  side == 'left' and 2 or self.drawings.base.Size.X - textInfo.drawing.TextBounds.X - 2,
+                  index * 20 + 27
+            );
+
+            table_insert(self.storedText, textInfo);
+
+            return textInfo;
+      end;
+      function boardClass:removeText(side, text)
+            
+            local removed     = false;
+            local index       = 0;
+
+            for i, textInfo in self.storedText do
+                  if (textInfo.side ~= side) then
+                        continue;
+                  elseif (removed) then
+                        -- print('adjusting text pos', index, textInfo.text)
+                        self.mouseHeld = false;
+
+                        textInfo.drawing.Position = self.drawings.base.Position + vector2(
+                              side == 'left' and 2 or self.drawings.base.Size.X - textInfo.drawing.TextBounds.X - 2,
+                              (index - 1) * 20 + 27
+                        );
+
+                  elseif (textInfo.text == text) then
+                        removed = true;
+
+                        textInfo.drawing.Visible = false;
+                        table_insert(self.cachedDrawings, textInfo.drawing);
+                        table_remove(self.storedText, i);
+                  end;
+
+                  index += 1;
+            end;
+
+      end;
+
+      function boardClass:update()
+            for _, textInfo in self.storedText do
+                  local drawing = textInfo.drawing;
+                  if (textInfo.text == drawing.Text and textInfo.colour == drawing.Color) then
+                        continue;
+                  end;
+
+                  drawing.Text      = textInfo.text;
+                  drawing.Color     = textInfo.colour;
+			if (textInfo.side == 'right') then
+				textInfo.drawing.Position = vector2(
+					self.drawings.base.Position.X + self.drawings.base.Size.X - textInfo.drawing.TextBounds.X - 2, 
+					textInfo.drawing.Position.Y
+				);
+			end;
+            end;
+      end;
+
+      function boardClass:findText(side, text)
+            for _, textInfo in self.storedText do
+                  if (textInfo.text == text and textInfo.side == side) then
+                        return textInfo;
+                  end;
+            end;
+      end;
 end;
 
 -- windowClass functions
@@ -1725,4 +2010,26 @@ do
 end;
 
 
-return windowClass, 2;
+
+-- local keybindList = boardClass.new({
+--       active      = true;
+--       title       = 'keybind list';
+--       size        = vector2(200, 150); 
+--       dragSize    = 20;
+-- });
+
+-- keybindList:addText('left', 'flight', Color3.new(0.5, 0.5, 0.5))
+-- keybindList:addText('right', '[X]', Color3.new(0.5, 0.5, 0.5))
+
+-- keybindList:addText('left', 'speedhack', Color3.new(0.5, 0.5, 0.5))
+-- keybindList:addText('right', '[V]', Color3.new(0.5, 0.5, 0.5))
+
+-- task.wait(3);
+
+-- keybindList:removeText('left', 'flight');
+-- keybindList:removeText('right', '[X]');
+
+return {
+      windowClass = windowClass;
+      boardClass  = boardClass;
+}, 3;
