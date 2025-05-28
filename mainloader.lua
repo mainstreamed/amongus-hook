@@ -64,12 +64,12 @@ local statuslist = {};
 statuslist.fallensurvival = {
 	name 		= 'Fallen Survival';
 	status 		= 'Undetected';
-	support 	= {'Wave'; 'AWP'; 'Hydrogen'; };
+	support 	= {'Wave'; 'AWP'; 'Hydrogen'; 'Seliware'; };
 };
 statuslist.tridentsurvival = {
 	name 		= 'Trident Survival';
 	status 		= 'Undetected';
-	support 	= {'Wave'; 'AWP'; 'Synapse Z'; 'MacSploit'; 'Velocity'; 'Potassium'; 'Hydrogen'; };
+	support 	= {'Wave'; 'AWP'; 'MacSploit'; 'Velocity'; 'Potassium'; 'Seliware'; };
 };
 
 local load = function(name)
