@@ -33,6 +33,7 @@ local executor 	= identifyexecutor and identifyexecutor() or 'unknown';
 local GLOBAL_FONT = executor == 'AWP' and 0 or 1;
 local GLOBAL_SIZE	= executor == 'AWP' and 15 or 13;
 
+local BASE_ZINDEX = 1;
 
 local espLibrary = {};
 
@@ -110,21 +111,21 @@ do
                         Thickness         = 1;
                         Color             = Color3.new(1, 1, 1);
                         Filled            = false;
-                        ZIndex            = 1;
+                        ZIndex            = BASE_ZINDEX + 1;
                   }, allDrawings);
                   boxOutline = createDrawing('Square', {
                         Visible           = false;
                         Thickness         = 2;
                         Color             = Color3.new(0, 0, 0);
                         Filled            = false;
-                        ZIndex            = 0;
+                        ZIndex            = BASE_ZINDEX;
                   }, allDrawings);
 
                   healthBar = createDrawing('Square', {
                         Visible           = false;
                         Thickness         = 1;
                         Filled            = true;
-                        ZIndex            = 1;
+                        ZIndex            = BASE_ZINDEX + 1;
                   }, allDrawings);
                   healthBackground = createDrawing('Square', {
                         Visible           = false;
@@ -132,7 +133,7 @@ do
                         Transparency      = 0.7;
                         Thickness         = 1;
                         Filled            = true;
-                        ZIndex            = 0
+                        ZIndex            = BASE_ZINDEX;
                   }, allDrawings);
 
                   name = createDrawing('Text', {
@@ -145,7 +146,7 @@ do
                         Size              = GLOBAL_SIZE;
                         Text              = self.player.DisplayName;
                         Font              = GLOBAL_FONT;
-                        ZIndex            = 1;
+                        ZIndex            = BASE_ZINDEX + 1;
                   }, allDrawings);
                   distance = createDrawing('Text', {
                         Visible           = false;
@@ -156,7 +157,7 @@ do
                         Transparency      = 1;
                         Size              = GLOBAL_SIZE;
                         Font              = GLOBAL_FONT;
-                        ZIndex            = 1;
+                        ZIndex            = BASE_ZINDEX + 1;
                   }, allDrawings);
                   weapon = createDrawing('Text', {
                         Visible           = false;
@@ -167,7 +168,7 @@ do
                         Transparency      = 1;
                         Size              = GLOBAL_SIZE;
                         Font              = GLOBAL_FONT;
-                        ZIndex            = 1;
+                        ZIndex            = BASE_ZINDEX + 1;
                   }, allDrawings);
             };
             drawings.all = allDrawings;
@@ -492,14 +493,14 @@ do
                         Filled            = false;
                         Thickness         = 1;
                         Color             = self.colour;
-                        ZIndex            = 0;
+                        ZIndex            = BASE_ZINDEX + 1;
                   }, allDrawings);
                   boxOutline = createDrawing('Square', {
                         Visible           = false;
                         Filled            = false;
                         Thickness         = 1;
                         Color             = Color3.new(0, 0, 0);
-                        ZIndex            = -1;
+                        ZIndex            = BASE_ZINDEX;
                   }, allDrawings);
 
                   name = createDrawing('Text', {
@@ -512,7 +513,7 @@ do
                         Size              = GLOBAL_SIZE;
                         Text              = self.name;
                         Font              = GLOBAL_FONT;
-                        ZIndex            = 0;
+                        ZIndex            = BASE_ZINDEX;
                   }, allDrawings);
                   distance = createDrawing('Text', {
                         Visible           = false;
@@ -523,7 +524,7 @@ do
                         Transparency      = 1;
                         Size              = GLOBAL_SIZE;
                         Font              = GLOBAL_FONT;
-                        ZIndex            = 0;
+                        ZIndex            = BASE_ZINDEX;
                   }, allDrawings);
             };
             drawings.all = allDrawings;
@@ -711,14 +712,14 @@ do
                         Filled            = false;
                         Thickness         = 1;
                         Color             = self.colour;
-                        ZIndex            = 0;
+                        ZIndex            = BASE_ZINDEX + 1;
                   }, allDrawings);
                   boxOutline = createDrawing('Square', {
                         Visible           = false;
                         Filled            = false;
                         Thickness         = 1;
                         Color             = Color3.new(0, 0, 0);
-                        ZIndex            = -1;
+                        ZIndex            = BASE_ZINDEX;
                   }, allDrawings);
 
                   name = createDrawing('Text', {
@@ -731,7 +732,7 @@ do
                         Size              = GLOBAL_SIZE;
                         Text              = self.name;
                         Font              = GLOBAL_FONT;
-                        ZIndex            = 0;
+                        ZIndex            = BASE_ZINDEX;
                   }, allDrawings);
                   distance = createDrawing('Text', {
                         Visible           = false;
@@ -742,14 +743,14 @@ do
                         Transparency      = 1;
                         Size              = GLOBAL_SIZE;
                         Font              = GLOBAL_FONT;
-                        ZIndex            = 0;
+                        ZIndex            = BASE_ZINDEX;
                   }, allDrawings);
 
                   healthBar = createDrawing('Square', {
                         Visible           = false;
                         Thickness         = 1;
                         Filled            = true;
-                        ZIndex            = 1;
+                        ZIndex            = BASE_ZINDEX + 1;
                   }, allDrawings);
                   healthBackground = createDrawing('Square', {
                         Visible           = false;
@@ -757,7 +758,7 @@ do
                         Transparency      = 0.7;
                         Thickness         = 1;
                         Filled            = true;
-                        ZIndex            = 0
+                        ZIndex            = BASE_ZINDEX;
                   }, allDrawings);
             };
             drawings.all = allDrawings;
