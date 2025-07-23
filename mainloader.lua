@@ -63,12 +63,12 @@ local statuslist = {};
 
 statuslist.fallensurvival = {
 	name 		= 'Fallen Survival';
-	status 		= 'Down';
+	status 		= 'Undetected';
 	support 	= {'Wave'; 'AWP'; 'Hydrogen'; 'Seliware'; };
 };
 statuslist.tridentsurvival = {
 	name 		= 'Trident Survival';
-	status 		= 'Undetected';
+	status 		= 'Use at own risk';
 	support 	= {'Wave'; 'AWP'; 'MacSploit'; 'Velocity'; 'Potassium'; 'Seliware'; };
 };
 
