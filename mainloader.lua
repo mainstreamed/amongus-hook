@@ -64,7 +64,7 @@ local statuslist = {};
 statuslist.fallensurvival = {
 	name 		= 'Fallen Survival';
 	status 		= 'Undetected';
-	support 	= {'Wave'; 'AWP'; 'Hydrogen'; 'Seliware'; };
+	support 	= {'Wave'; 'AWP'; 'Hydrogen'; 'Seliware'; 'Zenith'; };
 };
 statuslist.tridentsurvival = {
 	name 		= 'Trident Survival';
