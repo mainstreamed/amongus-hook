@@ -1,5 +1,5 @@
 local executor = identifyexecutor and identifyexecutor();
-if (executor ~= 'Pottasium' and executor ~= 'Zenith') then
+if (executor ~= 'Potassium' and executor ~= 'Zenith') then
 
       local players = game:GetService('Players');
       if (not players.LocalPlayer) then
