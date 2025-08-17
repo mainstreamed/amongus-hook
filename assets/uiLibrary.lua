@@ -55,7 +55,7 @@ local KEY_CONVERSION = {
 };
 local executor 	= identifyexecutor and identifyexecutor() or 'unknown';
 
-local GLOBAL_FONT = executor == 'AWP' and 0 or 1;
+local GLOBAL_FONT = executor == 'AWP' and 0 or executor == 'Zenith' and 2 or 1;
 local GLOBAL_SIZE	= executor == 'AWP' and 16 or 13;
 
 -- local Drawing = require(script.Drawing);
