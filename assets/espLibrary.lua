@@ -30,7 +30,7 @@ end;
 
 local executor 	= identifyexecutor and identifyexecutor() or 'unknown';
 
-local GLOBAL_FONT = executor == 'AWP' and 0 or 1;
+local GLOBAL_FONT = executor == 'AWP' and 0 or executor == 'Zenith' and 2 or 1;
 local GLOBAL_SIZE	= executor == 'AWP' and 15 or 13;
 
 local BASE_ZINDEX = 1;
@@ -59,6 +59,7 @@ do
             local self = setmetatable({
                   player      = player;
                   connections = {};
+                  hidden      = false;
                   allDrawings = nil;
                   drawings    = nil;
                   current     = nil;
@@ -177,6 +178,11 @@ do
             self.allDrawings = allDrawings;
       end;
       function playerESP:hideDrawings()
+            if (self.hidden) then
+                  return;
+            end;
+
+            self.hidden = true;
             for i = 1, #self.allDrawings do
                   self.allDrawings[i].Visible = false;
             end;
@@ -236,15 +242,16 @@ do
       function playerESP:loop(settings, distance)
             local current = self.current;
 
-            local _, size              = getBoundingBox(current.character, 5);
-            local goal              = current.rootPart.Position;
+            local _, size     = getBoundingBox(current.character, 5);
+            local goal        = current.rootPart.Position;
 
             local vector2, onscreen = worldToViewPoint(goal);
             if (not onscreen) then
                   return self:hideDrawings();
             end;
+            self.hidden = false;
 
-            local cframe = CFrame.new(goal, currentCamera.CFrame.Position);
+            local cframe      = CFrame.new(goal, currentCamera.CFrame.Position);
 
             local x, y = -size.X / 2, size.Y / 2;
             local topright    = worldToViewPoint((cframe * CFrame.new(x, y, 0)).Position)
@@ -444,6 +451,7 @@ do
                   
                   name        = name or entity.Name;
                   colour      = colour or Color3.new(1, 1, 1);
+                  hidden      = false;
 
                   connections = {};
             }, entityESP);
@@ -534,6 +542,11 @@ do
 
       end;
       function entityESP:hideDrawings()
+            if (self.hidden) then
+                  return;
+            end;
+            
+            self.hidden = true;
             for i = 1, #self.allDrawings do
                   self.allDrawings[i].Visible = false;
             end;
@@ -545,6 +558,7 @@ do
             if (not onscreen) then
                   return self:hideDrawings();
             end;
+            self.hidden = false;
 
             local cframe = CFrame.new(goal.Position, currentCamera.CFrame.Position);
 
@@ -630,6 +644,7 @@ do
                   
                   name        = name or entity.Name;
                   colour      = colour or Color3.new(1, 1, 1);
+                  hidden      = false;
 
                   connections = {};
             }, npcESP);
@@ -768,6 +783,11 @@ do
 
       end;
       function npcESP:hideDrawings()
+            if (self.hidden) then
+                  return;
+            end;
+
+            self.hidden = true;
             for i = 1, #self.allDrawings do
                   self.allDrawings[i].Visible = false;
             end;
@@ -779,6 +799,7 @@ do
             if (not onscreen) then
                   return self:hideDrawings();
             end;
+            self.hidden = false;
 
             local cframe = CFrame.new(goal.Position, currentCamera.CFrame.Position);
 
