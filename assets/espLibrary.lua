@@ -43,18 +43,27 @@ do
       local playerESP = {
             playerCache = {};
             drawingCache = {};
+            allDrawingCache = {};
 
             childAddedConnections = {};
             childRemovedConnections = {};
+
+            drawingAddedConnections = {};
       };
       playerESP.__index = playerESP;
 
+      -- preload
       playerESP.onChildAdded = function(_function)
             table.insert(playerESP.childAddedConnections, _function);
       end;
       playerESP.onChildRemoved = function(_function)
             table.insert(playerESP.childRemovedConnections, _function);
       end;
+      playerESP.onDrawingAdded = function(_func)
+            table.insert(playerESP.drawingAddedConnections, _func);
+      end;
+
+
       playerESP.new = function(player: Player)
             local self = setmetatable({
                   player      = player;
@@ -75,6 +84,10 @@ do
                   self.drawings = cache;
             else
                   self:createDrawingCache();
+            end;
+
+            for i = 1, #playerESP.drawingAddedConnections do
+                  playerESP.drawingAddedConnections[i](self);
             end;
 
             table.insert(self.connections, player.CharacterAdded:Connect(function(...)
@@ -181,6 +194,8 @@ do
 
             self.drawings = drawings;
             self.allDrawings = allDrawings;
+
+            table.insert(self.drawings, self.allDrawingCache);
       end;
       function playerESP:hideDrawings()
             if (self.hidden) then
@@ -215,8 +230,6 @@ do
             else
                   self:setNonActive();
             end;
-
-
 
             self.current.health           = health;
             self.current.maxHealth        = maxHealth;
@@ -443,11 +456,20 @@ do
       local entityESP = {
             entityCache = {};
             drawingCache = {};
+            allDrawingCache = {};
 
             childAddedConnections = {};
             childRemovedConnections = {};
+
+            drawingAddedConnections = {};
       };
       entityESP.__index = entityESP;
+
+      -- preload
+      entityESP.onDrawingAdded = function(_func)
+            table.insert(entityESP.drawingAddedConnections, _func);
+      end;
+
 
       entityESP.new = function(entity: Model, settingName:string, name: string?, colour: Color3?)
             local self = setmetatable({
@@ -477,6 +499,9 @@ do
                   self:createDrawingCache();
             end;
 
+            for i = 1, #entityESP.drawingAddedConnections do
+                  entityESP.drawingAddedConnections[i](self);
+            end;
             
             table.insert(self.connections, entity.AncestryChanged:Connect(function(child, parent)
                   if (child == entity and parent == nil) then
@@ -545,6 +570,7 @@ do
             self.drawings = drawings;
             self.allDrawings = allDrawings;
 
+            table.insert(self.drawings, self.allDrawingCache);
       end;
       function entityESP:hideDrawings()
             if (self.hidden) then
@@ -639,8 +665,16 @@ do
       local npcESP = {
             npcCache = {};
             drawingCache = {};
+            allDrawingCache = {};
+
+            drawingAddedConnections = {};
       };
       npcESP.__index = npcESP;
+
+      -- preload
+      npcESP.onDrawingAdded = function(_func)
+            table.insert(npcESP.drawingAddedConnections, _func);
+      end;
 
       npcESP.new = function(entity: Model, settingName:string, name: string?, colour: Color3?)
             local self = setmetatable({
@@ -668,6 +702,10 @@ do
                   self.drawings           = cache;
             else
                   self:createDrawingCache();
+            end;
+
+            for i = 1, #npcESP.drawingAddedConnections do
+                  npcESP.drawingAddedConnections[i](self);
             end;
 
             local humanoid = entity:FindFirstChildOfClass('Humanoid');
@@ -786,6 +824,7 @@ do
             self.drawings = drawings;
             self.allDrawings = allDrawings;
 
+            table.insert(self.drawings, self.allDrawingCache);
       end;
       function npcESP:hideDrawings()
             if (self.hidden) then
@@ -928,4 +967,4 @@ do
 end;
 
 
-return espLibrary, 1;
+return espLibrary, 2;
