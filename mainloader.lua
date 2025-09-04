@@ -11,7 +11,7 @@ end;
 
 local executor 		= identifyexecutor and identifyexecutor() or 'Unknown';
 
-local messagebox 	= messagebox;
+local messagebox 	= messageboxasync or messagebox;
 local request 		= request or http_request;
 local loadstring 	= loadstring;
 
