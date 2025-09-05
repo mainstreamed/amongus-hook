@@ -107,12 +107,16 @@ local loadAssets = function()
 	-- end;
 end;
 local fetchImage = function(name)
+	local filePath = `amghook\\assets\\{name}.png`;
+	if (not ASSET_IMAGES[`{name}.png`]) then
+		return;
+	end;
+	loadAssets();
+	if (not isfile(`amghook\\assets\\{name}.png`)) then
+		return;
+	end;
 	return readfile(`amghook\\assets\\{name}.png`);
-
-	-- return base64_decode(ASSET_IMAGES[`{name}.png`]);
 end;
-
-
 
 local roundedDrawing = function()
 
