@@ -112,10 +112,10 @@ local fetchImage = function(name)
 		return;
 	end;
 	loadAssets();
-	if (not isfile(`amghook\\assets\\{name}.png`)) then
+	if (not isfile(filePath)) then
 		return;
 	end;
-	return readfile(`amghook\\assets\\{name}.png`);
+	return readfile(filePath);
 end;
 
 local roundedDrawing = function()
