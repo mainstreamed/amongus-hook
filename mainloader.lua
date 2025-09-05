@@ -2,6 +2,18 @@ if not game:IsLoaded() then
 	game.Loaded:Wait()
 end;
 
+local statuslist = {};
+statuslist.fallensurvival = {
+	name 		= 'Fallen Survival';
+	status 		= 'Undetected';
+	support 	= {'Zenith'; 'Swift'; 'Wave'; 'Potassium'; 'Volcano'; };
+};
+statuslist.tridentsurvival = {
+	name 		= 'Trident Survival';
+	status 		= 'Use at own risk';
+	support 	= {'Wave'; 'AWP'; 'MacSploit'; 'Velocity'; 'Potassium'; 'Seliware'; };
+};
+
 local players 		= game:GetService('Players');
 local localPlayer 	= players.LocalPlayer;
 if (not localPlayer) then
@@ -58,18 +70,6 @@ end;
 	
 local placeid = game.PlaceId;
 local dir = 'https://raw.githubusercontent.com/mainstreamed/amongus-hook/main/';
-
-local statuslist = {};
-statuslist.fallensurvival = {
-	name 		= 'Fallen Survival';
-	status 		= 'Undetected';
-	support 	= {'Zenith'; 'Swift'; 'Wave'; 'Potassium'; 'Volcano'; };
-};
-statuslist.tridentsurvival = {
-	name 		= 'Trident Survival';
-	status 		= 'Use at own risk';
-	support 	= {'Wave'; 'AWP'; 'MacSploit'; 'Velocity'; 'Potassium'; 'Seliware'; };
-};
 
 local load = function(name)
 	local game = statuslist[name];
