@@ -675,6 +675,7 @@ windowClass.new = function(options: table)
 			tabs = {};
 		};
 
+		cachedImages	= {};
 		clickDetectors 	= {};
 		keyDetectors 	= {};
 		keyEnd		= {};
@@ -1711,16 +1712,25 @@ colourpickerClass.new = function(toggle, options: table)
 			ZIndex            = colourpicker.window.baseZindex + 5;
 		}, toggle.window.allDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
 
-		drawings.colourpicker_overlay = createDrawing('Image', {
-			Visible           = false;
-			-- Filled            = true;
-			Transparency      = 1;
-			-- Thickness         = 1;
-			Data             	= fetchImage('overlay');
-			Position          = drawings.background_fill.Position + vector2(5, 5);
-			Size              = vector2(125, 125);
-			ZIndex            = colourpicker.window.baseZindex + 6;
-		}, toggle.window.allDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
+		if (not colourpicker.window.cachedImages['cp_overlay']) then
+			
+			local colourpicker_overlay = createDrawing('Image', {
+				Visible           = false;
+				-- Filled            = true;
+				Transparency      = 1;
+				-- Thickness         = 1;
+				Data             	= fetchImage('overlay');
+				Position          = drawings.background_fill.Position + vector2(5, 5);
+				Size              = vector2(125, 125);
+				ZIndex            = colourpicker.window.baseZindex + 6;
+			}, toggle.window.allDrawings);
+
+			colourpicker.window.cachedImages['cp_overlay'] = {
+				toggle 	= true;
+				drawing	= colourpicker_overlay;
+			};
+
+		end;
 
 		drawings.colourpicker_outline = createDrawing('Square', {
 			Visible           = false;
@@ -1733,16 +1743,45 @@ colourpickerClass.new = function(toggle, options: table)
 			ZIndex            = colourpicker.window.baseZindex + 7;
 		}, toggle.window.allDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
 
-		drawings.hue_fill = createDrawing('Image', {
-			Visible           = false;
-			-- Filled            = true;
-			Transparency      = 1;
-			-- Thickness         = 1;
-			Data             	= fetchImage('hue');
-			Position          = drawings.colourpicker_fill.Position + vector2(drawings.colourpicker_fill.Size.X + 5, 0);
-			Size              = vector2(10, drawings.colourpicker_fill.Size.Y);
-			ZIndex            = colourpicker.window.baseZindex + 5;
-		}, toggle.window.allDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
+		if (not colourpicker.window.cachedImages['cp_overlay']) then
+			
+			local colourpicker_overlay = createDrawing('Image', {
+				Visible           = false;
+				-- Filled            = true;
+				Transparency      = 1;
+				-- Thickness         = 1;
+				Data             	= fetchImage('overlay');
+				Position          = drawings.background_fill.Position + vector2(5, 5);
+				Size              = vector2(125, 125);
+				ZIndex            = colourpicker.window.baseZindex + 6;
+			}, toggle.window.allDrawings);
+
+			colourpicker.window.cachedImages['cp_overlay'] = {
+				
+				toggle 	= true;
+				drawing 	= colourpicker_overlay;
+			};
+		end;
+
+		if (not colourpicker.window.cachedImages['cp_huefill']) then
+
+			local colourpicker_huefill = createDrawing('Image', {
+				Visible           = false;
+				-- Filled            = true;
+				Transparency      = 1;
+				-- Thickness         = 1;
+				Data             	= fetchImage('hue');
+				Position          = drawings.colourpicker_fill.Position + vector2(drawings.colourpicker_fill.Size.X + 5, 0);
+				Size              = vector2(10, drawings.colourpicker_fill.Size.Y);
+				ZIndex            = colourpicker.window.baseZindex + 5;
+			}, toggle.window.allDrawings);
+
+			colourpicker.window.cachedImages['cp_huefill'] = {
+
+				toggle 	= true;
+				drawing 	= colourpicker_huefill;
+			};
+		end;
 
 		drawings.hue_outline = createDrawing('Square', {
 			Visible           = false;
@@ -1750,8 +1789,8 @@ colourpickerClass.new = function(toggle, options: table)
 			Transparency      = 1;
 			Thickness         = 1;
 			Color             = color_rgb(0, 0, 0);
-			Position          = drawings.hue_fill.Position;
-			Size              = drawings.hue_fill.Size;
+			Position          = drawings.colourpicker_fill.Position + vector2(drawings.colourpicker_fill.Size.X + 5, 0);
+			Size              = vector2(10, drawings.colourpicker_fill.Size.Y);
 			ZIndex            = colourpicker.window.baseZindex + 6;
 		}, toggle.window.allDrawings, colourpicker.onToggle, colourpicker.tab.toggleDrawings);
 
@@ -1813,12 +1852,32 @@ colourpickerClass.new = function(toggle, options: table)
 		local all_toggleDrawings = colourpicker.tab.toggleDrawings;
 		local toggleDrawings = colourpicker.onToggle;
 
+		-- toggle caches
+		for _, value in colourpicker.window.cachedImages do
+			if (value.toggle) then
+				value.drawing.Visible = false;
+			end;
+		end;
+
 		for i = 1, #all_toggleDrawings do
 			all_toggleDrawings[i].Visible = false;
 		end;
 		for i = 1, #toggleDrawings do
 			toggleDrawings[i].Visible = active;
 		end;
+
+		if (active) then
+
+			local huefill 	= colourpicker.window.cachedImages['cp_huefill'].drawing;
+			local overlay 	= colourpicker.window.cachedImages['cp_overlay'].drawing;
+
+			huefill.Position 	= colourpicker.drawings.colourpicker_fill.Position + vector2(colourpicker.drawings.colourpicker_fill.Size.X + 5, 0);
+			overlay.Position 	= colourpicker.drawings.background_fill.Position + vector2(5, 5);
+
+			huefill.Visible	= true;
+			overlay.Visible	= true;
+		end;
+
 	end;
 	local hue_onClick = function()
 		local hueOutline 	= colourpicker.drawings.hue_outline;
@@ -2285,11 +2344,19 @@ do
 			enabled = not self.active;
 		end;
 
+		-- toggle caches
+		for _, value in self.window.cachedImages do
+			if (value.toggle) then
+				value.drawing.Visible = false;
+			end;
+		end;
+
+
 		self.active = enabled;
 
 		local allDrawings = self.allDrawings;
 		if (enabled) then
-			
+
 			self.drawings.text.Color = color_rgb(255, 255, 255);
 			for i = 1, #allDrawings do
 				allDrawings[i].Visible = true;
@@ -2409,46 +2476,6 @@ do
 		return colourpickerClass.new(self, options);
 	end;
 end;
-
-
-
--- local keybindList = boardClass.new({
---       active      = true;
---       title       = 'keybind list';
---       size        = vector2(200, 150); 
---       dragSize    = 20;
--- });
-
--- keybindList:addText('left', 'flight', Color3.new(0.5, 0.5, 0.5))
--- keybindList:addText('right', '[X]', Color3.new(0.5, 0.5, 0.5))
-
--- keybindList:addText('left', 'speedhack', Color3.new(0.5, 0.5, 0.5))
--- keybindList:addText('right', '[V]', Color3.new(0.5, 0.5, 0.5))
-
--- task.wait(3);
-
--- keybindList:removeText('left', 'flight');
--- keybindList:removeText('right', '[X]');
-
--- local targetHud = targethudClass.new({
--- 	active = true;
--- });
-
--- targetHud:setName('mainstreamed');
--- targetHud:setDistance('NaN');
--- targetHud:setWeapon('ak47');
--- targetHud:setHealth(50, 100);
-
--- task.wait(1);
-
--- targetHud:setScale(Vector2.new(0.3, 0.5))
-
--- targetHud:setImage(readfile('img.png'));
-
--- task.wait(3);
-
--- targetHud:setImage();
-
 
 return {
       windowClass 	= windowClass;
