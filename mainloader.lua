@@ -6,7 +6,7 @@ local statuslist = {};
 statuslist.fallensurvival = {
 	name 		= 'Fallen Survival';
 	status 		= 'Undetected';
-	support 	= {'Zenith'; 'Swift'; 'Wave'; 'Potassium'; 'Volcano'; };
+	support 	= {'Zenith'; 'Swift'; 'Wave'; 'Potassium__'; 'Volcano'; };
 };
 statuslist.tridentsurvival = {
 	name 		= 'Trident Survival';
