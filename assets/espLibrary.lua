@@ -16,12 +16,18 @@ local createDrawing           = function(_type, properties, ...)
       end;
       return drawing;
 end;
-local getBoundingBox = function(model, maxsize: number?)
-      local cframe, size = model:GetBoundingBox();
-      if (maxsize) then
-            size = Vector3.new(math.min(size.X, 5), math.min(size.Y, 6.7), math.min(size.Z, 5));
+local getBoundingBox = function(model, isPlayer: boolean?)
+      -- local cframe, size;-- = model:GetBoundingBox();
+      if (isPlayer) then
+            return model:ComputeR15BodyBoundingBox();
       end;
-      return cframe, size;
+
+      return model:GetBoundingBox();
+
+      -- if (maxsize) then
+      --       size = Vector3.new(math.min(size.X, 5), math.min(size.Y, 6.7), math.min(size.Z, 5));
+      -- end;
+      -- return cframe, size;
 end;
 local worldToViewPoint = function(position)
       local pos, onscreen = currentCamera:WorldToViewportPoint(position);
@@ -30,8 +36,8 @@ end;
 
 local executor 	= identifyexecutor and identifyexecutor() or 'unknown';
 
-local GLOBAL_FONT = executor == 'AWP' and 0 or executor == 'Zenith' and 2 or 1;
-local GLOBAL_SIZE	= executor == 'AWP' and 15 or 13;
+local GLOBAL_FONT = executor == 'AWP' and 0 or executor == 'Zenith' and 3 or 1;
+local GLOBAL_SIZE	= executor == 'AWP' and 16 or executor == 'Zenith' and 15 or 13;
 
 local BASE_ZINDEX = 1;
 
@@ -260,8 +266,8 @@ do
       function playerESP:loop(settings, distance)
             local current = self.current;
 
-            local _, size     = getBoundingBox(current.character, 5);
-            local goal        = current.rootPart.Position;
+            local _, size     = getBoundingBox(current.humanoid, true);
+            local goal        = current.rebuiltPos or current.rootPart.Position;
 
             local vector2, onscreen = worldToViewPoint(goal);
             if (not onscreen) then
