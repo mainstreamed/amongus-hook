@@ -45,8 +45,8 @@ local KEY_CONVERSION = {
 };
 local executor 	= identifyexecutor and identifyexecutor() or 'unknown';
 
-local GLOBAL_FONT = executor == 'AWP' and 0 or executor == 'Zenith' and 2 or 1;
-local GLOBAL_SIZE	= executor == 'AWP' and 16 or 13;
+local GLOBAL_FONT = executor == 'AWP' and 0 or executor == 'Zenith' and 3 or 1;
+local GLOBAL_SIZE	= executor == 'AWP' and 16 or executor == 'Zenith' and 15 or 13;
 
 -- local Drawing = require(script.Drawing);
 
@@ -2018,6 +2018,12 @@ do
 		for i = 1, #self.allDrawings do
 			self.allDrawings[i].Visible = enabled;
 		end;
+
+            if (enabled) then
+                  for _, textInfo in self.storedText do
+                        textInfo.drawing.Visible = textInfo.shown;
+                  end;
+            end;
       end;
 
       function boardClass:isWithin(drawing, mousePosition)
@@ -2053,18 +2059,20 @@ do
 		end;
 	end;
 
-      function boardClass:addText(side, text, colour)
+      function boardClass:addText(side, text, colour, shown)
             
             local textInfo = {
                   side        = side;
                   text        = text;
+			shown 	= shown == nil and true or shown;
                   colour      = colour;
                   drawing     = self.cachedDrawings[1];
             };
 
             if (not textInfo.drawing) then -- drawing cacher
+                  -- print((self.active and textInfo.shown) or false);
                   textInfo.drawing = createDrawing('Text', {
-                        Visible           = self.active;
+                        Visible           = (self.active and textInfo.shown) or false;
                         Center            = false;
                         Outline           = true;
                         Transparency      = 1;
@@ -2079,14 +2087,14 @@ do
             else
                   table_remove(self.cachedDrawings, 1);
 
-                  textInfo.drawing.Visible      = self.active;
+                  textInfo.drawing.Visible      = (self.active and textInfo.shown) or false;
                   textInfo.drawing.Color        = textInfo.colour;
                   textInfo.drawing.Text         = textInfo.text;
             end;
 
             local index = 0;
             for i = 1, #self.storedText do
-                  if (self.storedText[i].side == textInfo.side) then
+                  if (self.storedText[i].side == textInfo.side and textInfo.shown) then
                         index += 1;
                   end;
             end;
@@ -2097,7 +2105,6 @@ do
             );
 
             table_insert(self.storedText, textInfo);
-
             return textInfo;
       end;
       function boardClass:removeText(side, text)
@@ -2131,21 +2138,41 @@ do
       end;
 
       function boardClass:update()
-            for _, textInfo in self.storedText do
-                  local drawing = textInfo.drawing;
-                  if (textInfo.text == drawing.Text and textInfo.colour == drawing.Color) then
-                        continue;
-                  end;
 
-                  drawing.Text      = textInfo.text;
-                  drawing.Color     = textInfo.colour;
-			if (textInfo.side == 'right') then
-				textInfo.drawing.Position = vector2(
-					self.drawings.base.Position.X + self.drawings.base.Size.X - textInfo.drawing.TextBounds.X - 2, 
-					textInfo.drawing.Position.Y
+		local leftIndex 	= 0;
+		local rightIndex 	= 0;
+
+            for _, textInfo in self.storedText do
+
+                  local drawing 	= textInfo.drawing;
+			local side 		= textInfo.side;
+
+                  drawing.Visible = self.active and textInfo.shown;
+
+                  if not (textInfo.text == drawing.Text and textInfo.colour == drawing.Color) then
+                        drawing.Text      = textInfo.text;
+                        drawing.Color     = textInfo.colour;
+                  end;
+			if (textInfo.shown) then
+
+				textInfo.drawing.Position = self.drawings.base.Position + vector2(
+					side == 'left' and 2 or self.drawings.base.Size.X - textInfo.drawing.TextBounds.X - 2,
+					(side == 'left' and leftIndex or rightIndex ) * 20 + 27
 				);
+				
+				if (textInfo.side == 'left') then
+					leftIndex += 1;
+				else
+					rightIndex += 1;
+				end;
 			end;
             end;
+
+            local ySize = 27 + math.max(leftIndex, rightIndex) * 20;
+            local xSize = self.drawings.base.Size.X;
+
+            self.drawings.base.Size = vector2(xSize, ySize);
+            self.drawings.baseOutline.Size = vector2(xSize + 2, ySize + 2);
       end;
 
       function boardClass:findText(side, text)
@@ -2481,4 +2508,4 @@ return {
       windowClass 	= windowClass;
       boardClass  	= boardClass;
 	targethudClass 	= targethudClass;
-}, 4;
+}, 5;
