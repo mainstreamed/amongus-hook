@@ -843,7 +843,7 @@ do
             end;
       end;
       function npcESP:loop(settings, distance)
-            local goal, size = getBoundingBox(self.entity);
+            local goal, size = getBoundingBox(self.humanoid or self.entity, self.humanoid ~= nil);
 
             local vector2, onscreen = worldToViewPoint(goal.Position);
             if (not onscreen) then
