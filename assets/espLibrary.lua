@@ -682,7 +682,7 @@ do
             table.insert(npcESP.drawingAddedConnections, _func);
       end;
 
-      npcESP.new = function(entity: Model, settingName:string, name: string?, colour: Color3?)
+      npcESP.new = function(entity: Model, settingName:string, name: string?, colour: Color3?, ignoreR15)
             local self = setmetatable({
                   entity      = entity;
                   settingName = settingName;
@@ -690,6 +690,7 @@ do
                   name        = name or entity.Name;
                   colour      = colour or Color3.new(1, 1, 1);
                   hidden      = false;
+                  ignoreR15   = ignoreR15 or false;
 
                   connections = {};
             }, npcESP);
@@ -843,7 +844,9 @@ do
             end;
       end;
       function npcESP:loop(settings, distance)
-            local goal, size = getBoundingBox(self.humanoid or self.entity, self.humanoid ~= nil);
+
+            local useR15 = self.humanoid ~= nil and not self.ignoreR15;
+            local goal, size = getBoundingBox(useR15 and self.humanoid or self.entity, useR15);
 
             local vector2, onscreen = worldToViewPoint(goal.Position);
             if (not onscreen) then
@@ -973,4 +976,4 @@ do
 end;
 
 
-return espLibrary, 2;
+return espLibrary, 3;
