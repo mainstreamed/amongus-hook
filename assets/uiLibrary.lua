@@ -1505,7 +1505,9 @@ keypickerClass.new = function(toggle, options: table)
 
 
 	local onKeyPress = function(key)
-		if (keypicker.active) then
+		if (userInputService:GetFocusedTextBox()) then
+			return;
+		elseif (keypicker.active) then
 			local keyValue 	= key.KeyCode.Name;
 
 			if (keyValue == 'Unknown') then
@@ -1557,7 +1559,6 @@ keypickerClass.new = function(toggle, options: table)
 		if (keypicker.active or keypicker.value == 'None' or keypicker.mode == 'toggle') then
 			return;
 		end;
-
 
 		local keyValue 	= key.KeyCode.Name;
 		if (keyValue == 'Unknown') then
