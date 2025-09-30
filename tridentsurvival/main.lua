@@ -1,7 +1,7 @@
 local check_run_on_actor = function()
       if (identifyexecutor) then
             local exec = identifyexecutor();
-            if (exec == 'AWP' or exec == 'Potassium' or exec == 'Seliware') then
+            if (exec == 'AWP' or exec == 'Potassium' or exec == 'Seliware' or exec == 'Volcano') then
                   return true;
             end;
       end;
