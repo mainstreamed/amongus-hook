@@ -45,9 +45,9 @@ return [==[
       end);
 
       local permissionBypass  = Instance.new('BindableEvent');
-      permissionBypass.Event:Connect(...)
+      permissionBypass.Event:Connect(function(...)
             communicator:Fire(...);
-      end;
+      end);
 
       local new = function(_type)
             drawingID += 1;
