@@ -10,7 +10,7 @@ statuslist.fallensurvival = {
 };
 statuslist.tridentsurvival = {
 	name 		= 'Trident Survival';
-	status 		= 'Use at own risk';
+	status 		= 'Undetected';
 	support 	= {'Wave'; 'AWP'; 'MacSploit'; 'Velocity'; 'Potassium'; 'Seliware'; };
 };
 
