@@ -44,9 +44,14 @@ return [==[
             drawingResponse = value;
       end);
 
+      local permissionBypass  = Instance.new('BindableEvent');
+      permissionBypass.Event:Connect(...)
+            communicator:Fire(...);
+      end;
+
       local new = function(_type)
             drawingID += 1;
-            communicator:Fire('parallel', 'new', _type);
+            permissionBypass:Fire('parallel', 'new', _type);
 
             local drawID            = drawingID;
             local customDrawing     = newproxy(true);
@@ -56,18 +61,18 @@ return [==[
 
                   if (idx == 'Remove' or idx == 'Destroy') then
                         return function()
-                              communicator:Fire('parallel', 'remove', drawID);
+                              permissionBypass:Fire('parallel', 'remove', drawID);
                         end;
                   end;
 
-                  communicator:Fire('parallel', '__index', drawID, idx);
+                  permissionBypass:Fire('parallel', '__index', drawID, idx);
                   local response = drawingResponse;
                   drawingResponse = nil;
 
                   return response;
             end;
             objectMT.__newindex     = function(_, idx, nidx)
-                  communicator:Fire('parallel', '__newindex', drawID, idx, nidx);
+                  permissionBypass:Fire('parallel', '__newindex', drawID, idx, nidx);
             end;
 
             return customDrawing;
@@ -82,5 +87,4 @@ return [==[
                   Monospace   = 3;
             };
       };
-
 ]==];
