@@ -5,19 +5,21 @@ if (not localplayer) then
       localplayer = players.LocalPlayer;
 end;
 
-local source = game:HttpGet('https://raw.githubusercontent.com/mainstreamed/amongus-hook/refs/heads/main/tridentsurvival/obfuscated.lua');
+local GITHUB_REPO = 'https://raw.githubusercontent.com/mainstreamed/amongus-hook/refs/heads/main/';
+
+local source = game:HttpGet(`{GITHUB_REPO}tridentsurvival/obfuscated.lua`);
 if (getgenv and getgenv().DEBUG_AMGHOOK) then
-      source = 'getgenv().DEBUG_AMGHOOK = true;' .. source;
+      source = `getgenv().DEBUG_AMGHOOK = true;\n{source}`;
 end;
 
 -- Drawing Fix ( FUCK VOLCANO )
-source = [==[
-      if (not Drawing) then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/mainstreamed/amongus-hook/refs/heads/main/assets/trident/luaDrawing.lua"))();
-      end;
-]==] .. source;
+local drawingActorFix = loadstring(game:HttpGet(`{GITHUB_REPO}assets/trident/actorDrawingFix.lua`))();
 
-local executor = identifyexecutor and identifyexecutor() or 'Unknown';
+source = string.format([==[
+      if (not Drawing) then
+            %*
+      end;
+]==], drawingActorFix) .. source;
 
 -- Main Load
 local fastflag = getfflag and getfflag('DebugRunParallelLuaOnMainThread');
@@ -25,11 +27,6 @@ if (fastflag == 'true' or fastflag == 'True' or fastflag == true) then
       loadstring(source)();
       return;
 elseif (run_on_actor) then
-
-      local executors = { 'Volcano'; '' };
-      if (table.find(executors, executor)) then
-            return localplayer:Kick('Please use fflag - "#fflag-script" channel in discord');
-      end;
 
       local actor = getactors and getactors()[1] or localplayer:FindFirstChildWhichIsA('Actor', true);
       if (actor) then
