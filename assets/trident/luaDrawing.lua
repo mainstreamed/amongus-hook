@@ -44,8 +44,6 @@ end);
 
 local function create(className, properties, children)
 
-	local lackingPermissions = getthreadidentity and getthreadidentity() <= 2;
-
 	local inst = _instancenew(className);
 	for i, v in properties do
 		if i ~= "Parent" then
@@ -53,29 +51,19 @@ local function create(className, properties, children)
 		end
 	end
 	if children then
-
-		if (lackingPermissions) then
-			bind:Fire(function()
-				for i, v in children do
-					v.Parent = inst;
-				end
-			end);
-		else
-			for i, v in children do
-				v.Parent = inst;
-			end
-		end;
+		for i, v in children do
+			v.Parent = inst;
+		end
 	end
 	if _protectinstance then
 		_protectinstance(inst);
 	end
 
-	if (lackingPermissions) then
+	if (not pcall(function() inst.Parent = properties.Parent; end)) then
+		
 		bind:Fire(function()
 			inst.Parent = properties.Parent;
 		end);
-	else
-		inst.Parent = properties.Parent;
 	end;
 
 	return inst;
