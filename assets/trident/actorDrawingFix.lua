@@ -35,6 +35,7 @@ return [==[
       local drawingResponse   = nil;
 
       local communicator      = game:GetService('CoreGui'):FindFirstChild('DRAWING_COMMUNICATOR');
+      communicator.Parent     = nil;
 
       communicator.Event:Connect(function(enviroment, value)
             if (enviroment ~= 'serial') then
