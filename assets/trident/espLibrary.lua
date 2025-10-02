@@ -328,7 +328,7 @@ do
 
             
             table.insert(self.connections, self.model.AncestryChanged:Connect(function(child, parent)
-                  if (child == entity.model and parent == nil) then
+                  if (child == self.model and parent == nil) then
                         return self:remove();
                   end;
             end));
