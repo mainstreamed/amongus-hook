@@ -315,7 +315,10 @@ do
             end;
       end;
       function playerESP:childRemoved(child)
-            if (child == self.current.humanoid) then
+
+            if (not self.current) then
+                  -- PASS;
+            elseif (child == self.current.humanoid) then
                   self.current.humanoid = nil;
                   self:setNonActive();
             elseif (child == self.current.rootPart) then
