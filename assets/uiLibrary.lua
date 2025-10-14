@@ -668,7 +668,7 @@ windowClass.new = function(options: table)
 		active            = true;
 		title             = options.title or 'amongus.hook';
 		size              = options.size or vector2(600, 500);
-		position          = camera.ViewportSize / 2;
+		position          = camera.ViewportSize // 2;
 
 		tabSettings       = {
 			index = 0;
