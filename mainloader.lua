@@ -13,6 +13,11 @@ statuslist.tridentsurvival = {
 	status 		= 'Undetected';
 	support 	= {'Wave'; 'Zenith'; 'MacSploit'; 'Velocity'; 'Potassium'; 'Seliware'; 'Swift'; 'Volcano'; };
 };
+statuslist.lonesurvival = {
+	name 		= 'Lone Survival';
+	status      = 'Undetected';
+	support 	= {'Wave'; 'Zenith'; 'MacSploit'; 'Velocity'; 'Potassium'; 'Seliware'; 'Swift'; 'Volcano'; };
+};
 
 local players 		= game:GetService('Players');
 local localPlayer 	= players.LocalPlayer;
@@ -88,6 +93,8 @@ end;
 if (placeid == 13253735473) then
 	return load('tridentsurvival');
 elseif (placeid == 13800717766 or placeid == 15479377118 or placeid == 16849012343) then
-    return load('fallensurvival');
+      return load('fallensurvival');
+elseif (placeid == 13800223141 or placeid == 139307005148921) then
+	return load('lonesurvival');
 end;
 protectedMessagebox(`This Game is Unsupported!\n\nIf you believe this is incorrect, please open a ticket in our discord! - discord.gg/2jycAcKvdw`, `amongus.hook [{placeid}]`, 48);
