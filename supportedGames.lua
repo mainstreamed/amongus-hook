@@ -7,7 +7,7 @@ supportedGames.FALLEN = {
 
       gameName          = 'Fallen Survival';
       status            = 'Undetected';
-      executors         = { 'Zenith'; 'Wave'; 'Swift'; };
+      executors         = { 'Wave'; 'Swift'; 'Volt'; };
       customMessage     = {
             ['Potassium']     = 'Use at own risk';
             ['Volcano']       = 'Use at own risk';
@@ -20,7 +20,7 @@ supportedGames.TRIDENT = {
 
       gameName          = 'Trident Survival';
       status            = 'Undetected';
-      executors         = { 'Zenith'; 'Wave'; 'Swift'; 'Velocity'; 'Potassium'; 'Seliware'; 'Volcano'; };
+      executors         = { 'Wave'; 'Swift'; 'Velocity'; 'Potassium'; 'Seliware'; 'Volcano'; 'Volt'; };
       customMessage     = {
 
             ['executor']      = 'custom message';
@@ -33,7 +33,7 @@ supportedGames.LONE = {
 
       gameName          = 'Lone Survival';
       status            = 'Undetected';
-      executors         = { 'Zenith'; 'Wave'; 'Swift'; 'Velocity'; 'Potassium'; 'Seliware'; 'Volcano'; };
+      executors         = { 'Wave'; 'Swift'; 'Velocity'; 'Potassium'; 'Seliware'; 'Volcano'; 'Volt'; };
       customMessage     = {
 
             ['executor']      = 'custom message';
