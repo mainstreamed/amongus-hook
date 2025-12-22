@@ -43,10 +43,10 @@ local KEY_CONVERSION = {
 	['LeftAlt'] 	= 'LAlt';
 	['MouseButton2'] 	= 'MB2';
 };
-local executor 	= identifyexecutor and identifyexecutor() or 'unknown';
+-- local executor 	= identifyexecutor and identifyexecutor() or 'unknown';
 
-local GLOBAL_FONT = executor == 'AWP' and 0 or executor == 'Zenith' and 3 or 1;
-local GLOBAL_SIZE	= executor == 'AWP' and 16 or executor == 'Zenith' and 15 or 13;
+local GLOBAL_FONT = _G.GLOBAL_FONT or 1;  --executor == 'AWP' and 0 or executor == 'Zenith' and 3 or 1;
+local GLOBAL_SIZE	= _G.GLOBAL_SIZE or 13; --executor == 'AWP' and 16 or executor == 'Zenith' and 15 or 13;
 
 -- local Drawing = require(script.Drawing);
 
