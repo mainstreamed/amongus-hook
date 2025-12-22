@@ -34,10 +34,10 @@ local worldToViewPoint = function(position)
       return Vector2.new(pos.X, pos.Y), onscreen, pos.Z;
 end;
 
-local executor 	= identifyexecutor and identifyexecutor() or 'unknown';
+-- local executor 	= identifyexecutor and identifyexecutor() or 'unknown';
 
-local GLOBAL_FONT = executor == 'AWP' and 0 or executor == 'Zenith' and 3 or 1;
-local GLOBAL_SIZE	= executor == 'AWP' and 16 or executor == 'Zenith' and 15 or 13;
+local GLOBAL_FONT = _G.GLOBAL_FONT or 1;  --executor == 'AWP' and 0 or executor == 'Zenith' and 3 or 1;
+local GLOBAL_SIZE	= _G.GLOBAL_SIZE or 13; --executor == 'AWP' and 16 or executor == 'Zenith' and 15 or 13;
 
 local BASE_ZINDEX = 1;
 
@@ -249,6 +249,7 @@ do
       function playerESP:setupHumanoid(humanoid: Humanoid, firstTime)
 
             self:humanoidHealthChanged();
+            
             table.insert(self.connections, humanoid:GetPropertyChangedSignal('Health'):Connect(function()
                   self:humanoidHealthChanged();
             end));
