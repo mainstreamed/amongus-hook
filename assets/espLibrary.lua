@@ -226,6 +226,9 @@ do
       end;
       function playerESP:humanoidHealthChanged()
             local humanoid                = self.current.humanoid;
+            if (not humanoid) then
+                  return;
+            end;
 
             local health                  = humanoid.Health;
             local maxHealth               = humanoid.MaxHealth;
@@ -246,7 +249,6 @@ do
       function playerESP:setupHumanoid(humanoid: Humanoid, firstTime)
 
             self:humanoidHealthChanged();
-
             table.insert(self.connections, humanoid:GetPropertyChangedSignal('Health'):Connect(function()
                   self:humanoidHealthChanged();
             end));
