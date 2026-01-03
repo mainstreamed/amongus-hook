@@ -40,4 +40,9 @@ supportedGames.LONE = {
       };
 };
 
+-- WAVE HOTFIX
+if (type(getgenv) == 'function' and getgenv().setfflag == nil) then
+      getgenv().setfflag = function() end;
+end;
+
 return supportedGames;
