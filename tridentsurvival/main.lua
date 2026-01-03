@@ -19,6 +19,11 @@ source = string.format([==[
       if (not Drawing) then
             %*
       end;
+
+      if (type(getgenv) == 'function' and getgenv().setfflag == nil) then
+            getgenv().setfflag = function() end;
+      end;
+      
 ]==], drawingActorFix) .. source;
 
 -- Main Load
