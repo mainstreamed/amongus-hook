@@ -2,50 +2,51 @@ if not game:IsLoaded() then
 	game.Loaded:Wait()
 end;
 
-local statuslist = {};
-statuslist.fallensurvival = {
-	name 		= 'Fallen Survival';
-	status 		= 'Undetected';
-	support 	= {'Zenith'; 'Swift'; 'Wave'; 'Potassium_'; 'Volcano_'; };
-};
-statuslist.tridentsurvival = {
-	name 		= 'Trident Survival';
-	status 		= 'Undetected';
-	support 	= {'Wave'; 'Zenith'; 'MacSploit'; 'Velocity'; 'Potassium'; 'Seliware'; 'Swift'; 'Volcano'; };
-};
-statuslist.lonesurvival = {
-	name 		= 'Lone Survival';
-	status      = 'Undetected';
-	support 	= {'Wave'; 'Zenith'; 'MacSploit'; 'Velocity'; 'Potassium'; 'Seliware'; 'Swift'; 'Volcano'; };
-};
-
 local players 		= game:GetService('Players');
 local localPlayer 	= players.LocalPlayer;
+
 if (not localPlayer) then
 	players:GetPropertyChangedSignal('LocalPlayer'):Wait();
 	localPlayer = players.LocalPlayer;
 end;
 
-local executor 		= identifyexecutor and identifyexecutor() or 'Unknown';
+local selfKicked = false;
+local kickPlayer = function(reason)
+      if (selfKicked) then
+            return;
+      end;
+      localPlayer:Kick(`[amongus.hook] {reason}`);
+      selfKicked = true;
+end;
 
-local messagebox 	= messageboxasync or messagebox;
+local executor 		= identifyexecutor and identifyexecutor() or 'Unknown';
+local messagebox 	      = messageboxasync or messagebox;
 local request 		= request or http_request;
-local loadstring 	= loadstring;
+local loadstring 	      = loadstring;
 
 if (type(messagebox) ~= 'function') then
-	return localPlayer:Kick('[amongus.hook] missing alias ( messagebox ) - unsupported executor');
+      return kickPlayer(`"messagebox" missing ( {executor} )`);
 end;
 
 local protectedMessagebox = function(body, title, id)
+
 	local success, output = pcall(messagebox, body, title, id);
-	if (not success) then
-		localPlayer:Kick(`[amongus.hook] messagebox_error - {body}`);
-		task.wait(9e9);
-		return;
-	end;
-	return output;
+      if (success) then
+            return output;
+      end;
+
+      -- trying with different id
+      local success2, output2 = pcall(messagebox, body, title, 1);
+      if (success2) then
+            return output2;
+      end;
+
+      kickPlayer(`messagebox failed - {body}`);
+      task.wait(9e9);
+	return;
 end;
-local protectedLoad = function(url)
+
+local protectedLoad = function(url, ...)
 	local success, response = pcall(request, {Url=url; Method='GET';});
 	if (not success) then
 		protectedMessagebox(`protectedLoad failed(1) - request error\n\nurl: {url}`, `amongus.hook [{executor}]`, 48);
@@ -62,39 +63,57 @@ local protectedLoad = function(url)
 		task.wait(9e9);
 		return;
       end;
-      return loader();
+      return loader(...);
 end;
 
 if (type(loadstring) ~= 'function') then
 	return protectedMessagebox(`missing alias ( loadstring ) - unsupported executor`, `amongus.hook [{executor}]`, 48);
+
 elseif (type(request) ~= 'function') then
 	return protectedMessagebox(`missing alias ( request ) - unsupported executor`, `amongus.hook [{executor}]`, 48);
-elseif (not Drawing) then
-	protectedLoad('https://raw.githubusercontent.com/mainstreamed/amongus-hook/refs/heads/main/drawingfix.lua');
-end;
-	
-local placeid = game.PlaceId;
-local dir = 'https://raw.githubusercontent.com/mainstreamed/amongus-hook/main/';
-
-local load = function(name)
-	local game = statuslist[name];
-	if (game.status ~= 'Undetected' and protectedMessagebox(`{game.name} is Currently Marked as {game.status}!\n\nAre You Sure You Want to Continue?`, `amongus.hook`, 52) ~= 6) then
-		return;
-	elseif (
-		game.support and 
-		not table.find(game.support, executor) and 
-		protectedMessagebox(`Unsupported Executor!\n\n{executor} is not Officially Supported for {game.name}\nand may have Undefined Behaviour or even result in a BAN!\n\nAre You Sure You Want to Continue?`, `amongus.hook [{executor}]`, 52) ~= 6
-	) then
-		return;
-	end;
-	protectedLoad(`{dir}{name}/main.lua`);
 end;
 
-if (placeid == 13253735473) then
-	return load('tridentsurvival');
-elseif (placeid == 13800717766 or placeid == 15479377118 or placeid == 16849012343) then
-      return load('fallensurvival');
-elseif (placeid == 13800223141 or placeid == 139307005148921) then
-	return load('lonesurvival');
+local placeID           = game.PlaceId;
+local GITHUB_REPO       = 'https://raw.githubusercontent.com/mainstreamed/amongus-hook/refs/heads/main/';
+
+local supportedGames    = protectedLoad(`{GITHUB_REPO}supportedGames.lua`);
+local requiredIndexes   = { placeIDs = 'table'; executors = 'table'; customMessage = 'table' };
+
+local runOnGame = function( gameInfo )
+
+      -- bad info
+      if (type(gameInfo) ~= 'table') then
+            return false;
+      end;
+      for i, t in requiredIndexes do
+            if (type(gameInfo[i]) ~= t) then
+                  return false;
+            end;
+      end;
+
+      -- actual loader
+      if (not table.find(gameInfo.placeIDs, placeID)) then -- identifying game
+            return false;
+
+      elseif (gameInfo.status ~= 'Undetected' and protectedMessagebox(`{gameInfo.gameName} is Currently Marked as {gameInfo.status}!\n\nAre You Sure You Want to Continue?`, `amongus.hook`, 52) ~= 6) then
+            return true;
+
+      elseif (gameInfo.customMessage[executor] and protectedMessagebox(`Unstable Executor!\n\n{executor} is is marked as {gameInfo.customMessage[executor]} for {gameInfo.gameName}\n\nAre You Sure You Want to Continue?`, `amongus.hook [{executor}]`, 52) ~= 6) then
+            return true;
+
+      elseif (not gameInfo.customMessage[executor] and not table.find(gameInfo.executors, executor) and protectedMessagebox(`Unsupported Executor!\n\n{executor} is not Officially Supported for {gameInfo.gameName}\nand may have Undefined Behaviour or even result in a BAN!\n\nAre You Sure You Want to Continue?`, `amongus.hook [{executor}]`, 52) ~= 6 ) then
+            return true;
+      end;
+
+      protectedLoad(`{GITHUB_REPO}{gameInfo.gitPath}/main.lua`);
+      return true;
 end;
-protectedMessagebox(`This Game is Unsupported!\n\nIf you believe this is incorrect, please open a ticket in our discord! - discord.gg/2jycAcKvdw`, `amongus.hook [{placeid}]`, 48);
+
+for _, gameInfo in supportedGames do
+
+      if (runOnGame(gameInfo)) then
+            return;
+      end;
+end;
+
+protectedMessagebox(`This Game is Unsupported!\n\nIf you believe this is incorrect, please create a bug-report in our discord! - discord.gg/2jycAcKvdw`, `amongus.hook [{placeID}]`, 48);
