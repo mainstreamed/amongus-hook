@@ -7,7 +7,7 @@ supportedGames.FALLEN = {
 
       gameName          = 'Fallen Survival';
       status            = 'Undetected';
-      executors         = { 'Wave'; 'Swift'; 'Volt'; };
+      executors         = { 'Wave'; 'Swift'; 'Volt'; 'Seliware'; };
       customMessage     = {
             ['Potassium']     = 'Use at own risk';
             ['Volcano']       = 'Use at own risk';
