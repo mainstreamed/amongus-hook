@@ -149,7 +149,7 @@ local roundedDrawing = function()
       -- setup
       table_insert(allDrawings, middleFill);
       for i = 1, #borderRound do
-            borderRound[i].Radius = properties.Rounding;
+            borderRound[i].Radius = properties.Rounding + 0.0001;
             borderRound[i].Thickness = 1;
             table_insert(allDrawings, borderRound[i]);
       end;
@@ -194,7 +194,7 @@ local roundedDrawing = function()
             middleFill.Size = properties.Size - vector2(properties.Rounding * 2, properties.Rounding * 2);
 
             for i = 1, #borderRound do
-                  borderRound[i].Radius = properties.Rounding;
+                  borderRound[i].Radius = properties.Rounding + 0.0001;
             end;
       end;
 
