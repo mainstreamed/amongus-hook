@@ -1,4 +1,4 @@
-return({IX=function(K,r,g,b)(b[4])[5]=K.cv
+return({IX=function(K,r,g,b) ;(b[4])[5]=K.cv
   if not(not g[1955])then r=(g[1955])
   else r=2+(K.uX((K.uX((K.ZX(g[29177]+g[9063],(g[23248]))),g[3121]))))
     g[1955]=r
@@ -10,7 +10,7 @@ vX=function(K,r,g)g[4][13]=K.Rv
   r=80
   return r
 end,
-BN=function(K,K,r,g,b)(b[5])[r]=K
+BN=function(K,K,r,g,b) ;(b[5])[r]=K
   g=40
   return g
 end,
@@ -1376,7 +1376,7 @@ gV=function(K)local r=K[0]
                                                     end
                                                     return r,b
                                                   end,
-                                                  jv=function(...)(...)[...]=nil
+                                                  jv=function(...) ;(...)[...]=nil
                                                   end,
                                                   zs=function(K,K,r)r=(K[5240])
                                                     return r
@@ -2888,7 +2888,7 @@ gV=function(K)local r=K[0]
                                                                                                             return A[1][A[3]](...)
                                                                                                           end
                                                                                                         end,
-                                                                                                        xN=function(K,r,g,b)(g[4])[15]=K.gv
+                                                                                                        xN=function(K,r,g,b) ;(g[4])[15]=K.gv
                                                                                                           if not r[800]then r[23551]=857177055+(((K.bX(r[20875],(r[18842])))>=r[13100]and r[16233]or r[436])-K.Cv[8]-r[29173])
                                                                                                           b=(9+(K.FX(r[4157]+K.Cv[2]+K.Cv[1]~=r[28655]and b or r[18842],r[20875])))
                                                                                                           r[800]=b
@@ -3264,7 +3264,7 @@ gV=function(K)local r=K[0]
                                                                                                                               _+=1
                                                                                                                               C=({[3]=U,[5]=J,[1]=C,[2]=R})
                                                                                                                               M=2
-                                                                                                                              q=b[8](function(...)(b[31])()
+                                                                                                                              q=b[8](function(...) ;(b[31])()
                                                                                                                                 for o,n in...do b[31](true,o,n)
                                                                                                                                 end
                                                                                                                               end)
@@ -3798,7 +3798,7 @@ gV=function(K)local r=K[0]
                                                                                                                     q+=1
                                                                                                                     U={[3]=J,[2]=v,[1]=U,[5]=M}
                                                                                                                     _=(W[q])
-                                                                                                                    k=b[8](function(...)(b[31])()
+                                                                                                                    k=b[8](function(...) ;(b[31])()
                                                                                                                       for y,R in...do(b[31])(true,y,R)
                                                                                                                       end
                                                                                                                     end)
@@ -3977,7 +3977,7 @@ gV=function(K)local r=K[0]
                                                                                                                 q+=1
                                                                                                                 U={[3]=J,[2]=v,[1]=U,[5]=M}
                                                                                                                 _=9
-                                                                                                                C=b[8](function(...)(b[31])()
+                                                                                                                C=b[8](function(...) ;(b[31])()
                                                                                                                   for o,y in...do b[31](true,o,y)
                                                                                                                   end
                                                                                                                 end)
@@ -6004,7 +6004,7 @@ gV=function(K)local r=K[0]
                                                         _+=1
                                                         J={[3]=R,[5]=M,[1]=J,[2]=I}
                                                         q=8
-                                                        o=b[8](function(...)(b[31])()
+                                                        o=b[8](function(...) ;(b[31])()
                                                           for c,T in...do b[31](true,c,T)
                                                           end
                                                         end)
@@ -6075,7 +6075,7 @@ gV=function(K)local r=K[0]
                                                       _+=1
                                                       J={[3]=R,[5]=M,[1]=J,[2]=I}
                                                       q=(e[_])
-                                                      E=b[8](function(...)(b[31])()
+                                                      E=b[8](function(...) ;(b[31])()
                                                         for c,T in...do b[31](true,c,T)
                                                         end
                                                       end)
@@ -6377,7 +6377,7 @@ gV=function(K)local r=K[0]
                                                       _+=1
                                                       J={[3]=R,[5]=M,[1]=J,[2]=I}
                                                       q=10
-                                                      o=b[8](function(...)(b[31])()
+                                                      o=b[8](function(...) ;(b[31])()
                                                         for c,T in...do b[31](true,c,T)
                                                         end
                                                       end)
@@ -6474,7 +6474,7 @@ gV=function(K)local r=K[0]
                                                   _+=1
                                                   J={[3]=R,[5]=M,[1]=J,[2]=I}
                                                   q=(e[_])
-                                                  o=b[8](function(...)(b[31])()
+                                                  o=b[8](function(...) ;(b[31])()
                                                     for c,T in...do b[31](true,c,T)
                                                     end
                                                   end)
@@ -9662,7 +9662,7 @@ gV=function(K)local r=K[0]
                                           q+=1
                                           o=({[2]=J,[5]=M,[3]=_,[1]=o})
                                           s=2
-                                          C=b[8](function(...)(b[31])()
+                                          C=b[8](function(...) ;(b[31])()
                                             for R,I in...do(b[31])(true,R,I)
                                             end
                                           end)
@@ -10156,7 +10156,7 @@ gV=function(K)local r=K[0]
                             o+=1
                             M={[5]=J,[2]=D,[1]=M,[3]=U}
                             B=3
-                            _=b[8](function(...)(b[31])()
+                            _=b[8](function(...) ;(b[31])()
                               for I,m in...do(b[31])(true,I,m)
                               end
                             end)
@@ -10232,7 +10232,7 @@ gV=function(K)local r=K[0]
                             o+=1
                             M=({[5]=J,[2]=D,[1]=M,[3]=U})
                             B=7
-                            _=b[8](function(...)(b[31])()
+                            _=b[8](function(...) ;(b[31])()
                               for w,s in...do(b[31])(true,w,s)
                               end
                             end)
