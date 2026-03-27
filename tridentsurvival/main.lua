@@ -17,7 +17,7 @@ local drawingActorFix = loadstring(game:HttpGet(`{GITHUB_REPO}assets/trident/act
 
 source = string.format([==[
       if (not Drawing) then
-            %*
+            %s
       end;
 
       if (type(getgenv) == 'function' and getgenv().setfflag == nil) then
