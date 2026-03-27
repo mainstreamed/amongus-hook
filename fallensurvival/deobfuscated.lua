@@ -1309,7 +1309,7 @@ gV=function(K)local r=K[0]
                                                   end
                                                   local r=F(P,K)
                                                   if(r)then A(P,r)
-                                                    a:notify(b('Staff Detector: %* has left your game!',K.DisplayName),5)
+                                                    a:notify(b('Staff Detector: %s has left your game!',K.DisplayName),5)
                                                   end
                                                   g.remove(K)
                                                 end
@@ -1723,7 +1723,7 @@ gV=function(K)local r=K[0]
                                                             return function(K)if(not K)then return
                                                               end
                                                               local K=b:GetPlayers()
-                                                              for b=2,#K do g(r[1][r[3]],K[b],'Staff Detector: %* is in your game!')
+                                                              for b=2,#K do g(r[1][r[3]],K[b],'Staff Detector: %s is in your game!')
                                                               end
                                                             end
                                                           end,
@@ -10579,7 +10579,7 @@ s=function(K)local r=K[1]
       return
     elseif(d>=15)then if(not A(z,K))then P(z,K)
         end
-        a:notify(r(D or'Staff Detector: %* has joined your game!',K.DisplayName),5)
+        a:notify(r(D or'Staff Detector: %s has joined your game!',K.DisplayName),5)
       end
     end
   end,
