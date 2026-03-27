@@ -749,7 +749,7 @@ gV=function(K)local r=K[0]
                                 end
                               end
                               if K[3]==K[20]then else r=65
-                                while true do if r==44 thenK[1]=K[1]+g
+                                while true do if r==44 then K[1]=K[1]+g
                                   return-2,b
                                 else r=44
                                   K[26](b,0,K[36],K[1],g)
@@ -1920,7 +1920,7 @@ gV=function(K)local r=K[0]
                                                                     end,
                                                                     bN=function(K,K,r,g,b)local A=(r[7][g])
                                                                       local f=(#A)
-                                                                      if r[51]==g then elseA[f+1]=b
+                                                                      if r[51]==g then else A[f+1]=b
                                                                         A[f+2]=K
                                                                       end
                                                                       A[f+3]=2
@@ -2944,7 +2944,7 @@ gV=function(K)local r=K[0]
                                                                                                         local g=K[2]
                                                                                                         local b=K[1]
                                                                                                         local A=K[3]
-                                                                                                        return function()for K,K in r do if(type(K)~='function'or debug.info(K,"s")~=A or not g(debug.getconstants(K),'WalkSpeed')or not b(debug.getupvaluesK[2]))then continue
+                                                                                                        return function()for K,K in r do if(type(K)~='function'or debug.info(K,"s")~=A or not g(debug.getconstants(K),'WalkSpeed')or not b(debug.getupvalues(K)[2]))then continue
                                                                                                               end
                                                                                                               break
                                                                                                             end
@@ -3232,14 +3232,14 @@ gV=function(K)local r=K[0]
                                                                                                                         local C,U,J
                                                                                                                         local n,R
                                                                                                                         while true do local E=(d[_])
-                                                                                                                          if not(E<5)then if not(E<7)then if E<8 thenB[e[_]]=u[_]
+                                                                                                                          if not(E<5)then if not(E<7)then if E<8 then B[e[_]]=u[_]
                                                                                                                             else if E~=9 then y=(W[_])
                                                                                                                                 q,o,n=U()
                                                                                                                                 if q then B[y+1]=o
                                                                                                                                   B[y+2]=n
                                                                                                                                   _=e[_]
                                                                                                                                 end
-                                                                                                                              else if s then for n,I in s do if not(n>=1)then elseI[1]=I
+                                                                                                                              else if s then for n,I in s do if not(n>=1)then else I[1]=I
                                                                                                                                       I[2]=B[n]
                                                                                                                                       I[3]=2
                                                                                                                                       s[n]=nil
@@ -3285,7 +3285,7 @@ gV=function(K)local r=K[0]
                                                                                                                               end
                                                                                                                             end
                                                                                                                           end
-                                                                                                                        else if E<2 then if E==1 thenB[3]=a[e[_]]
+                                                                                                                        else if E<2 then if E==1 then B[3]=a[e[_]]
                                                                                                                             _+=1
                                                                                                                             B[4]=(B[1])
                                                                                                                             _+=1
@@ -3296,7 +3296,7 @@ gV=function(K)local r=K[0]
                                                                                                                             _+=1
                                                                                                                             if B[3]~=u[_]then _=(e[_])
                                                                                                                             end
-                                                                                                                            elseB[5]=a[e[_]]
+                                                                                                                            else B[5]=a[e[_]]
                                                                                                                             _+=1
                                                                                                                             B[6]=(B[4])
                                                                                                                             _+=1
@@ -3306,7 +3306,7 @@ gV=function(K)local r=K[0]
                                                                                                                             if B[5]~=u[_]then _=(e[_])
                                                                                                                             end
                                                                                                                           end
-                                                                                                                        else if E>=3 then if E~=4 thenB[6]=(a[e[_]])
+                                                                                                                        else if E>=3 then if E~=4 then B[6]=(a[e[_]])
                                                                                                                             _+=1
                                                                                                                             B[7]=a[W[_]]
                                                                                                                             _+=1
@@ -3452,7 +3452,7 @@ gV=function(K)local r=K[0]
                                                                                                                                 else if B[e[q]]then q=(Z[q])
                                                                                                                                   end
                                                                                                                                 end
-                                                                                                                                elseB[9]=(a[Z[q]][u[q]])
+                                                                                                                                else B[9]=(a[Z[q]][u[q]])
                                                                                                                                 q+=1
                                                                                                                                 B[W[q]]=B[e[q]][O[q]]
                                                                                                                                 q+=1
@@ -3498,7 +3498,7 @@ gV=function(K)local r=K[0]
                                                                                                                                 if C<0 then C=(-1)
                                                                                                                                 end
                                                                                                                                 p=0
-                                                                                                                                for t=4,4+C doB[t]=(E[1+p])
+                                                                                                                                for t=4,4+C do B[t]=(E[1+p])
                                                                                                                                 p+=1
                                                                                                                               end
                                                                                                                               _=4+C
@@ -3516,7 +3516,7 @@ gV=function(K)local r=K[0]
                                                                                                                               if B[3]==O[q]then q=(e[q])
                                                                                                                               end
                                                                                                                             end
-                                                                                                                          else if x<23 thenB[23]=a[W[q]]
+                                                                                                                          else if x<23 then B[23]=a[W[q]]
                                                                                                                             q+=1
                                                                                                                             B[W[q]]=(O[q])
                                                                                                                             q+=1
@@ -3547,7 +3547,7 @@ gV=function(K)local r=K[0]
                                                                                                                             B[Z[q]][w[q]]=B[4]
                                                                                                                             q+=1
                                                                                                                             q=e[q]
-                                                                                                                            elseB[Z[q]]=a[W[q]]
+                                                                                                                            else B[Z[q]]=a[W[q]]
                                                                                                                             q+=1
                                                                                                                             B[6]=(O[q])
                                                                                                                             q+=1
@@ -3564,20 +3564,20 @@ gV=function(K)local r=K[0]
                                                                                                                             if not(not(B[W[q]]<B[6]))then else q=(Z[q])
                                                                                                                             end
                                                                                                                           end
-                                                                                                                        else if not(x<33)then if x==34 thenB[9]=(a[Z[q]][u[q]])
+                                                                                                                        else if not(x<33)then if x==34 then B[9]=(a[Z[q]][u[q]])
                                                                                                                             q+=1
                                                                                                                             B[W[q]]=B[9][O[q]]
                                                                                                                             q+=1
                                                                                                                             if not B[Z[q]]then q=(e[q])
                                                                                                                             end
-                                                                                                                            elseB[5]=a[W[q]]
+                                                                                                                            else B[5]=a[W[q]]
                                                                                                                             q+=1
                                                                                                                             C=W[q]
                                                                                                                             p=(I-n-1)
                                                                                                                             if p<0 then p=(-1)
                                                                                                                             end
                                                                                                                             T=0
-                                                                                                                            for t=C,C+p doB[t]=(E[s+T])
+                                                                                                                            for t=C,C+p do B[t]=(E[s+T])
                                                                                                                             T+=1
                                                                                                                           end
                                                                                                                           _=(C+p)
@@ -3609,7 +3609,7 @@ gV=function(K)local r=K[0]
                                                                                                                           end
                                                                                                                           _=C+p
                                                                                                                           q+=1
-                                                                                                                          if L then for t,X in L do if t>=1 thenX[1]=X
+                                                                                                                          if L then for t,X in L do if t>=1 then X[1]=X
                                                                                                                               X[2]=(B[t])
                                                                                                                               X[3]=2
                                                                                                                               L[t]=nil
@@ -3625,7 +3625,7 @@ gV=function(K)local r=K[0]
                                                                                                                         if not(p<0)then else p=-1
                                                                                                                         end
                                                                                                                         T=0
-                                                                                                                        for t=C,C+p doB[t]=(E[s+T])
+                                                                                                                        for t=C,C+p do B[t]=(E[s+T])
                                                                                                                         T+=1
                                                                                                                       end
                                                                                                                       _=(C+p)
@@ -3806,7 +3806,7 @@ gV=function(K)local r=K[0]
                                                                                                                     J=k
                                                                                                                     q=Z[q]
                                                                                                                   else if x~=37 then q=(e[q])
-                                                                                                                      elseB[23]=(a[W[q]])
+                                                                                                                      else B[23]=(a[W[q]])
                                                                                                                       q+=1
                                                                                                                       B[24]=a[W[q]]
                                                                                                                       q+=1
@@ -3852,7 +3852,7 @@ gV=function(K)local r=K[0]
                                                                                                                     q+=1
                                                                                                                     if not(B[10]<=w[q])then q=(W[q])
                                                                                                                     end
-                                                                                                                    elseB[23]=(a[W[q]])
+                                                                                                                    else B[23]=(a[W[q]])
                                                                                                                     q+=1
                                                                                                                     B[24]=(O[q])
                                                                                                                     q+=1
@@ -3893,7 +3893,7 @@ gV=function(K)local r=K[0]
                                                                                                                     q+=1
                                                                                                                     if not(B[e[q]])then else q=Z[q]
                                                                                                                     end
-                                                                                                                  else if x==4 thenB[3]=(a[W[q]])
+                                                                                                                  else if x==4 then B[3]=(a[W[q]])
                                                                                                                     q+=1
                                                                                                                     B[W[q]]=(B[2])
                                                                                                                     q+=1
@@ -3932,7 +3932,7 @@ gV=function(K)local r=K[0]
                                                                                                                     return B[p](b[29](B,_,p+1))
                                                                                                                   end
                                                                                                                 end
-                                                                                                              else if x==1 thenB[W[q]]=(B[e[q]])
+                                                                                                              else if x==1 then B[W[q]]=(B[e[q]])
                                                                                                                 q+=1
                                                                                                                 B[5]=(a[W[q]])
                                                                                                                 q+=1
@@ -3984,7 +3984,7 @@ gV=function(K)local r=K[0]
                                                                                                                 C(B[_],B[_+1],B[_+2])
                                                                                                                 J=C
                                                                                                                 q=Z[q]
-                                                                                                                elseB[4]=a[W[q]]
+                                                                                                                else B[4]=a[W[q]]
                                                                                                                 q+=1
                                                                                                                 B[W[q]]=O[q]
                                                                                                                 q+=1
@@ -3998,7 +3998,7 @@ gV=function(K)local r=K[0]
                                                                                                               end
                                                                                                             end
                                                                                                           end
-                                                                                                        else if not(x<15)then if x<17 then if x==16 thenB[6]=(a[W[q]])
+                                                                                                        else if not(x<15)then if x<17 then if x==16 then B[6]=(a[W[q]])
                                                                                                               q+=1
                                                                                                               B[W[q]]=B[5]
                                                                                                               q+=1
@@ -4042,7 +4042,7 @@ gV=function(K)local r=K[0]
                                                                                                               if C<0 then C=-1
                                                                                                               end
                                                                                                               p=0
-                                                                                                              for o=5,5+C doB[o]=E[s+p]
+                                                                                                              for o=5,5+C do B[o]=E[s+p]
                                                                                                               p+=1
                                                                                                             end
                                                                                                             _=5+C
@@ -4061,7 +4061,7 @@ gV=function(K)local r=K[0]
                                                                                                               B[W[q]]=(B[e[q]][O[q]])
                                                                                                               q+=1
                                                                                                               q=e[q]
-                                                                                                              elseB[Z[q]]=a[W[q]]
+                                                                                                              else B[Z[q]]=a[W[q]]
                                                                                                               q+=1
                                                                                                               B[W[q]]=B[4]
                                                                                                               q+=1
@@ -4248,7 +4248,7 @@ gV=function(K)local r=K[0]
                                                                                                           if not(o<0)then else o=(-1)
                                                                                                           end
                                                                                                           U=0
-                                                                                                          for n=C,C+o doB[n]=M[1+U]
+                                                                                                          for n=C,C+o do B[n]=M[1+U]
                                                                                                           U+=1
                                                                                                         end
                                                                                                         _=C+o
@@ -4257,8 +4257,8 @@ gV=function(K)local r=K[0]
                                                                                                         _=4
                                                                                                         y+=1
                                                                                                         y=W[y]
-                                                                                                      else if J==2 thenB[e[y]]=B[W[y]]
-                                                                                                        elseB[4]=a[Z[y]][w[y]]
+                                                                                                      else if J==2 then B[e[y]]=B[W[y]]
+                                                                                                        else B[4]=a[Z[y]][w[y]]
                                                                                                         y+=1
                                                                                                         B[e[y]]=B[W[y]][O[y]]
                                                                                                         y+=1
@@ -4270,7 +4270,7 @@ gV=function(K)local r=K[0]
                                                                                                       else if not B[W[y]]then y=e[y]
                                                                                                         end
                                                                                                       end
-                                                                                                      elseB[Z[y]]=a[e[y]]
+                                                                                                      else B[Z[y]]=a[e[y]]
                                                                                                       y+=1
                                                                                                       B[4]=(B[W[y]])
                                                                                                       y+=1
@@ -4283,20 +4283,20 @@ gV=function(K)local r=K[0]
                                                                                                       end
                                                                                                     end
                                                                                                   end
-                                                                                                else if J>=9 then if J<10 thenB[e[y]]=B[W[y]]==O[y]
-                                                                                                  else if J==11 thenB[3]=a[e[y]]
+                                                                                                else if J>=9 then if J<10 then B[e[y]]=B[W[y]]==O[y]
+                                                                                                  else if J==11 then B[3]=a[e[y]]
                                                                                                     y+=1
                                                                                                     C=Z[y]
                                                                                                     o=q+-1
                                                                                                     if not(o<0)then else o=-1
                                                                                                     end
                                                                                                     U=0
-                                                                                                    for n=C,C+o doB[n]=(M[1+U])
+                                                                                                    for n=C,C+o do B[n]=(M[1+U])
                                                                                                     U+=1
                                                                                                   end
                                                                                                   _=(C+o)
                                                                                                   y+=1
-                                                                                                  if not(s)then else for C,U in s do if not(C>=1)then elseU[1]=U
+                                                                                                  if not(s)then else for C,U in s do if not(C>=1)then else U[1]=U
                                                                                                         U[2]=(B[C])
                                                                                                         U[3]=2
                                                                                                         s[C]=nil
@@ -4305,12 +4305,12 @@ gV=function(K)local r=K[0]
                                                                                                   end
                                                                                                   o=Z[y]
                                                                                                   return B[o](b[29](B,_,o+1))
-                                                                                                  elseB[W[y]]=O[y]
+                                                                                                  else B[W[y]]=O[y]
                                                                                                 end
                                                                                               end
                                                                                             else if J<7 then if not(B[e[y]])then else y=Z[y]
                                                                                                 end
-                                                                                              else if J~=8 then if not(s)then else for o,C in s do if not(o>=1)then elseC[1]=C
+                                                                                              else if J~=8 then if not(s)then else for o,C in s do if not(o>=1)then else C[1]=C
                                                                                                         C[2]=B[o]
                                                                                                         C[3]=2
                                                                                                         s[o]=nil
@@ -4353,7 +4353,7 @@ gV=function(K)local r=K[0]
                                                                                               if not(y<0)then else y=-1
                                                                                               end
                                                                                               M=0
-                                                                                              for J=5,5+y doB[J]=(o[1+M])
+                                                                                              for J=5,5+y do B[J]=(o[1+M])
                                                                                               M+=1
                                                                                             end
                                                                                             q=5+y
@@ -4368,7 +4368,7 @@ gV=function(K)local r=K[0]
                                                                                             return B[4](b[29](B,q,5))
                                                                                           else _=(W[_])
                                                                                           end
-                                                                                        else if not(U>=3)thenB[4]=(a[Z[_]])
+                                                                                        else if not(U>=3)then B[4]=(a[Z[_]])
                                                                                           _+=1
                                                                                           B[5]=a[W[_]]
                                                                                           _+=1
@@ -4400,7 +4400,7 @@ gV=function(K)local r=K[0]
                                                                                           _+=1
                                                                                           B[4]=(B[4]+B[5])
                                                                                           _+=1
-                                                                                          if s then for M,J in s do if not(M>=1)then elseJ[1]=J
+                                                                                          if s then for M,J in s do if not(M>=1)then else J[1]=J
                                                                                                 J[2]=B[M]
                                                                                                 J[3]=2
                                                                                                 s[M]=nil
@@ -4440,7 +4440,7 @@ gV=function(K)local r=K[0]
                                                                                     local o=1
                                                                                     while true do local y=d[s]
                                                                                       if y<2 then if y==1 then _={...}
-                                                                                          for M=1,W[s]doB[M]=(_[M])
+                                                                                          for M=1,W[s]do B[M]=(_[M])
                                                                                         end
                                                                                         s+=1
                                                                                         B[3]=(a[W[s]])
@@ -4460,7 +4460,7 @@ gV=function(K)local r=K[0]
                                                                                           end
                                                                                           return
                                                                                         end
-                                                                                        elseB[Z[s]]=a[W[s]]
+                                                                                        else B[Z[s]]=a[W[s]]
                                                                                         s+=1
                                                                                         (a[e[s]])[B[Z[s]]]=(B[W[s]])
                                                                                         s+=1
@@ -4507,7 +4507,7 @@ gV=function(K)local r=K[0]
                                                                                           if q<0 then q=(-1)
                                                                                           end
                                                                                           C=0
-                                                                                          for n=4,4+q doB[n]=s[1+C]
+                                                                                          for n=4,4+q do B[n]=s[1+C]
                                                                                           C+=1
                                                                                         end
                                                                                         _=(4+q)
@@ -4519,14 +4519,14 @@ gV=function(K)local r=K[0]
                                                                                         o+=1
                                                                                         if not(B[3])then else o=e[o]
                                                                                         end
-                                                                                        elseB[5]=B[4][O[o]]
+                                                                                        else B[5]=B[4][O[o]]
                                                                                         o+=1
                                                                                         B[6]=B[5]
                                                                                         o+=1
                                                                                         if not B[6]then o=e[o]
                                                                                         end
                                                                                       end
-                                                                                      elseB[3]=a[e[o]]
+                                                                                      else B[3]=a[e[o]]
                                                                                       o+=1
                                                                                       B[4]=(B[2])
                                                                                       o+=1
@@ -4536,8 +4536,8 @@ gV=function(K)local r=K[0]
                                                                                       if B[3]~=w[o]then o=Z[o]
                                                                                       end
                                                                                     end
-                                                                                  else if not(J<19)then if J~=20 thenB[W[o]]=(B[Z[o]])
-                                                                                      elseB[5]=a[e[o]]
+                                                                                  else if not(J<19)then if J~=20 then B[W[o]]=(B[Z[o]])
+                                                                                      else B[5]=a[e[o]]
                                                                                       o+=1
                                                                                       B[6]=a[W[o]]
                                                                                       o+=1
@@ -4566,7 +4566,7 @@ gV=function(K)local r=K[0]
                                                                                     o=Z[o]
                                                                                   end
                                                                                 end
-                                                                              else if J<12 then if J~=11 thenB[3]=(a[e[o]])
+                                                                              else if J<12 then if J~=11 then B[3]=(a[e[o]])
                                                                                   o+=1
                                                                                   q=U+-1
                                                                                   if q<0 then q=-1
@@ -4577,7 +4577,7 @@ gV=function(K)local r=K[0]
                                                                                   end
                                                                                   _=4+q
                                                                                   o+=1
-                                                                                  if not(y)then else for n,R in y do if not(n>=1)then elseR[1]=R
+                                                                                  if not(y)then else for n,R in y do if not(n>=1)then else R[1]=R
                                                                                         R[2]=(B[n])
                                                                                         R[3]=2
                                                                                         y[n]=nil
@@ -4585,7 +4585,7 @@ gV=function(K)local r=K[0]
                                                                                     end
                                                                                   end
                                                                                   return B[3](b[29](B,_,4))
-                                                                                  elseB[4]=(a[e[o]])
+                                                                                  else B[4]=(a[e[o]])
                                                                                   o+=1
                                                                                   B[5]=(B[2])
                                                                                   o+=1
@@ -4616,7 +4616,7 @@ gV=function(K)local r=K[0]
                                                                                     if q<0 then q=(-1)
                                                                                     end
                                                                                     C=0
-                                                                                    for n=5,5+q doB[n]=s[1+C]
+                                                                                    for n=5,5+q do B[n]=s[1+C]
                                                                                     C+=1
                                                                                   end
                                                                                   _=5+q
@@ -4707,7 +4707,7 @@ gV=function(K)local r=K[0]
                                                                                   o+=1
                                                                                   o=(Z[o])
                                                                                 end
-                                                                                elseB[5]=a[e[o]]
+                                                                                else B[5]=a[e[o]]
                                                                                 o+=1
                                                                                 B[6]=(B[3])
                                                                                 o+=1
@@ -4733,7 +4733,7 @@ gV=function(K)local r=K[0]
                                                                       while true do local R=(d[s])
                                                                         if not(R>=5)then if R<2 then if R~=1 then if B[Z[s]]==w[s]then s=W[s]
                                                                               end
-                                                                              elseB[Z[s]]=B[W[s]][w[s]]
+                                                                              else B[Z[s]]=B[W[s]][w[s]]
                                                                             end
                                                                           else if R<3 then n,U=b[55](...)
                                                                               s+=1
@@ -4763,7 +4763,7 @@ gV=function(K)local r=K[0]
                                                                                 end
                                                                                 _=(y+M)
                                                                                 s+=1
-                                                                                if not(C)then else for J,E in C do if not(J>=1)then elseE[1]=E
+                                                                                if not(C)then else for J,E in C do if not(J>=1)then else E[1]=E
                                                                                       E[2]=B[J]
                                                                                       E[3]=2
                                                                                       C[J]=nil
@@ -4778,7 +4778,7 @@ gV=function(K)local r=K[0]
                                                                           end
                                                                         else if not(R<8)then if not(R>=9)then if B[e[s]]~=O[s]then s=W[s]
                                                                               end
-                                                                            else if R~=10 then if not(C)then else for J,E in C do if J>=1 thenE[1]=E
+                                                                            else if R~=10 then if not(C)then else for J,E in C do if J>=1 then E[1]=E
                                                                                     E[2]=(B[J])
                                                                                     E[3]=2
                                                                                     C[J]=nil
@@ -4786,7 +4786,7 @@ gV=function(K)local r=K[0]
                                                                                 end
                                                                               end
                                                                               return B[Z[s]]
-                                                                              elseB[4]=(a[e[s]])
+                                                                              else B[4]=(a[e[s]])
                                                                               s+=1
                                                                               _=4
                                                                               B[_]=B[_]()
@@ -4795,7 +4795,7 @@ gV=function(K)local r=K[0]
                                                                               end
                                                                             end
                                                                           end
-                                                                        else if R>=6 then if R==7 thenB[e[s]]=a[W[s]][O[s]]
+                                                                        else if R>=6 then if R==7 then B[e[s]]=a[W[s]][O[s]]
                                                                           else s=e[s]
                                                                           end
                                                                         else y=a[e[s]]
@@ -4805,7 +4805,7 @@ gV=function(K)local r=K[0]
                                                                           if y<0 then y=(-1)
                                                                           end
                                                                           M=0
-                                                                          for o=5,5+y doB[o]=(U[q+M])
+                                                                          for o=5,5+y do B[o]=(U[q+M])
                                                                           M+=1
                                                                         end
                                                                         _=5+y
@@ -4830,7 +4830,7 @@ gV=function(K)local r=K[0]
                                                                 local U,J
                                                                 local n,R,E,I,m
                                                                 while true do local j=d[_]
-                                                                  if j<6 then if j>=3 then if not(j<4)then if j~=5 thenB[e[_]]=({})
+                                                                  if j<6 then if j>=3 then if not(j<4)then if j~=5 then B[e[_]]=({})
                                                                         _+=1
                                                                         B[4]=B[e[_]][O[_]]
                                                                         _+=1
@@ -4851,7 +4851,7 @@ gV=function(K)local r=K[0]
                                                                       else B[W[_]]=(B[e[_]][O[_]])
                                                                       end
                                                                     else C=({...})
-                                                                      for c=1,W[_]doB[c]=C[c]
+                                                                      for c=1,W[_]do B[c]=C[c]
                                                                     end
                                                                     _+=1
                                                                     B[W[_]]=B[1][O[_]]
@@ -5095,7 +5095,7 @@ gV=function(K)local r=K[0]
                                                           local y
                                                           local M,C,U,J,n,R,E,I=1,1
                                                           while true do local m=d[M]
-                                                            if m>=5 then if m<8 then if m>=6 then if m~=7 thenB[2]=B[1][u[M]]
+                                                            if m>=5 then if m<8 then if m>=6 then if m~=7 then B[2]=B[1][u[M]]
                                                                   M+=1
                                                                   (a[e[M]])[B[W[M]]]=B[2]
                                                                   M+=1
@@ -5192,8 +5192,8 @@ gV=function(K)local r=K[0]
                                                                             y[E]=J
                                                                           end
                                                                           I[j-1]=J
-                                                                        elseif o==1 thenI[j-1]=B[E]
-                                                                          elseI[j-1]=a[E]
+                                                                        elseif o==1 then I[j-1]=B[E]
+                                                                          else I[j-1]=a[E]
                                                                         end
                                                                       end
                                                                     end
@@ -5224,7 +5224,7 @@ gV=function(K)local r=K[0]
                                                                     M+=1
                                                                     if not B[5]then M=(W[M])
                                                                     end
-                                                                    elseB[Z[M]]=(a[W[M]][w[M]])
+                                                                    else B[Z[M]]=(a[W[M]][w[M]])
                                                                     M+=1
                                                                     B[Z[M]]=(B[e[M]][u[M]])
                                                                     M+=1
@@ -5251,9 +5251,9 @@ gV=function(K)local r=K[0]
                                                                     U=(e[M])
                                                                     B[U](B[U+1])
                                                                     C=(U-1)
-                                                                    elseB[Z[M]]=(B[e[M]][u[M]])
+                                                                    else B[Z[M]]=(B[e[M]][u[M]])
                                                                   end
-                                                                  elseB[3]=a[W[M]]
+                                                                  else B[3]=a[W[M]]
                                                                   M+=1
                                                                   B[e[M]]=(a[W[M]])
                                                                   M+=1
@@ -5268,7 +5268,7 @@ gV=function(K)local r=K[0]
                                                               end
                                                             else if not(m>=2)then if m==1 then M=e[M]
                                                                 else U={...}
-                                                                  for J=1,Z[M]doB[J]=(U[J])
+                                                                  for J=1,Z[M]do B[J]=(U[J])
                                                                 end
                                                                 M+=1
                                                                 B[Z[M]]=(a[W[M]])
@@ -5387,7 +5387,7 @@ gV=function(K)local r=K[0]
                                                                     _[m]=s
                                                                   end
                                                                   J[j-1]=s
-                                                                elseif n==1 thenJ[j-1]=(B[m])
+                                                                elseif n==1 then J[j-1]=(B[m])
                                                                 else J[j-1]=a[m]
                                                                 end
                                                               end
@@ -5478,7 +5478,7 @@ gV=function(K)local r=K[0]
                                                             R+=1
                                                             a[W[R]][w[R]]=(B[Z[R]])
                                                             R+=1
-                                                            for j=e[R],7 doB[j]=nil
+                                                            for j=e[R],7 do B[j]=nil
                                                           end
                                                           R+=1
                                                           E=u[R]
@@ -5495,8 +5495,8 @@ gV=function(K)local r=K[0]
                                                                   _[y]=M
                                                                 end
                                                                 J[j-1]=M
-                                                              elseif I==1 thenJ[j-1]=(B[y])
-                                                                elseJ[j-1]=(a[y])
+                                                              elseif I==1 then J[j-1]=(B[y])
+                                                                else J[j-1]=(a[y])
                                                               end
                                                             end
                                                           end
@@ -5525,8 +5525,8 @@ gV=function(K)local r=K[0]
                                                                   _[C]=M
                                                                 end
                                                                 J[j-1]=M
-                                                              elseif I==1 thenJ[j-1]=B[C]
-                                                                elseJ[j-1]=(a[C])
+                                                              elseif I==1 then J[j-1]=B[C]
+                                                                else J[j-1]=(a[C])
                                                               end
                                                             end
                                                           end
@@ -5560,7 +5560,7 @@ gV=function(K)local r=K[0]
                                                                   _[E]=n
                                                                 end
                                                                 J[M-1]=n
-                                                              elseif I==1 thenJ[M-1]=(B[E])
+                                                              elseif I==1 then J[M-1]=(B[E])
                                                               else J[M-1]=a[E]
                                                               end
                                                             end
@@ -5594,7 +5594,7 @@ gV=function(K)local r=K[0]
                                                   local q,_,o,y=1,1
                                                   local M,C,U,J,n,R,E,I,m
                                                   while true do local j=(d[_])
-                                                    if j<22 then if not(j>=11)then if not(j<5)then if j<8 then if j<6 thenB[W[_]]=a[e[_]]
+                                                    if j<22 then if not(j>=11)then if not(j<5)then if j<8 then if j<6 then B[W[_]]=a[e[_]]
                                                             _+=1
                                                             B[10]=B[5]
                                                             _+=1
@@ -5625,8 +5625,8 @@ gV=function(K)local r=K[0]
                                                                       y[n]=s
                                                                     end
                                                                     C[c-1]=s
-                                                                  elseif E~=1 thenC[c-1]=(a[n])
-                                                                    elseC[c-1]=B[n]
+                                                                  elseif E~=1 then C[c-1]=(a[n])
+                                                                    else C[c-1]=B[n]
                                                                   end
                                                                 end
                                                               end
@@ -5660,7 +5660,7 @@ gV=function(K)local r=K[0]
                                                               _+=1
                                                               if not(not B[6])then else _=(W[_])
                                                               end
-                                                              elseB[11]=a[e[_]]
+                                                              else B[11]=a[e[_]]
                                                               _+=1
                                                               B[e[_]]=B[10]
                                                               _+=1
@@ -5677,7 +5677,7 @@ gV=function(K)local r=K[0]
                                                             I=J[2]
                                                             M=(J[5])
                                                             J=J[1]
-                                                          else if j~=10 thenB[W[_]]=(a[e[_]])
+                                                          else if j~=10 then B[W[_]]=(a[e[_]])
                                                             _+=1
                                                             B[e[_]]=B[W[_]]
                                                             _+=1
@@ -5689,7 +5689,7 @@ gV=function(K)local r=K[0]
                                                             _+=1
                                                             if B[15]==O[_]then _=W[_]
                                                             end
-                                                            elseB[8]=(a[e[_]])
+                                                            else B[8]=(a[e[_]])
                                                             _+=1
                                                             B[9]=O[_]
                                                             _+=1
@@ -5705,7 +5705,7 @@ gV=function(K)local r=K[0]
                                                           end
                                                         end
                                                       end
-                                                    else if not(j<2)then if not(j>=3)thenB[13]=(a[e[_]])
+                                                    else if not(j<2)then if not(j>=3)then B[13]=(a[e[_]])
                                                         _+=1
                                                         B[e[_]]=(B[12])
                                                         _+=1
@@ -5759,8 +5759,8 @@ gV=function(K)local r=K[0]
                                                                   y[n]=s
                                                                 end
                                                                 C[c-1]=s
-                                                              elseif E==1 thenC[c-1]=(B[n])
-                                                                elseC[c-1]=a[n]
+                                                              elseif E==1 then C[c-1]=(B[n])
+                                                                else C[c-1]=a[n]
                                                               end
                                                             end
                                                           end
@@ -5799,7 +5799,7 @@ gV=function(K)local r=K[0]
                                                             end
                                                           end
                                                           return
-                                                          elseB[7]=a[e[_]]
+                                                          else B[7]=a[e[_]]
                                                           _+=1
                                                           B[W[_]]=O[_]
                                                           _+=1
@@ -5838,7 +5838,7 @@ gV=function(K)local r=K[0]
                                                       end
                                                     end
                                                   end
-                                                else if not(j<16)then if j<19 then if not(j<17)then if j~=18 thenB[7]=a[e[_]]
+                                                else if not(j<16)then if j<19 then if not(j<17)then if j~=18 then B[7]=a[e[_]]
                                                         _+=1
                                                         q=Z[_]
                                                         B[q]()
@@ -5864,7 +5864,7 @@ gV=function(K)local r=K[0]
                                                         _+=1
                                                         if not(not B[7])then else _=(W[_])
                                                         end
-                                                        elseB[9]=(a[e[_]])
+                                                        else B[9]=(a[e[_]])
                                                         _+=1
                                                         B[e[_]]=(B[W[_]])
                                                         _+=1
@@ -5888,7 +5888,7 @@ gV=function(K)local r=K[0]
                                                         if B[9]then _=Z[_]
                                                         end
                                                       end
-                                                      elseB[13]=a[e[_]]
+                                                      else B[13]=a[e[_]]
                                                       _+=1
                                                       B[e[_]]=B[7]
                                                       _+=1
@@ -5941,12 +5941,12 @@ gV=function(K)local r=K[0]
                                                         q=10
                                                         _+=1
                                                         _=(e[_])
-                                                        elseB[W[_]]=(a[e[_]])
+                                                        else B[W[_]]=(a[e[_]])
                                                       end
                                                     else B[e[_]]=(B[W[_]])
                                                     end
                                                   end
-                                                else if not(j<13)then if not(j<14)then if j~=15 thenB[7]=(a[e[_]])
+                                                else if not(j<13)then if not(j<14)then if j~=15 then B[7]=(a[e[_]])
                                                       _+=1
                                                       B[Z[_]]=(B[e[_]][u[_]])
                                                       _+=1
@@ -6034,8 +6034,8 @@ gV=function(K)local r=K[0]
                                                               y[n]=s
                                                             end
                                                             C[c-1]=s
-                                                          elseif o==1 thenC[c-1]=B[n]
-                                                            elseC[c-1]=a[n]
+                                                          elseif o==1 then C[c-1]=B[n]
+                                                            else C[c-1]=a[n]
                                                           end
                                                         end
                                                       end
@@ -6083,7 +6083,7 @@ gV=function(K)local r=K[0]
                                                       R=E
                                                       _=(W[_])
                                                     end
-                                                  else if j~=12 thenB[W[_]]=a[e[_]]
+                                                  else if j~=12 then B[W[_]]=a[e[_]]
                                                     _+=1
                                                     B[12]=(B[W[_]])
                                                     _+=1
@@ -6129,7 +6129,7 @@ gV=function(K)local r=K[0]
                                                         B[o+2]=C
                                                         _=(W[_])
                                                       end
-                                                      elseB[W[_]]=a[e[_]]
+                                                      else B[W[_]]=a[e[_]]
                                                       _+=1
                                                       B[12]=(B[5])
                                                       _+=1
@@ -6143,7 +6143,7 @@ gV=function(K)local r=K[0]
                                                       _+=1
                                                       _=(e[_])
                                                     end
-                                                    elseB[12]=a[e[_]]
+                                                    else B[12]=a[e[_]]
                                                     _+=1
                                                     B[13]=B[10]
                                                     _+=1
@@ -6306,11 +6306,11 @@ gV=function(K)local r=K[0]
                                                       _=(e[_])
                                                     end
                                                   end
-                                                else if not(j<30)then if j>=31 then if j==32 thenB[W[_]]=(a[e[_]])
+                                                else if not(j<30)then if j>=31 then if j==32 then B[W[_]]=(a[e[_]])
                                                       _+=1
                                                       B[W[_]]=O[_]
                                                       _+=1
-                                                      if not(y)then else for c,T in y do if c>=1 thenT[1]=T
+                                                      if not(y)then else for c,T in y do if c>=1 then T[1]=T
                                                           T[2]=(B[c])
                                                           T[3]=2
                                                           y[c]=nil
@@ -6385,11 +6385,11 @@ gV=function(K)local r=K[0]
                                                       R=o
                                                       _=(W[_])
                                                     end
-                                                    elseB[7]=(a[e[_]])
+                                                    else B[7]=(a[e[_]])
                                                     _+=1
                                                     B[8]=O[_]
                                                     _+=1
-                                                    if y then for c,T in y do if not(c>=1)then elseT[1]=T
+                                                    if y then for c,T in y do if not(c>=1)then else T[1]=T
                                                           T[2]=B[c]
                                                           T[3]=2
                                                           y[c]=nil
@@ -6398,7 +6398,7 @@ gV=function(K)local r=K[0]
                                                     end
                                                     return B[7](B[8])
                                                   end
-                                                else if not(j>=28)thenB[11]=(a[e[_]])
+                                                else if not(j>=28)then B[11]=(a[e[_]])
                                                   _+=1
                                                   B[12]=(B[10])
                                                   _+=1
@@ -6418,7 +6418,7 @@ gV=function(K)local r=K[0]
                                                     _+=1
                                                     if B[Z[_]]==w[_]then else _=W[_]
                                                     end
-                                                    elseB[7]=a[e[_]]
+                                                    else B[7]=a[e[_]]
                                                     _+=1
                                                     B[e[_]]=B[W[_]]
                                                     _+=1
@@ -6443,11 +6443,11 @@ gV=function(K)local r=K[0]
                                               end
                                             end
                                           else if j>=39 then if j>=42 then if not(j<43)then if j==44 then _=(e[_])
-                                                    elseB[W[_]]=(a[e[_]])
+                                                    else B[W[_]]=(a[e[_]])
                                                     _+=1
                                                     B[W[_]]=(O[_])
                                                     _+=1
-                                                    if not(y)then else for c,T in y do if c>=1 thenT[1]=T
+                                                    if not(y)then else for c,T in y do if c>=1 then T[1]=T
                                                         T[2]=B[c]
                                                         T[3]=2
                                                         y[c]=nil
@@ -6484,7 +6484,7 @@ gV=function(K)local r=K[0]
                                                 else if B[W[_]]==B[Z[_]]then else _=e[_]
                                                   end
                                                 end
-                                                elseB[14]=(a[e[_]])
+                                                else B[14]=(a[e[_]])
                                                 _+=1
                                                 B[15]=(B[12])
                                                 _+=1
@@ -6497,7 +6497,7 @@ gV=function(K)local r=K[0]
                                                 end
                                               end
                                             end
-                                          else if not(j<36)then if j>=37 then if j~=38 thenB[Z[_]]=(B[e[_]][u[_]])
+                                          else if not(j<36)then if j>=37 then if j~=38 then B[Z[_]]=(B[e[_]][u[_]])
                                               else B[W[_]]=a[e[_]]
                                                 _+=1
                                                 B[8]=B[W[_]]
@@ -6564,7 +6564,7 @@ gV=function(K)local r=K[0]
                                                       end
                                                       C[j-1]=s
                                                     elseif E==1 then C[j-1]=(B[n])
-                                                        elseC[j-1]=(a[n])
+                                                        else C[j-1]=(a[n])
                                                       end
                                                     end
                                                   end
@@ -6627,27 +6627,27 @@ gV=function(K)local r=K[0]
                                                       else B[e[U]]=messageboxasync
                                                       end
                                                     else if t~=246 then B[e[U]]=hookfunction
-                                                        elseB[W[U]]=require
+                                                        else B[W[U]]=require
                                                       end
                                                     end
-                                                  else if t>=251 then if t==252 thenB[Z[U]]=nil
+                                                  else if t>=251 then if t==252 then B[Z[U]]=nil
                                                     else R=Z[U]
                                                     end
                                                   else if t~=250 then B[e[U]][B[Z[U]]]=u[U]
-                                                      elseB[W[U]]=loadstring
+                                                      else B[W[U]]=loadstring
                                                     end
                                                   end
                                                 end
                                               else if not(t>=257)then if t>=255 then if t==256 then B[Z[U]]=listfiles
                                                     else B[e[U]]=setfenv
                                                     end
-                                                  else if t==254 thenB[Z[U]]=next
+                                                  else if t==254 then B[Z[U]]=next
                                                   else c=(e[U])
                                                     B[c](B[c+1],B[c+2])
                                                     o=c-1
                                                   end
                                                 end
-                                              else if t<259 then if t~=258 thenB[Z[U]]=CFrame
+                                              else if t<259 then if t~=258 then B[Z[U]]=CFrame
                                                 else R=B
                                                   v=e[U]
                                                   M=c
@@ -6657,7 +6657,7 @@ gV=function(K)local r=K[0]
                                                   else if not(O[U]<B[W[U]])then U=e[U]
                                                     end
                                                   end
-                                                  elseB[W[U]]=tick
+                                                  else B[W[U]]=tick
                                                 end
                                               end
                                             end
@@ -6689,7 +6689,7 @@ gV=function(K)local r=K[0]
                                               end
                                             end
                                           else if not(t>=241)then if t>=239 then if t==240 then local X=W[U]
-                                                  if not(I)then else for l,G in I do if not(l>=X)then elseG[1]=G
+                                                  if not(I)then else for l,G in I do if not(l>=X)then else G[1]=G
                                                         G[2]=B[l]
                                                         G[3]=2
                                                         I[l]=nil
@@ -6698,12 +6698,12 @@ gV=function(K)local r=K[0]
                                                   end
                                                 else R=W[U]
                                                 end
-                                              else if t==238 thenB[W[U]]=B[e[U]]+B[Z[U]]
+                                              else if t==238 then B[W[U]]=B[e[U]]+B[Z[U]]
                                               else c=(W[U])
                                               end
                                             end
                                           else if not(t<243)then if t==244 then B[W[U]]=setreadonly
-                                                elseB[Z[U]]=(not B[W[U]])
+                                                else B[Z[U]]=(not B[W[U]])
                                               end
                                             else if t==242 then if not(I)then else for X,l in I do if X>=1 then l[1]=l
                                                       l[2]=B[X]
@@ -6714,7 +6714,7 @@ gV=function(K)local r=K[0]
                                                 end
                                                 c=(W[U])
                                                 return B[c](b[29](B,o,c+1))
-                                                elseB[W[U]]=(O[U]~=w[U])
+                                                else B[W[U]]=(O[U]~=w[U])
                                               end
                                             end
                                           end
@@ -6727,10 +6727,10 @@ gV=function(K)local r=K[0]
                                               else B[e[U]]=(B[W[U]]<=B[Z[U]])
                                               end
                                             else if t==223 then v=v[M]
-                                                elseB[W[U]]=Z
+                                                else B[W[U]]=Z
                                               end
                                             end
-                                          else if not(t<226)then if not(t<227)then if t==228 thenB[W[U]]=w[U]+B[Z[U]]
+                                          else if not(t<226)then if not(t<227)then if t==228 then B[W[U]]=w[U]+B[Z[U]]
                                               else if not(not(u[U]<=B[e[U]]))then else U=(Z[U])
                                                 end
                                               end
@@ -6749,11 +6749,11 @@ gV=function(K)local r=K[0]
                                             else B[e[U]]=cloneref
                                             end
                                           end
-                                        else if t>=218 then if t==219 thenB[W[U]]=B[e[U]]~=O[U]
-                                            elseB[e[U]]=getcallingscript
+                                        else if t>=218 then if t==219 then B[W[U]]=B[e[U]]~=O[U]
+                                            else B[e[U]]=getcallingscript
                                           end
                                         else if t==217 then c=B
-                                            elseB[W[U]]=(O[U]<w[U])
+                                            else B[W[U]]=(O[U]<w[U])
                                           end
                                         end
                                       end
@@ -6765,19 +6765,19 @@ gV=function(K)local r=K[0]
                                         else if t==211 then c=a
                                             R=Z[U]
                                             c=c[R]
-                                            elseB[W[U]]=d
+                                            else B[W[U]]=d
                                           end
                                         end
                                       else if t>=206 then if t~=207 then B[Z[U]]=Vector2
                                           else R=(W[U])
                                           end
-                                        else if t~=205 thenB[e[U]]=rawlen
+                                        else if t~=205 then B[e[U]]=rawlen
                                         else o=c
                                           c=B
                                         end
                                       end
                                     end
-                                  else if t<200 then if t<198 then if t~=197 thenB[e[U]]=clonefunction
+                                  else if t<200 then if t<198 then if t~=197 then B[e[U]]=clonefunction
                                       else c=B
                                         R=(e[U])
                                         v=B
@@ -6940,12 +6940,12 @@ gV=function(K)local r=K[0]
                                                                             v=(v[M])
                                                                             c[R]=v
                                                                           end
-                                                                        else if t~=170 thenB[W[U]]=e
+                                                                        else if t~=170 then B[W[U]]=e
                                                                         else c=B
                                                                         end
                                                                       end
                                                                     else if not(t<165)then if t==166 then B[Z[U]]=Drawing
-                                                                          elseB[e[U]]=task
+                                                                          else B[e[U]]=task
                                                                         end
                                                                       else if t==164 then c=e[U]
                                                                           o=c+Z[U]-1
@@ -6963,7 +6963,7 @@ gV=function(K)local r=K[0]
                                                                     end
                                                                   else if not(t<175)then if not(t>=177)then if t~=176 then B[W[U]]=(B[e[U]])
                                                                         else c=({...})
-                                                                          for X=1,W[U]doB[X]=c[X]
+                                                                          for X=1,W[U]do B[X]=c[X]
                                                                         end
                                                                       end
                                                                     else if t~=178 then B[Z[U]]=(a[W[U]][B[e[U]]])
@@ -6972,16 +6972,16 @@ gV=function(K)local r=K[0]
                                                                         c[R]=v
                                                                       end
                                                                     end
-                                                                  else if not(t<173)then if t==174 thenB[Z[U]]=typeof
-                                                                      elseB[W[U]]=B[Z[U]]%w[U]
+                                                                  else if not(t<173)then if t==174 then B[Z[U]]=typeof
+                                                                      else B[W[U]]=B[Z[U]]%w[U]
                                                                     end
-                                                                  else if t==172 thenB[e[U]]=B[Z[U]]/u[U]
+                                                                  else if t==172 then B[e[U]]=B[Z[U]]/u[U]
                                                                   else B[Z[U]]=B[W[U]]-B[e[U]]
                                                                   end
                                                                 end
                                                               end
                                                             end
-                                                          else if t>=187 then if t<191 then if not(t<189)then if t~=190 thenB[e[U]]=B[Z[U]]%B[W[U]]
+                                                          else if t>=187 then if t<191 then if not(t<189)then if t~=190 then B[e[U]]=B[Z[U]]%B[W[U]]
                                                                 else M=b[37]
                                                                   T=B
                                                                   _=c
@@ -6994,25 +6994,25 @@ gV=function(K)local r=K[0]
                                                                   J=v
                                                                   M(T,_,x,j,J)
                                                                 end
-                                                              else if t~=188 thenB[e[U]]=(b[24](B[Z[U]],u[U]))
+                                                              else if t~=188 then B[e[U]]=(b[24](B[Z[U]],u[U]))
                                                               else v=rawget
                                                               end
                                                             end
-                                                          else if not(t<193)then if t>=194 then if t~=195 thenB[e[U]]=tostring
+                                                          else if not(t<193)then if t>=194 then if t~=195 then B[e[U]]=tostring
                                                               else c=B
                                                                 R=W[U]
                                                               end
                                                             else c=(W[U])
                                                             end
-                                                          else if t~=192 thenB[W[U]]=makefolder
-                                                            elseB[Z[U]]=coroutine
+                                                          else if t~=192 then B[W[U]]=makefolder
+                                                            else B[Z[U]]=coroutine
                                                           end
                                                         end
                                                       end
                                                     else if not(t>=183)then if t>=181 then if t==182 then c[R]=v
                                                           else B[Z[U]]=appendfile
                                                           end
-                                                        else if t~=180 thenB[e[U]]=K._X
+                                                        else if t~=180 then B[e[U]]=K._X
                                                         else if B[e[U]]~=B[Z[U]]then else U=W[U]
                                                           end
                                                         end
@@ -7053,7 +7053,7 @@ gV=function(K)local r=K[0]
                                                       else if t==140 then c=(e[U])
                                                           B[c]=B[c](B[c+1],B[c+2])
                                                           o=c
-                                                          elseB[e[U]]=loadfile
+                                                          else B[e[U]]=loadfile
                                                         end
                                                       end
                                                     end
@@ -7070,7 +7070,7 @@ gV=function(K)local r=K[0]
                                                         end
                                                       end
                                                     else if not(t<137)then if t==138 then B[Z[U]]={}
-                                                          elseB[e[U]]=assert
+                                                          else B[e[U]]=assert
                                                         end
                                                       else if t==136 then c=false
                                                           E+=p
@@ -7080,7 +7080,7 @@ gV=function(K)local r=K[0]
                                                           if c then B[Z[U]+3]=E
                                                             U=W[U]
                                                           end
-                                                          elseB[W[U]]=K.pX
+                                                          else B[W[U]]=K.pX
                                                         end
                                                       end
                                                     end
@@ -7218,17 +7218,17 @@ gV=function(K)local r=K[0]
                                                                                   c(B[o],B[o+1],B[o+2])
                                                                                   E=c
                                                                                   U=W[U]
-                                                                                  elseB[Z[U]]=setfpscap
+                                                                                  else B[Z[U]]=setfpscap
                                                                                 end
                                                                               end
                                                                             end
-                                                                          else if t<151 then if t>=149 then if t~=150 thenB[e[U]]=B[W[U]][O[U]]
+                                                                          else if t<151 then if t>=149 then if t~=150 then B[e[U]]=B[W[U]][O[U]]
                                                                               else c=a[Z[U]]
                                                                                 (c[1][c[3]])[B[W[U]]]=(B[e[U]])
                                                                               end
                                                                             else if t==148 then if B[Z[U]]~=B[e[U]]then U=(W[U])
                                                                                 end
-                                                                                elseB[e[U]]=(u[U]==O[U])
+                                                                                else B[e[U]]=(u[U]==O[U])
                                                                               end
                                                                             end
                                                                           else if t<153 then if t~=152 then R=(w[U])
@@ -7243,12 +7243,12 @@ gV=function(K)local r=K[0]
                                                                       end
                                                                     end
                                                                   end
-                                                                else if not(t<65)then if not(t<98)then if not(t<114)then if t>=122 then if t>=126 then if not(t<128)then if t>=129 then if t==130 thenB[W[U]]=B[e[U]][B[Z[U]]]
+                                                                else if not(t<65)then if not(t<98)then if not(t<114)then if t>=122 then if t>=126 then if not(t<128)then if t>=129 then if t==130 then B[W[U]]=B[e[U]][B[Z[U]]]
                                                                               else a[Z[U]][w[U]]=(B[W[U]])
                                                                               end
-                                                                              elseB[e[U]]=identifyexecutor
+                                                                              else B[e[U]]=identifyexecutor
                                                                             end
-                                                                          else if t~=127 thenB[W[U]]=getgc
+                                                                          else if t~=127 then B[W[U]]=getgc
                                                                           else M=e[U]
                                                                             v=v[M]
                                                                           end
@@ -7399,7 +7399,7 @@ gV=function(K)local r=K[0]
                                                                                                     else if not(t<120)then if t~=121 then B[Z[U]]=(B[e[U]]*B[W[U]])
                                                                                                         else B[e[U]]=base64decode
                                                                                                         end
-                                                                                                      else if t~=119 thenB[W[U]]=writefile
+                                                                                                      else if t~=119 then B[W[U]]=writefile
                                                                                                       else c=(Z[U])
                                                                                                         B[c]=B[c](b[29](B,o,c+1))
                                                                                                         o=c
@@ -7412,7 +7412,7 @@ gV=function(K)local r=K[0]
                                                                                                         v=v()
                                                                                                         c[R]=v
                                                                                                       end
-                                                                                                    else if t~=109 thenB[e[U]]=B[Z[U]]>=B[W[U]]
+                                                                                                    else if t~=109 then B[e[U]]=B[Z[U]]>=B[W[U]]
                                                                                                     else v+=M
                                                                                                       c[R]=v
                                                                                                     end
@@ -7420,7 +7420,7 @@ gV=function(K)local r=K[0]
                                                                                                 else if t>=112 then if t==113 then B[W[U]]=readfile
                                                                                                     else B[W[U]]=K.AX
                                                                                                     end
-                                                                                                  else if t~=111 thenB[e[U]]=O[U]
+                                                                                                  else if t~=111 then B[e[U]]=O[U]
                                                                                                   else M=W[U]
                                                                                                     v=(v[M])
                                                                                                     M=(O[U])
@@ -7580,7 +7580,7 @@ gV=function(K)local r=K[0]
                                                                                                                             end
                                                                                                                           end
                                                                                                                         else if t>=79 then if t~=80 then B[W[U]]=request
-                                                                                                                              elseB[W[U]]=b[22](Z[U])
+                                                                                                                              else B[W[U]]=b[22](Z[U])
                                                                                                                             end
                                                                                                                           else if t~=78 then B[e[U]]=messagebox
                                                                                                                             else for J=Z[U],W[U]do B[J]=nil
@@ -7615,7 +7615,7 @@ gV=function(K)local r=K[0]
                                                                                                                                 end
                                                                                                                                 return
                                                                                                                               end
-                                                                                                                            else if t~=66 thenB[Z[U]]=_G
+                                                                                                                            else if t~=66 then B[Z[U]]=_G
                                                                                                                             else c=B
                                                                                                                               R=Z[U]
                                                                                                                               v={}
@@ -7624,20 +7624,20 @@ gV=function(K)local r=K[0]
                                                                                                                         end
                                                                                                                       end
                                                                                                                     else if not(t>=89)then if not(t<85)then if not(t>=87)then if t==86 then c=Z[U]
-                                                                                                                              elseB[Z[U]]=getconnections
+                                                                                                                              else B[Z[U]]=getconnections
                                                                                                                             end
-                                                                                                                          else if t==88 thenB[Z[U]]=(-B[W[U]])
+                                                                                                                          else if t==88 then B[Z[U]]=(-B[W[U]])
                                                                                                                           else v/=M
                                                                                                                             c[R]=v
                                                                                                                           end
                                                                                                                         end
-                                                                                                                      else if t>=83 then if t==84 thenB[W[U]]=tonumber
+                                                                                                                      else if t>=83 then if t==84 then B[W[U]]=tonumber
                                                                                                                         else c=Z[U]
                                                                                                                           R=s-C-1
                                                                                                                           if not(R<0)then else R=(-1)
                                                                                                                           end
                                                                                                                           v=0
-                                                                                                                          for J=c,c+R doB[J]=(q[y+v])
+                                                                                                                          for J=c,c+R do B[J]=(q[y+v])
                                                                                                                           v+=1
                                                                                                                         end
                                                                                                                         o=c+R
@@ -7649,11 +7649,11 @@ gV=function(K)local r=K[0]
                                                                                                                       end
                                                                                                                     end
                                                                                                                   end
-                                                                                                                else if t>=93 then if t<95 then if t~=94 thenB[e[U]]=game
+                                                                                                                else if t>=93 then if t<95 then if t~=94 then B[e[U]]=game
                                                                                                                     else if B[W[U]]~=w[U]then U=(Z[U])
                                                                                                                       end
                                                                                                                     end
-                                                                                                                  else if t<96 thenB[e[U]]=K.CX
+                                                                                                                  else if t<96 then B[e[U]]=K.CX
                                                                                                                   else if t==97 then else if not B[W[U]]then U=e[U]
                                                                                                                       end
                                                                                                                     end
@@ -7681,7 +7681,7 @@ gV=function(K)local r=K[0]
                                                                                                                     else o=c-1
                                                                                                                     end
                                                                                                                   end
-                                                                                                                else if t==90 thenB[Z[U]]=os
+                                                                                                                else if t==90 then B[Z[U]]=os
                                                                                                                 else o=W[U]
                                                                                                                   B[o]=B[o]()
                                                                                                                 end
@@ -7726,7 +7726,7 @@ gV=function(K)local r=K[0]
                                                                                                                   B[c+1]=R
                                                                                                                   B[c]=(R[u[U]])
                                                                                                                 end
-                                                                                                              else if t==3 thenB[Z[U]]=getrawmetatable
+                                                                                                              else if t==3 then B[Z[U]]=getrawmetatable
                                                                                                               else C=Z[U]
                                                                                                                 s,q=b[55](...)
                                                                                                                 for J=1,C do B[J]=q[J]
@@ -7740,7 +7740,7 @@ gV=function(K)local r=K[0]
                                                                                                               end
                                                                                                             else if t==11 then M=B
                                                                                                                 T=Z[U]
-                                                                                                                elseB[W[U]]=unpack
+                                                                                                                else B[W[U]]=unpack
                                                                                                               end
                                                                                                             end
                                                                                                           else if not(t<14)then if t==15 then c=Z[U]
@@ -7750,7 +7750,7 @@ gV=function(K)local r=K[0]
                                                                                                               end
                                                                                                             else if t==13 then R=(W[U])
                                                                                                                 v=a
-                                                                                                                elseB[Z[U]]=getnamecallmethod
+                                                                                                                else B[Z[U]]=getnamecallmethod
                                                                                                               end
                                                                                                             end
                                                                                                           end
@@ -7758,9 +7758,9 @@ gV=function(K)local r=K[0]
                                                                                                       else if t>=24 then if not(t>=28)then if not(t>=26)then if t==25 then T=c
                                                                                                                 c=3
                                                                                                                 T=T[c]
-                                                                                                                elseB[W[U]]=checkcaller
+                                                                                                                else B[W[U]]=checkcaller
                                                                                                               end
-                                                                                                            else if t~=27 thenB[W[U]]=Enum
+                                                                                                            else if t~=27 then B[W[U]]=Enum
                                                                                                             else for y=c,R do v=B
                                                                                                                 M=y
                                                                                                                 y=nil
@@ -7791,7 +7791,7 @@ gV=function(K)local r=K[0]
                                                                                                             end
                                                                                                           else if t==23 then c=(a[Z[U]])
                                                                                                               B[e[U]]=(c[1][c[3]])
-                                                                                                              elseB[W[U]]=rawset
+                                                                                                              else B[W[U]]=rawset
                                                                                                             end
                                                                                                           end
                                                                                                         end
@@ -7799,7 +7799,7 @@ gV=function(K)local r=K[0]
                                                                                                     end
                                                                                                   else if not(t<48)then if not(t<56)then if not(t<60)then if t>=62 then if t<63 then B[W[U]]=compareinstances
                                                                                                             else if t==64 then B[W[U]]=B[e[U]]==O[U]
-                                                                                                                elseB[W[U]]=setrawmetatable
+                                                                                                                else B[W[U]]=setrawmetatable
                                                                                                               end
                                                                                                             end
                                                                                                           else if t~=61 then R=o
@@ -7815,7 +7815,7 @@ gV=function(K)local r=K[0]
                                                                                                         else if not(t>=58)then if t~=57 then M=W[U]
                                                                                                               v=v[M]
                                                                                                               v=(not v)
-                                                                                                              elseB[W[U]]=O[U]>=w[U]
+                                                                                                              else B[W[U]]=O[U]>=w[U]
                                                                                                             end
                                                                                                           else if t==59 then M=(M[T])
                                                                                                               R[v]=M
@@ -7824,7 +7824,7 @@ gV=function(K)local r=K[0]
                                                                                                             end
                                                                                                           end
                                                                                                         end
-                                                                                                      else if t<52 then if not(t>=50)then if t==49 thenB[e[U]]=(B[Z[U]]==B[W[U]])
+                                                                                                      else if t<52 then if not(t>=50)then if t==49 then B[e[U]]=(B[Z[U]]==B[W[U]])
                                                                                                           else v=typeof
                                                                                                           end
                                                                                                         else if t==51 then T=(Z[U])
@@ -7837,7 +7837,7 @@ gV=function(K)local r=K[0]
                                                                                                           else c=(W[U])
                                                                                                             R=(e[U])
                                                                                                           end
-                                                                                                        else if t~=53 thenB[Z[U]]=rawequal
+                                                                                                        else if t~=53 then B[Z[U]]=rawequal
                                                                                                         else B[e[U]]=(u[U]>O[U])
                                                                                                         end
                                                                                                       end
@@ -7865,7 +7865,7 @@ gV=function(K)local r=K[0]
                                                                                                                   I[_]=x
                                                                                                                 end
                                                                                                                 M[z-1]=x
-                                                                                                              elseif c==1 thenM[z-1]=(B[_])
+                                                                                                              elseif c==1 then M[z-1]=(B[_])
                                                                                                               else M[z-1]=a[_]
                                                                                                               end
                                                                                                             end
@@ -7878,12 +7878,12 @@ gV=function(K)local r=K[0]
                                                                                                       else if t==43 then c=(c[R])
                                                                                                           R=O[U]
                                                                                                           v=w[U]
-                                                                                                          elseB[e[U]]=a[W[U]]
+                                                                                                          else B[e[U]]=a[W[U]]
                                                                                                         end
                                                                                                       end
                                                                                                     end
                                                                                                   else if t<36 then if t>=34 then if t~=35 then B[e[U]][B[Z[U]]]=(B[W[U]])
-                                                                                                          elseB[e[U]]=K.BX
+                                                                                                          else B[e[U]]=K.BX
                                                                                                         end
                                                                                                       else if t~=33 then if I then for z,s in I do if not(z>=1)then elses[1]=s
                                                                                                                 s[2]=(B[z])
@@ -7899,7 +7899,7 @@ gV=function(K)local r=K[0]
                                                                                                     else if t>=38 then if t==39 then M=o
                                                                                                           v=(v[M])
                                                                                                           v=v()
-                                                                                                          elseB[W[U]]=B[e[U]]..B[Z[U]]
+                                                                                                          else B[W[U]]=B[e[U]]..B[Z[U]]
                                                                                                         end
                                                                                                       else if t~=37 then B[e[U]]=base64encode
                                                                                                         else B[W[U]][O[U]]=w[U]
@@ -7920,7 +7920,7 @@ gV=function(K)local r=K[0]
                                                                                         local M,C,U,J=1
                                                                                         local n
                                                                                         while true do local R=d[B]
-                                                                                          if R>=4 then if not(R>=6)then if R==5 then if s then for E,I in s do if not(E>=1)then elseI[1]=I
+                                                                                          if R>=4 then if not(R>=6)then if R==5 then if s then for E,I in s do if not(E>=1)then else I[1]=I
                                                                                                       I[2]=z[E]
                                                                                                       I[3]=2
                                                                                                       s[E]=nil
@@ -8136,7 +8136,7 @@ gV=function(K)local r=K[0]
                                                                                                   B+=1
                                                                                                   z[11][u[B]]=z[12]
                                                                                                   B+=1
-                                                                                                  if not(s)then else for q,_ in s do if not(q>=1)then else_[1]=_
+                                                                                                  if not(s)then else for q,_ in s do if not(q>=1)then else _[1]=_
                                                                                                         _[2]=(z[q])
                                                                                                         _[3]=2
                                                                                                         s[q]=nil
@@ -8180,8 +8180,8 @@ gV=function(K)local r=K[0]
                                                                                       local U
                                                                                       local J,n,R,E
                                                                                       while true do local I=d[z]
-                                                                                        if I>=11 then if I>=16 then if not(I>=19)then if I>=17 then if I==18 thenB[e[z]]=B[W[z]]
-                                                                                                elseB[3]=a[Z[z]]
+                                                                                        if I>=11 then if I>=16 then if not(I>=19)then if I>=17 then if I==18 then B[e[z]]=B[W[z]]
+                                                                                                else B[3]=a[Z[z]]
                                                                                                 z+=1
                                                                                                 B[4]=(a[W[z]])
                                                                                                 z+=1
@@ -8240,7 +8240,7 @@ gV=function(K)local r=K[0]
                                                                                               end
                                                                                             end
                                                                                           end
-                                                                                        else if not(I<13)then if not(I<14)then if I==15 thenB[7]=a[Z[z]]
+                                                                                        else if not(I<13)then if not(I<14)then if I==15 then B[7]=a[Z[z]]
                                                                                               z+=1
                                                                                               B[8]=B[6]
                                                                                               z+=1
@@ -8269,7 +8269,7 @@ gV=function(K)local r=K[0]
                                                                                             if not(o<0)then else o=(-1)
                                                                                             end
                                                                                             q=0
-                                                                                            for m=4,4+o doB[m]=J[1+q]
+                                                                                            for m=4,4+o do B[m]=J[1+q]
                                                                                             q+=1
                                                                                           end
                                                                                           y=4+o
@@ -8286,7 +8286,7 @@ gV=function(K)local r=K[0]
                                                                                         end
                                                                                       end
                                                                                     end
-                                                                                  else if I>=5 then if I<8 then if I>=6 then if I~=7 thenB[8]=(a[Z[z]])
+                                                                                  else if I>=5 then if I<8 then if I>=6 then if I~=7 then B[8]=(a[Z[z]])
                                                                                           z+=1
                                                                                           B[9]=B[6]
                                                                                           z+=1
@@ -8304,7 +8304,7 @@ gV=function(K)local r=K[0]
                                                                                           if B[4]then z=(W[z])
                                                                                           end
                                                                                         end
-                                                                                        elseB[4]=a[Z[z]]
+                                                                                        else B[4]=a[Z[z]]
                                                                                         z+=1
                                                                                         B[5]=w[z]
                                                                                         z+=1
@@ -8331,7 +8331,7 @@ gV=function(K)local r=K[0]
                                                                                       end
                                                                                       return B[4](b[29](B,y,5))
                                                                                     end
-                                                                                  else if I>=9 then if I~=10 thenB[4]=(a[Z[z]])
+                                                                                  else if I>=9 then if I~=10 then B[4]=(a[Z[z]])
                                                                                       z+=1
                                                                                       B[5]=(w[z])
                                                                                       z+=1
@@ -8340,7 +8340,7 @@ gV=function(K)local r=K[0]
                                                                                       z+=1
                                                                                       if B[4]then z=(W[z])
                                                                                       end
-                                                                                      elseB[3]=w[z]
+                                                                                      else B[3]=w[z]
                                                                                       z+=1
                                                                                       B[4]=(a[Z[z]])
                                                                                       z+=1
@@ -8378,7 +8378,7 @@ gV=function(K)local r=K[0]
                                                                                     end
                                                                                   end
                                                                                 end
-                                                                              else if not(I>=2)then if I~=1 thenB[7]=a[Z[z]][w[z]]
+                                                                              else if not(I>=2)then if I~=1 then B[7]=a[Z[z]][w[z]]
                                                                                   z+=1
                                                                                   B[7]=B[7][O[z]]
                                                                                   z+=1
@@ -8467,7 +8467,7 @@ gV=function(K)local r=K[0]
                                                                                     end
                                                                                     y=7+o
                                                                                     z+=1
-                                                                                    if not(R)then else for s,_ in R do if s>=1 then_[1]=_
+                                                                                    if not(R)then else for s,_ in R do if s>=1 then _[1]=_
                                                                                         _[2]=(B[s])
                                                                                         _[3]=2
                                                                                         R[s]=nil
@@ -8481,7 +8481,7 @@ gV=function(K)local r=K[0]
                                                                                   if o<0 then o=-1
                                                                                   end
                                                                                   q=0
-                                                                                  for s=4,4+o doB[s]=(J[1+q])
+                                                                                  for s=4,4+o do B[s]=(J[1+q])
                                                                                   q+=1
                                                                                 end
                                                                                 y=(4+o)
@@ -9053,7 +9053,7 @@ gV=function(K)local r=K[0]
                                                             end
                                                             _[s-1]=o
                                                           elseif q~=1 then _[s-1]=(a[B])
-                                                              else_[s-1]=z[B]
+                                                              else _[s-1]=z[B]
                                                             end
                                                           end
                                                         end
@@ -9312,7 +9312,7 @@ gV=function(K)local r=K[0]
                                                 (z[7])(z[8],z[9])
                                                 _=6
                                                 y+=1
-                                                if not(M)then else for c,T in M do if c>=1 thenT[1]=T
+                                                if not(M)then else for c,T in M do if c>=1 then T[1]=T
                                                     T[2]=(z[c])
                                                     T[3]=2
                                                     M[c]=nil
@@ -9533,7 +9533,7 @@ gV=function(K)local r=K[0]
                                         end
                                         q=(6+o)
                                         B+=1
-                                        if not(J)then else for R,E in J do if not(R>=1)then elseE[1]=E
+                                        if not(J)then else for R,E in J do if not(R>=1)then else E[1]=E
                                               E[2]=(z[R])
                                               E[3]=2
                                               J[R]=nil
@@ -10190,7 +10190,7 @@ gV=function(K)local r=K[0]
                                   end
                                   R[I-1]=C
                                 elseif s~=1 then R[I-1]=a[y]
-                                    elseR[I-1]=(z[y])
+                                    else R[I-1]=(z[y])
                                   end
                                 end
                               end
@@ -10282,7 +10282,7 @@ gV=function(K)local r=K[0]
                             if not(O<0)then else O=-1
                             end
                             B=0
-                            for d=5,5+O doD[d]=(q[1+B])
+                            for d=5,5+O do D[d]=(q[1+B])
                             B+=1
                           end
                           z=5+O
@@ -10300,7 +10300,7 @@ gV=function(K)local r=K[0]
                     else if not(o<1)then if o==2 then s,q=b[55](...)
                           F+=1
                           O=0
-                          for d=2,e[F]+1 doD[d]=(q[w+O])
+                          for d=2,e[F]+1 do D[d]=(q[w+O])
                           O+=1
                         end
                         F+=1
@@ -10682,13 +10682,13 @@ s=function(K)local r=K[1]
               W=nil
               for g=88,124,18 do if g<124 and g>88 then W=#O
                 else if g<106 then O=f[7][q]
-                  else if g>106 thenO[W+1]=d
+                  else if g>106 then O[W+1]=d
                   end
                 end
               end
             end
             Z=41
-            repeat if Z==116 thenO[W+3]=6
+            repeat if Z==116 then O[W+3]=6
               break
             else if Z~=41 then else Z=K:KN(O,Z,W,u)
                 continue
