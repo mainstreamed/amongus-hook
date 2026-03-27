@@ -2033,7 +2033,7 @@ gV=function(K)local r=K[0]
                                                                         end
                                                                       end,
                                                                       ZN=function(K,K,r,g,b)g=111
-                                                                        (b[53])[K+1]=r
+                                                                        ;(b[53])[K+1]=r
                                                                         return g
                                                                       end,
                                                                       JN=function(K,r,g,b)if not(b<=11)then r[55]=(function(...)local A=r[13]('#',...)
@@ -2820,8 +2820,8 @@ gV=function(K)local r=K[0]
                                                                                                             while true do if d>32 then K:FN(a,u,F)
                                                                                                                 break
                                                                                                               else if d<82 then F=#a[53]
-                                                                                                                  (a[53])[F+1]=f
-                                                                                                                  (a[53])[F+2]=r
+                                                                                                                  ;(a[53])[F+1]=f
+                                                                                                                  ;(a[53])[F+2]=r
                                                                                                                   d=82
                                                                                                                   continue
                                                                                                                 end
@@ -2838,7 +2838,7 @@ gV=function(K)local r=K[0]
                                                                                                           elseif z==1 then g[r]=r-P
                                                                                                           else if z~=7 then else s=nil
                                                                                                               s=K:oN(z,r,s,a,Z)
-                                                                                                              (a[53])[s+3]=P
+                                                                                                              ;(a[53])[s+3]=P
                                                                                                             end
                                                                                                           end
                                                                                                           return A,B,b,W,u,D
@@ -3594,7 +3594,7 @@ gV=function(K)local r=K[0]
                                                                                                                           B[10]=O[q]
                                                                                                                           q+=1
                                                                                                                           C=(Z[q])
-                                                                                                                          (B[C])(B[C+1])
+                                                                                                                          ;(B[C])(B[C+1])
                                                                                                                           _=C-1
                                                                                                                           q+=1
                                                                                                                           B[e[q]]=(a[W[q]])
@@ -3751,7 +3751,7 @@ gV=function(K)local r=K[0]
                                                                                                                     T=(#p)
                                                                                                                     y=(T>0 and{})
                                                                                                                     R=b[56](c,y)
-                                                                                                                    (b[52])(R,(b[2]()))
+                                                                                                                    ;(b[52])(R,(b[2]()))
                                                                                                                     B[e[q]]=R
                                                                                                                     if not(y)then else for t=1,T do c=(p[t])
                                                                                                                         R=(c[1])
@@ -3802,7 +3802,7 @@ gV=function(K)local r=K[0]
                                                                                                                       for y,R in...do(b[31])(true,y,R)
                                                                                                                       end
                                                                                                                     end)
-                                                                                                                    (k)(B[_],B[_+1],B[_+2])
+                                                                                                                    ;(k)(B[_],B[_+1],B[_+2])
                                                                                                                     J=k
                                                                                                                     q=Z[q]
                                                                                                                   else if x~=37 then q=(e[q])
@@ -3906,7 +3906,7 @@ gV=function(K)local r=K[0]
                                                                                                                     q+=1
                                                                                                                     B[4]=(O[q])
                                                                                                                     q+=1
-                                                                                                                    (B[3])(B[4])
+                                                                                                                    ;(B[3])(B[4])
                                                                                                                     _=2
                                                                                                                     q+=1
                                                                                                                     B[3]=(a[W[q]])
@@ -3949,7 +3949,7 @@ gV=function(K)local r=K[0]
                                                                                                                 q+=1
                                                                                                                 B[7]=({})
                                                                                                                 q+=1
-                                                                                                                (B[e[q]])[u[q]]=(B[7])
+                                                                                                                ;(B[e[q]])[u[q]]=(B[7])
                                                                                                                 q+=1
                                                                                                                 B[7]=a[Z[q]][u[q]]
                                                                                                                 q+=1
@@ -4033,7 +4033,7 @@ gV=function(K)local r=K[0]
                                                                                                               B[5]=O[q]
                                                                                                               q+=1
                                                                                                               C=Z[q]
-                                                                                                              (B[C])(B[C+1])
+                                                                                                              ;(B[C])(B[C+1])
                                                                                                               _=C-1
                                                                                                               q+=1
                                                                                                               B[e[q]]=(a[W[q]])
@@ -4070,7 +4070,7 @@ gV=function(K)local r=K[0]
                                                                                                               _=C
                                                                                                               q+=1
                                                                                                               C=a[e[q]]
-                                                                                                              (C[1][C[3]])[O[q]]=(B[W[q]])
+                                                                                                              ;(C[1][C[3]])[O[q]]=(B[W[q]])
                                                                                                               q+=1
                                                                                                               q=(e[q])
                                                                                                             end
@@ -4212,14 +4212,14 @@ gV=function(K)local r=K[0]
                                                                                                         M+=1
                                                                                                         B[6]=({})
                                                                                                         M+=1
-                                                                                                        (B[6])[w[M]]=O[M]
+                                                                                                        ;(B[6])[w[M]]=O[M]
                                                                                                         M+=1
                                                                                                         B[6][O[M]]=(B[3])
                                                                                                         M+=1
                                                                                                         B[4]=B[4](B[5],B[6])
                                                                                                         q=4
                                                                                                         M+=1
-                                                                                                        (B[1])[u[M]]=(B[4])
+                                                                                                        ;(B[1])[u[M]]=(B[4])
                                                                                                         M+=1
                                                                                                         if J then for s,q in J do if not(s>=1)then else q[1]=q
                                                                                                               q[2]=B[s]
@@ -4462,7 +4462,7 @@ gV=function(K)local r=K[0]
                                                                                         end
                                                                                         else B[Z[s]]=a[W[s]]
                                                                                         s+=1
-                                                                                        (a[e[s]])[B[Z[s]]]=(B[W[s]])
+                                                                                        ;(a[e[s]])[B[Z[s]]]=(B[W[s]])
                                                                                         s+=1
                                                                                         B[3]=a[W[s]]
                                                                                         s+=1
@@ -4471,7 +4471,7 @@ gV=function(K)local r=K[0]
                                                                                         B[5]=a[W[s]]
                                                                                         s+=1
                                                                                         _=e[s]
-                                                                                        (B[_])(B[_+1],B[_+2])
+                                                                                        ;(B[_])(B[_+1],B[_+2])
                                                                                         o=_-1
                                                                                         s+=1
                                                                                         if not(q)then else for _,o in q do if _>=1 then o[1]=o
@@ -4834,7 +4834,7 @@ gV=function(K)local r=K[0]
                                                                         _+=1
                                                                         B[4]=B[e[_]][O[_]]
                                                                         _+=1
-                                                                        (B[Z[_]])[u[_]]=B[4]
+                                                                        ;(B[Z[_]])[u[_]]=B[4]
                                                                         _+=1
                                                                         B[4]=B[1][O[_]]
                                                                         _+=1
@@ -4842,7 +4842,7 @@ gV=function(K)local r=K[0]
                                                                         _+=1
                                                                         B[4]=B[W[_]][O[_]]
                                                                         _+=1
-                                                                        (B[e[_]])[u[_]]=B[4]
+                                                                        ;(B[e[_]])[u[_]]=B[4]
                                                                         _+=1
                                                                         B[Z[_]]=(B[2]==w[_])
                                                                         _+=1
@@ -4872,7 +4872,7 @@ gV=function(K)local r=K[0]
                                                                       _+=1
                                                                       B[Z[_]]=(B[6]/u[_])
                                                                       _+=1
-                                                                      (B[e[_]])[u[_]]=B[6]
+                                                                      ;(B[e[_]])[u[_]]=B[6]
                                                                       _+=1
                                                                       B[6]=a[W[_]][O[_]]
                                                                       _+=1
@@ -4897,7 +4897,7 @@ gV=function(K)local r=K[0]
                                                                     B[4]=B[4](B[5])
                                                                     o=4
                                                                     _+=1
-                                                                    (a[Z[_]])[B[1]]=(B[4])
+                                                                    ;(a[Z[_]])[B[1]]=(B[4])
                                                                     _+=1
                                                                     B[Z[_]]=nil
                                                                     _+=1
@@ -5035,7 +5035,7 @@ gV=function(K)local r=K[0]
                                                                         end
                                                                       end
                                                                       _+=1
-                                                                      (B[6])(B[7],B[8])
+                                                                      ;(B[6])(B[7],B[8])
                                                                       o=5
                                                                       _+=1
                                                                       B[Z[_]]=(a[W[_]][w[_]])
@@ -5097,7 +5097,7 @@ gV=function(K)local r=K[0]
                                                           while true do local m=d[M]
                                                             if m>=5 then if m<8 then if m>=6 then if m~=7 then B[2]=B[1][u[M]]
                                                                   M+=1
-                                                                  (a[e[M]])[B[W[M]]]=B[2]
+                                                                  ;(a[e[M]])[B[W[M]]]=B[2]
                                                                   M+=1
                                                                   B[2]=(a[W[M]])
                                                                   M+=1
@@ -5180,7 +5180,7 @@ gV=function(K)local r=K[0]
                                                                     q=#_
                                                                     I=q>0 and{}
                                                                     E=b[56](s,I)
-                                                                    (b[52])(E,(b[2]()))
+                                                                    ;(b[52])(E,(b[2]()))
                                                                     B[e[M]]=E
                                                                     if not(I)then else for j=1,q do s=_[j]
                                                                         o=(s[1])
@@ -5230,7 +5230,7 @@ gV=function(K)local r=K[0]
                                                                     M+=1
                                                                     B[5]=B[5]/u[M]
                                                                     M+=1
-                                                                    (B[1])[O[M]]=B[W[M]]
+                                                                    ;(B[1])[O[M]]=B[W[M]]
                                                                   end
                                                                 else B[2]=a[W[M]]
                                                                   M+=1
@@ -5320,11 +5320,11 @@ gV=function(K)local r=K[0]
                                                                     end
                                                                   end
                                                                   s=K[O[M]](q)
-                                                                  (b[52])(s,(b[2]()))
+                                                                  ;(b[52])(s,(b[2]()))
                                                                   B[W[M]]=s
                                                                   M+=1
                                                                   U=(W[M])
-                                                                  (B[U])(B[U+1],B[U+2])
+                                                                  ;(B[U])(B[U+1],B[U+2])
                                                                   C=U-1
                                                                   M+=1
                                                                   if y then for s,q in y do if s>=1 then q[1]=q
@@ -5397,7 +5397,7 @@ gV=function(K)local r=K[0]
                                                             B[3]=s
                                                             R+=1
                                                             q=(W[R])
-                                                            (B[q])()
+                                                            ;(B[q])()
                                                             q-=1
                                                             R+=1
                                                             B[3]=(a[W[R]])
@@ -5418,7 +5418,7 @@ gV=function(K)local r=K[0]
                                                               B[j]=(y[C])
                                                             end
                                                             R+=1
-                                                            (B[3])(b[29](B,q,4))
+                                                            ;(B[3])(b[29](B,q,4))
                                                             q=2
                                                             R+=1
                                                             B[e[R]]=u[R]
@@ -5433,7 +5433,7 @@ gV=function(K)local r=K[0]
                                                             R+=1
                                                             B[7]=(u[R])
                                                             R+=1
-                                                            (B[5])(B[6],B[7])
+                                                            ;(B[5])(B[6],B[7])
                                                             q=4
                                                             R+=1
                                                             a[Z[R]][w[R]]=u[R]
@@ -5474,7 +5474,7 @@ gV=function(K)local r=K[0]
                                                             R+=1
                                                             B[6]=B[W[R]]*B[Z[R]]
                                                             R+=1
-                                                            (B[5])[O[R]]=(B[6])
+                                                            ;(B[5])[O[R]]=(B[6])
                                                             R+=1
                                                             a[W[R]][w[R]]=(B[Z[R]])
                                                             R+=1
@@ -5501,7 +5501,7 @@ gV=function(K)local r=K[0]
                                                             end
                                                           end
                                                           s=K[O[R]](J)
-                                                          (b[52])(s,(b[2]()))
+                                                          ;(b[52])(s,(b[2]()))
                                                           B[8]=s
                                                           R+=1
                                                           B[9]=(a[W[R]][w[R]])
@@ -5613,7 +5613,7 @@ gV=function(K)local r=K[0]
                                                               U=(#m)
                                                               C=(U>0 and{})
                                                               E=b[56](o,C)
-                                                              (b[52])(E,(b[2]()))
+                                                              ;(b[52])(E,(b[2]()))
                                                               B[e[_]]=E
                                                               if not(C)then else for c=1,U do o=(m[c])
                                                                   E=o[1]
@@ -5632,7 +5632,7 @@ gV=function(K)local r=K[0]
                                                               end
                                                               _+=1
                                                               q=(Z[_])
-                                                              (B[q])()
+                                                              ;(B[q])()
                                                               q-=1
                                                               _+=1
                                                               B[W[_]]=a[e[_]]
@@ -5898,7 +5898,7 @@ gV=function(K)local r=K[0]
                                                       _+=1
                                                       o=e[_]
                                                       q=(o+3)
-                                                      (B[o])(b[29](B,q,o+1))
+                                                      ;(B[o])(b[29](B,q,o+1))
                                                       q=(o-1)
                                                       _+=1
                                                       _=e[_]
@@ -6008,7 +6008,7 @@ gV=function(K)local r=K[0]
                                                           for c,T in...do b[31](true,c,T)
                                                           end
                                                         end)
-                                                        (o)(B[q],B[q+1],B[q+2])
+                                                        ;(o)(B[q],B[q+1],B[q+2])
                                                         R=o
                                                         _=(W[_])
                                                       end
@@ -6041,7 +6041,7 @@ gV=function(K)local r=K[0]
                                                       end
                                                       _+=1
                                                       q=(Z[_])
-                                                      (B[q])()
+                                                      ;(B[q])()
                                                       q-=1
                                                       _+=1
                                                       local c=(Z[_])
@@ -6079,7 +6079,7 @@ gV=function(K)local r=K[0]
                                                         for c,T in...do b[31](true,c,T)
                                                         end
                                                       end)
-                                                      (E)(B[q],B[q+1],B[q+2])
+                                                      ;(E)(B[q],B[q+1],B[q+2])
                                                       R=E
                                                       _=(W[_])
                                                     end
@@ -6168,7 +6168,7 @@ gV=function(K)local r=K[0]
                                                     q=1
                                                     _+=1
                                                     o=a[e[_]]
-                                                    (o[1])[o[3]]=B[1]
+                                                    ;(o[1])[o[3]]=B[1]
                                                     _+=1
                                                     m=(e[_])
                                                     U=B[1]
@@ -6184,7 +6184,7 @@ gV=function(K)local r=K[0]
                                                     q=2
                                                     _+=1
                                                     o=a[W[_]]
-                                                    (o[1])[o[3]]=(B[e[_]])
+                                                    ;(o[1])[o[3]]=(B[e[_]])
                                                     _+=1
                                                     U=(B[W[_]])
                                                     B[3]=U
@@ -6206,7 +6206,7 @@ gV=function(K)local r=K[0]
                                                     B[e[_]]=u[_]
                                                     _+=1
                                                     m=(e[_])
-                                                    (B[m])(B[m+1])
+                                                    ;(B[m])(B[m+1])
                                                     q=m-1
                                                     _+=1
                                                     m=e[_]
@@ -6278,7 +6278,7 @@ gV=function(K)local r=K[0]
                                                         end
                                                       end
                                                       m=K[O[_]](U)
-                                                      (b[52])(m,(b[2]()))
+                                                      ;(b[52])(m,(b[2]()))
                                                       B[6]=m
                                                       _+=1
                                                       q=6
@@ -6300,7 +6300,7 @@ gV=function(K)local r=K[0]
                                                       _+=1
                                                       o=e[_]
                                                       q=o+3
-                                                      (B[o])(b[29](B,q,o+1))
+                                                      ;(B[o])(b[29](B,q,o+1))
                                                       q=(o-1)
                                                       _+=1
                                                       _=(e[_])
@@ -6338,7 +6338,7 @@ gV=function(K)local r=K[0]
                                                         end
                                                       end
                                                       o=K[O[_]](U)
-                                                      (b[52])(o,(b[2]()))
+                                                      ;(b[52])(o,(b[2]()))
                                                       B[W[_]]=o
                                                       _+=1
                                                       B[e[_]]=Instance
@@ -6359,7 +6359,7 @@ gV=function(K)local r=K[0]
                                                       B[13]=(B[W[_]])
                                                       _+=1
                                                       q=13
-                                                      (B[10])(b[29](B,q,11))
+                                                      ;(B[10])(b[29](B,q,11))
                                                       q=9
                                                       _+=1
                                                       B[10]=a[W[_]]
@@ -6478,7 +6478,7 @@ gV=function(K)local r=K[0]
                                                     for c,T in...do b[31](true,c,T)
                                                     end
                                                   end)
-                                                  (o)(B[q],B[q+1],B[q+2])
+                                                  ;(o)(B[q],B[q+1],B[q+2])
                                                   R=o
                                                   _=W[_]
                                                 else if B[W[_]]==B[Z[_]]then else _=e[_]
@@ -6518,7 +6518,7 @@ gV=function(K)local r=K[0]
                                               B[e[_]]=(a[Z[_]][u[_]])
                                               _+=1
                                               q=(W[_]+10)
-                                              (B[11])(b[29](B,q,12))
+                                              ;(B[11])(b[29](B,q,12))
                                               q=10
                                               _+=1
                                               _=(e[_])
@@ -6571,7 +6571,7 @@ gV=function(K)local r=K[0]
                                                   _+=1
                                                   C=(e[_])
                                                   q=C+W[_]-1
-                                                  (B[C])(b[29](B,q,C+1))
+                                                  ;(B[C])(b[29](B,q,C+1))
                                                   q=C-1
                                                   _+=1
                                                   B[e[_]]=(a[W[_]])
@@ -6723,7 +6723,7 @@ gV=function(K)local r=K[0]
                                     else if not(t<212)then if not(t<220)then if t<224 then if t<222 then if t==221 then c=W[U]
                                                 R=e[U]
                                                 v=(B[c])
-                                                (b[37])(B,c+1,o,R+1,v)
+                                                ;(b[37])(B,c+1,o,R+1,v)
                                               else B[e[U]]=(B[W[U]]<=B[Z[U]])
                                               end
                                             else if t==223 then v=v[M]
@@ -7224,7 +7224,7 @@ gV=function(K)local r=K[0]
                                                                             end
                                                                           else if t<151 then if t>=149 then if t~=150 then B[e[U]]=B[W[U]][O[U]]
                                                                               else c=a[Z[U]]
-                                                                                (c[1][c[3]])[B[W[U]]]=(B[e[U]])
+                                                                                ;(c[1][c[3]])[B[W[U]]]=(B[e[U]])
                                                                               end
                                                                             else if t==148 then if B[Z[U]]~=B[e[U]]then U=(W[U])
                                                                                 end
@@ -7644,7 +7644,7 @@ gV=function(K)local r=K[0]
                                                                                                                       end
                                                                                                                     else if t~=82 then b[4][Z[U]]=B[W[U]]
                                                                                                                       else o=e[U]
-                                                                                                                        (B[o])()
+                                                                                                                        ;(B[o])()
                                                                                                                         o-=1
                                                                                                                       end
                                                                                                                     end
@@ -7712,7 +7712,7 @@ gV=function(K)local r=K[0]
                                                                                                                     end
                                                                                                                   end
                                                                                                                   R=K[u[U]](v)
-                                                                                                                  (b[52])(R,(b[2]()))
+                                                                                                                  ;(b[52])(R,(b[2]()))
                                                                                                                   B[Z[U]]=R
                                                                                                                 end
                                                                                                               else if t~=5 then M=B
@@ -8018,7 +8018,7 @@ gV=function(K)local r=K[0]
                                                                                                 end
                                                                                               end
                                                                                               o=K[O[B]](y)
-                                                                                              (b[52])(o,(b[2]()))
+                                                                                              ;(b[52])(o,(b[2]()))
                                                                                               z[7]=o
                                                                                               B+=1
                                                                                               C=(u[B])
@@ -8041,7 +8041,7 @@ gV=function(K)local r=K[0]
                                                                                                   end
                                                                                                 end
                                                                                                 o=K[O[B]](y)
-                                                                                                (b[52])(o,(b[2]()))
+                                                                                                ;(b[52])(o,(b[2]()))
                                                                                                 z[8]=o
                                                                                                 B+=1
                                                                                                 C=(u[B])
@@ -8064,7 +8064,7 @@ gV=function(K)local r=K[0]
                                                                                                     end
                                                                                                   end
                                                                                                   o=K[O[B]](y)
-                                                                                                  (b[52])(o,(b[2]()))
+                                                                                                  ;(b[52])(o,(b[2]()))
                                                                                                   z[9]=o
                                                                                                   B+=1
                                                                                                   C=u[B]
@@ -8108,9 +8108,9 @@ gV=function(K)local r=K[0]
                                                                                                   B+=1
                                                                                                   z[14]=({})
                                                                                                   B+=1
-                                                                                                  (z[14])[u[B]]=w[B]
+                                                                                                  ;(z[14])[u[B]]=w[B]
                                                                                                   B+=1
-                                                                                                  (z[14])[u[B]]=z[10]
+                                                                                                  ;(z[14])[u[B]]=z[10]
                                                                                                   B+=1
                                                                                                   z[12]=z[12](z[13],z[14])
                                                                                                   M=12
@@ -8127,7 +8127,7 @@ gV=function(K)local r=K[0]
                                                                                                   B+=1
                                                                                                   z[14]=({})
                                                                                                   B+=1
-                                                                                                  (z[14])[u[B]]=O[B]
+                                                                                                  ;(z[14])[u[B]]=O[B]
                                                                                                   B+=1
                                                                                                   z[14][u[B]]=(z[9])
                                                                                                   B+=1
@@ -8260,7 +8260,7 @@ gV=function(K)local r=K[0]
                                                                                             z+=1
                                                                                             B[4]=w[z]
                                                                                             z+=1
-                                                                                            (B[3])(B[4])
+                                                                                            ;(B[3])(B[4])
                                                                                             y=2
                                                                                             z+=1
                                                                                             B[3]=a[W[z]]
@@ -8441,7 +8441,7 @@ gV=function(K)local r=K[0]
                                                                                     B[9]=B[5]
                                                                                     z+=1
                                                                                     y=9
-                                                                                    (B[6])(b[29](B,y,7))
+                                                                                    ;(B[6])(b[29](B,y,7))
                                                                                     y=5
                                                                                     z+=1
                                                                                     B[6]=a[W[z]]
@@ -8453,7 +8453,7 @@ gV=function(K)local r=K[0]
                                                                                     B[9]=B[5]
                                                                                     z+=1
                                                                                     y=9
-                                                                                    (B[6])(b[29](B,y,7))
+                                                                                    ;(B[6])(b[29](B,y,7))
                                                                                     y=5
                                                                                     z+=1
                                                                                     B[6]=a[W[z]]
@@ -8568,7 +8568,7 @@ gV=function(K)local r=K[0]
                                                                               z[12]=(u[B])
                                                                               B+=1
                                                                               _=12
-                                                                              (z[6])(b[29](z,_,7))
+                                                                              ;(z[6])(b[29](z,_,7))
                                                                               _=5
                                                                               B+=1
                                                                               B=Z[B]
@@ -8591,7 +8591,7 @@ gV=function(K)local r=K[0]
                                                                             B+=1
                                                                             z[2]=z[2]+z[1]
                                                                             B+=1
-                                                                            (a[W[B]])[w[B]]=(z[2])
+                                                                            ;(a[W[B]])[w[B]]=(z[2])
                                                                             B+=1
                                                                             z[2]=a[W[B]][O[B]]
                                                                             B+=1
@@ -8750,14 +8750,14 @@ gV=function(K)local r=K[0]
                                                                     J+=1
                                                                     z[7]=z[7][O[J]]
                                                                     J+=1
-                                                                    (z[6])[O[J]]=z[7]
+                                                                    ;(z[6])[O[J]]=z[7]
                                                                     J+=1
                                                                     z[7]=b[22](1)
                                                                     J+=1
                                                                     z[8]=z[3]
                                                                     J+=1
                                                                     q=z[7]
-                                                                    (b[37])(z,8,8,1,q)
+                                                                    ;(b[37])(z,8,8,1,q)
                                                                     J+=1
                                                                     z[6][u[J]]=(z[7])
                                                                     J+=1
@@ -8994,7 +8994,7 @@ gV=function(K)local r=K[0]
                                                       J+=1
                                                       z[8]=(z[8][O[J]])
                                                       J+=1
-                                                      (z[7])[O[J]]=(z[8])
+                                                      ;(z[7])[O[J]]=(z[8])
                                                       J+=1
                                                       z[8]=b[22](1)
                                                       J+=1
@@ -9003,7 +9003,7 @@ gV=function(K)local r=K[0]
                                                       q=z[8]
                                                       b[37](z,9,9,1,q)
                                                       J+=1
-                                                      (z[7])[u[J]]=(z[8])
+                                                      ;(z[7])[u[J]]=(z[8])
                                                       J+=1
                                                       z[8]=workspace
                                                       J+=1
@@ -9112,7 +9112,7 @@ gV=function(K)local r=K[0]
                                                       z[8]=(z[4]*z[3])
                                                       o+=1
                                                       C=8
-                                                      (z[5])(b[29](z,C,6))
+                                                      ;(z[5])(b[29](z,C,6))
                                                       C=4
                                                       o+=1
                                                       o=W[o]
@@ -9177,7 +9177,7 @@ gV=function(K)local r=K[0]
                                                   z[4]=z[4](z[5],z[6])
                                                   C=4
                                                   o+=1
-                                                  (z[2])[u[o]]=z[4]
+                                                  ;(z[2])[u[o]]=z[4]
                                                   o+=1
                                                   z[4]=(a[W[o]])
                                                   o+=1
@@ -9201,7 +9201,7 @@ gV=function(K)local r=K[0]
                                                     o+=1
                                                     z[4]=z[4]*z[3]
                                                     o+=1
-                                                    (z[2])[u[o]]=(z[4])
+                                                    ;(z[2])[u[o]]=(z[4])
                                                     o+=1
                                                     z[4]=a[Z[o]]
                                                     o+=1
@@ -9309,7 +9309,7 @@ gV=function(K)local r=K[0]
                                                 y+=1
                                                 z[9]=z[6]
                                                 y+=1
-                                                (z[7])(z[8],z[9])
+                                                ;(z[7])(z[8],z[9])
                                                 _=6
                                                 y+=1
                                                 if not(M)then else for c,T in M do if c>=1 then T[1]=T
@@ -9326,7 +9326,7 @@ gV=function(K)local r=K[0]
                                             y+=1
                                             z[e[y]]=(z[W[y]])
                                             y+=1
-                                            (z[10])(z[11])
+                                            ;(z[10])(z[11])
                                             _=9
                                             y+=1
                                             y=(e[y])
@@ -9379,7 +9379,7 @@ gV=function(K)local r=K[0]
                                           z[e[y]]=(u[y])
                                           y+=1
                                           n=z[3]
-                                          (b[37])(z,4,3+W[y],1,n)
+                                          ;(b[37])(z,4,3+W[y],1,n)
                                           y+=1
                                           C=(u[y])
                                           n=C[3]
@@ -9447,7 +9447,7 @@ gV=function(K)local r=K[0]
                                               end
                                             end
                                             J=K[O[y]](m)
-                                            (b[52])(J,(b[2]()))
+                                            ;(b[52])(J,(b[2]()))
                                             z[e[y]]=J
                                             y+=1
                                             C=(W[y])
@@ -9558,7 +9558,7 @@ gV=function(K)local r=K[0]
                                           q=4
                                           B+=1
                                           o=a[e[B]]
-                                          (o[1])[o[3]]=(z[4])
+                                          ;(o[1])[o[3]]=(z[4])
                                           B+=1
                                           if not(J)then else for s,q in J do if not(s>=1)then else q[1]=q
                                                 q[2]=(z[s])
@@ -9828,7 +9828,7 @@ gV=function(K)local r=K[0]
                                     for B,q in...do b[31](true,B,q)
                                     end
                                   end)
-                                  (R)(z[y],z[y+1],z[y+2])
+                                  ;(R)(z[y],z[y+1],z[y+2])
                                   M=R
                                   o=Z[o]
                                 else if U then for B,q in U do if B>=1 then q[1]=q
@@ -9981,7 +9981,7 @@ gV=function(K)local r=K[0]
                               end
                             end
                             C=K[w[o]](s)
-                            (b[52])(C,(b[2]()))
+                            ;(b[52])(C,(b[2]()))
                             z[5]=C
                             o+=1
                             n=u[o]
@@ -10015,12 +10015,12 @@ gV=function(K)local r=K[0]
                             o+=1
                             z[9][O[o]]=w[o]
                             o+=1
-                            (z[9])[w[o]]=z[5]
+                            ;(z[9])[w[o]]=z[5]
                             o+=1
                             z[7]=z[7](z[8],z[9])
                             B=7
                             o+=1
-                            (z[2])[u[o]]=(z[7])
+                            ;(z[2])[u[o]]=(z[7])
                             o+=1
                             z[7]=K.CX
                             o+=1
@@ -10028,9 +10028,9 @@ gV=function(K)local r=K[0]
                             o+=1
                             z[9]=({})
                             o+=1
-                            (z[9])[u[o]]=(O[o])
+                            ;(z[9])[u[o]]=(O[o])
                             o+=1
-                            (z[9])[u[o]]=z[6]
+                            ;(z[9])[u[o]]=z[6]
                             o+=1
                             z[7]=z[7](z[8],z[9])
                             B=7
@@ -10160,7 +10160,7 @@ gV=function(K)local r=K[0]
                               for I,m in...do(b[31])(true,I,m)
                               end
                             end)
-                            (_)(z[B],z[B+1],z[B+2])
+                            ;(_)(z[B],z[B+1],z[B+2])
                             U=_
                             o=(W[o])
                           end
@@ -10195,7 +10195,7 @@ gV=function(K)local r=K[0]
                                 end
                               end
                               q=K[w[o]](R)
-                              (b[52])(q,(b[2]()))
+                              ;(b[52])(q,(b[2]()))
                               z[10]=q
                               o+=1
                               z[11]=K.CX
@@ -10211,7 +10211,7 @@ gV=function(K)local r=K[0]
                               z[11]=z[11](z[12],z[13])
                               B=11
                               o+=1
-                              (z[6])[z[8]]=z[11]
+                              ;(z[6])[z[8]]=z[11]
                               o+=1
                               if n then for w,s in n do if not(w>=7)then else s[1]=s
                                     s[2]=(z[w])
@@ -10236,7 +10236,7 @@ gV=function(K)local r=K[0]
                               for w,s in...do(b[31])(true,w,s)
                               end
                             end)
-                            (_)(z[B],z[B+1],z[B+2])
+                            ;(_)(z[B],z[B+1],z[B+2])
                             U=_
                             o=(W[o])
                           end
@@ -10388,7 +10388,7 @@ else r=(function()local z,a,F,D
           end
         end
       until false
-      (b[4])[8]=K.hv
+      ;(b[4])[8]=K.hv
       A=19
       repeat if A==86 then b[4][14]=K.zv
           break
