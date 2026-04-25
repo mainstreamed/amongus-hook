@@ -6,7 +6,7 @@ supportedGames.FALLEN = {
       gitPath           = 'fallensurvival';
 
       gameName          = 'Fallen Survival';
-      status            = 'Detected';
+      status            = 'Undetected';
       executors         = { 'Wave'; 'Swift'; 'Volt'; 'Seliware'; 'Synapse Z'; 'Madium'; };
       customMessage     = {
             ['Potassium']     = 'Use at own risk';
