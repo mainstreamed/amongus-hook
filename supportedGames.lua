@@ -28,7 +28,7 @@ supportedGames.TRIDENT = {
 };
 supportedGames.LONE = {
 
-      placeIDs          = { 13800223141; 139307005148921; 133421733370779; };
+      placeIDs          = { 13800223141; 139307005148921; 133421733370779; 4712109542; };
       gitPath           = 'lonesurvival';
 
       gameName          = 'Lone Survival';
