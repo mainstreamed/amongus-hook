@@ -74,6 +74,7 @@ elseif (type(request) ~= 'function') then
 end;
 
 local placeID           = game.PlaceId;
+local gameID			= game.GameId;
 local GITHUB_REPO       = 'https://raw.githubusercontent.com/mainstreamed/amongus-hook/refs/heads/main/';
 
 local supportedGames    = protectedLoad(`{GITHUB_REPO}supportedGames.lua`);
@@ -92,7 +93,10 @@ local runOnGame = function( gameInfo )
       end;
 
       -- actual loader
-      if (not table.find(gameInfo.placeIDs, placeID)) then -- identifying game
+      if (
+			not table.find(gameInfo.placeIDs, placeID) and
+			not table.find(gameInfo.placeIDs, gameID)
+		) then -- identifying game
             return false;
 
       elseif (gameInfo.status ~= 'Undetected' and protectedMessagebox(`{gameInfo.gameName} is Currently Marked as {gameInfo.status}!\n\nAre You Sure You Want to Continue?`, `amongus.hook`, 52) ~= 6) then
