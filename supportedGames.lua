@@ -32,7 +32,7 @@ supportedGames.LONE = {
       gitPath           = 'lonesurvival';
 
       gameName          = 'Lone Survival';
-      status            = 'Detected';
+      status            = 'Undetected';
       executors         = { 'Wave'; 'Swift'; 'Velocity'; 'Potassium'; 'Seliware'; 'Volcano'; 'Volt'; };
       customMessage     = {
 
