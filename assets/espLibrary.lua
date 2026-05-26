@@ -307,7 +307,7 @@ do
       end;
       function playerESP:childAdded(child: Instance)
 
-            if (child.ClassName == 'Humanoid') then
+            if (child.ClassName == 'Humanoid' and self.current) then
                   self.current.humanoid = child;
                   self:setupHumanoid(child);
             end;
