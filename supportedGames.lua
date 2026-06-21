@@ -7,9 +7,10 @@ supportedGames.FALLEN = {
 
       gameName          = 'Fallen Survival';
       status            = 'Undetected';
-      executors         = { 'Wave'; 'Swift'; 'Volt'; 'Seliware'; 'Madium'; 'Potassium'; 'Volcano'; };
+      executors         = { 'Wave'; 'Swift'; 'Volt'; 'Seliware'; 'Madium'; 'Volcano'; };
       customMessage     = {
             ['Synapse Z']      = 'Use at own risk';
+            ['Potassium']      = 'Use at own risk';
             ['executor']      = 'custom message';
       };
 };
