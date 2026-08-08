@@ -232,7 +232,7 @@ do
 
             local health                  = humanoid.Health;
             local maxHealth               = humanoid.MaxHealth;
-            local healthPercentage        = health / maxHealth;
+            local healthPercentage        = math.max(health / maxHealth, 0);
 
             if (self.current.rootPart and health > 0) then
                   self.current.active = true;
@@ -449,9 +449,10 @@ do
             local basePosition = vector2 - offset - Vector2.new(5, 0);
             local baseSize = Vector2.new(3, offset.Y * 2);
 
-            local healthLength = (baseSize.Y - 2) * self.current.healthPercentage;
-            local healthPosition = basePosition + Vector2.new(1, 1 + (baseSize.Y - 2 - healthLength));
-            local healthSize = Vector2.new(1, healthLength);
+            local healthLength      = (baseSize.Y - 2) * self.current.healthPercentage;
+
+            local healthPosition    = basePosition + Vector2.new(1, 1 + (baseSize.Y - 2 - healthLength));
+            local healthSize        = Vector2.new(1, healthLength);
 
             healthBackground.Position     = basePosition;
             healthBackground.Size         = baseSize;
@@ -883,7 +884,7 @@ do
             local health            = humanoid.Health;
             local maxHealth         = humanoid.MaxHealth;
 
-            local healthPercentage  = health / maxHealth;
+            local healthPercentage  = math.max(health / maxHealth, 0);
             
             self.health             = health;
             self.maxHealth          = maxHealth;
