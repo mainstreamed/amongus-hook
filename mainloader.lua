@@ -75,7 +75,7 @@ end;
 
 local placeID           = game.PlaceId;
 local gameID			= game.GameId;
-local GITHUB_REPO       = 'https://raw.githubusercontent.com/mainstreamed/amongus-hook/refs/heads/main/';
+local GITHUB_REPO       = 'https://raw.githubusercontent.com/mainstreamed/amongus-hook/main/';
 
 local supportedGames    = protectedLoad(`{GITHUB_REPO}supportedGames.lua`);
 local requiredIndexes   = { placeIDs = 'table'; executors = 'table'; customMessage = 'table' };
