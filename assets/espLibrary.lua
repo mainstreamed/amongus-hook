@@ -232,7 +232,7 @@ do
 
             local health                  = humanoid.Health;
             local maxHealth               = humanoid.MaxHealth;
-            local healthPercentage        = math.max(health / maxHealth, 0);
+            local healthPercentage        = health / maxHealth;
 
             if (self.current.rootPart and health > 0) then
                   self.current.active = true;
@@ -446,13 +446,13 @@ do
             healthBar.Visible = true;
             healthBackground.Visible = true;
 
-            local basePosition = vector2 - offset - Vector2.new(5, 0);
-            local baseSize = Vector2.new(3, offset.Y * 2);
+            local basePosition            = vector2 - offset - Vector2.new(5, 0);
+            local baseSize                = Vector2.new(3, offset.Y * 2);
 
-            local healthLength      = (baseSize.Y - 2) * self.current.healthPercentage;
+            local healthLength            = math.max( (baseSize.Y - 2) * self.current.healthPercentage, 0);
 
-            local healthPosition    = basePosition + Vector2.new(1, 1 + (baseSize.Y - 2 - healthLength));
-            local healthSize        = Vector2.new(1, healthLength);
+            local healthPosition          = basePosition + Vector2.new(1, 1 + (baseSize.Y - 2 - healthLength));
+            local healthSize              = Vector2.new(1, healthLength);
 
             healthBackground.Position     = basePosition;
             healthBackground.Size         = baseSize;
@@ -876,6 +876,7 @@ do
             self:renderName(vector2, offset, settings.name);
             self:renderDistance(vector2, offset, settings.distance, distance);
             self:renderHealthbar(vector2, offset, settings.healthbar);
+            return;
       end;
       
       function npcESP:humanoidHealthChanged()
@@ -884,7 +885,7 @@ do
             local health            = humanoid.Health;
             local maxHealth         = humanoid.MaxHealth;
 
-            local healthPercentage  = math.max(health / maxHealth, 0);
+            local healthPercentage  = health / maxHealth;
             
             self.health             = health;
             self.maxHealth          = maxHealth;
@@ -958,18 +959,18 @@ do
                   return;
             end;
 
-            local healthBar         = self.drawings.healthBar;
-            local healthBackground  = self.drawings.healthBackground;
+            local healthBar               = self.drawings.healthBar;
+            local healthBackground        = self.drawings.healthBackground;
 
-            healthBar.Visible = true;
-            healthBackground.Visible = true;
+            healthBar.Visible             = true;
+            healthBackground.Visible      = true;
 
-            local basePosition = vector2 - offset - Vector2.new(5, 0);
-            local baseSize = Vector2.new(3, offset.Y * 2);
+            local basePosition            = vector2 - offset - Vector2.new(5, 0);
+            local baseSize                = Vector2.new(3, offset.Y * 2);
 
-            local healthLength = (baseSize.Y - 2) * self.healthPercentage;
-            local healthPosition = basePosition + Vector2.new(1, 1 + (baseSize.Y - 2 - healthLength));
-            local healthSize = Vector2.new(1, healthLength);
+            local healthLength            = math.max( (baseSize.Y - 2) * self.healthPercentage, 0);
+            local healthPosition          = basePosition + Vector2.new(1, 1 + (baseSize.Y - 2 - healthLength));
+            local healthSize              = Vector2.new(1, healthLength);
 
             healthBackground.Position     = basePosition;
             healthBackground.Size         = baseSize;
