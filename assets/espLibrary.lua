@@ -451,7 +451,7 @@ do
             local barHeight               = math.max(offset.Y * 2, 0);
             local baseSize                = Vector2.new(3, barHeight);
 
-            local healthLength            = math.max(baseSize.Y - 2) * self.current.healthPercentage;
+            local healthLength            = math.max(baseSize.Y - 2, 0) * self.current.healthPercentage;
 
             local healthPosition          = basePosition + Vector2.new(1, 1 + (baseSize.Y - 2 - healthLength));
             local healthSize              = Vector2.new(1, healthLength);
@@ -971,7 +971,7 @@ do
             local barHeight               = math.max(offset.Y * 2, 0);
             local baseSize                = Vector2.new(3, barHeight);
 
-            local healthLength            = math.max(baseSize.Y - 2) * self.current.healthPercentage;
+            local healthLength            = math.max(baseSize.Y - 2, 0) * self.current.healthPercentage;
             
             local healthPosition          = basePosition + Vector2.new(1, 1 + (baseSize.Y - 2 - healthLength));
             local healthSize              = Vector2.new(1, healthLength);
