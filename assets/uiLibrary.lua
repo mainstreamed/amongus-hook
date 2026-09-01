@@ -2257,7 +2257,7 @@ do
 
 		local healthColour 	= color_rgb(255, 0, 0):Lerp(color_rgb(0, 255, 0), healthPerc);
 
-		self.drawings.healthbar.Size 	= vector2(maxSize * healthPerc, 6);
+		self.drawings.healthbar.Size 	= vector2(math.max(maxSize * healthPerc, 0), 6);
 		self.drawings.healthbar.Color = healthColour;
 	end;
 	-- function targethudClass:setImage(data: string)
