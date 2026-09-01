@@ -285,8 +285,8 @@ do
             local bottomright = worldToViewPoint((cframe * CFrame.new(x, -y, 0)).Position)
 
             local offset = Vector2.new(
-                  math.max(topright.X - vector2.X, bottomright.X - vector2.X),
-                  math.max((vector2.Y - topright.Y), (bottomright.Y - vector2.Y))
+                  math.max(topright.X - vector2.X, bottomright.X - vector2.X, 0),
+                  math.max((vector2.Y - topright.Y), (bottomright.Y - vector2.Y), 0)
             );
 
             self:renderBox(vector2, offset, settings.box);
@@ -868,8 +868,8 @@ do
             local bottomright = worldToViewPoint((cframe * CFrame.new(x, -y, 0)).Position)
 
             local offset = Vector2.new(
-                  math.max(topright.X - vector2.X, bottomright.X - vector2.X),
-                  math.max((vector2.Y - topright.Y), (bottomright.Y - vector2.Y))
+                  math.max(topright.X - vector2.X, bottomright.X - vector2.X, 0),
+                  math.max((vector2.Y - topright.Y), (bottomright.Y - vector2.Y), 0)
             );
 
             self:renderBox(vector2, offset, settings.box);
