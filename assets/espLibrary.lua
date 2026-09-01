@@ -446,13 +446,15 @@ do
             healthBar.Visible = true;
             healthBackground.Visible = true;
 
-            local basePosition = vector2 - offset - Vector2.new(5, 0);
-            local baseSize = Vector2.new(3, offset.Y * 2);
+            local basePosition      = vector2 - offset - Vector2.new(5, 0);
 
-            local healthLength      = (baseSize.Y - 2) * self.current.healthPercentage;
+            local barHeight               = math.max(offset.Y * 2, 0);
+            local baseSize                = Vector2.new(3, barHeight);
 
-            local healthPosition    = basePosition + Vector2.new(1, 1 + (baseSize.Y - 2 - healthLength));
-            local healthSize        = Vector2.new(1, healthLength);
+            local healthLength            = math.max(baseSize.Y - 2) * self.current.healthPercentage;
+
+            local healthPosition          = basePosition + Vector2.new(1, 1 + (baseSize.Y - 2 - healthLength));
+            local healthSize              = Vector2.new(1, healthLength);
 
             healthBackground.Position     = basePosition;
             healthBackground.Size         = baseSize;
@@ -964,12 +966,15 @@ do
             healthBar.Visible = true;
             healthBackground.Visible = true;
 
-            local basePosition = vector2 - offset - Vector2.new(5, 0);
-            local baseSize = Vector2.new(3, offset.Y * 2);
+            local basePosition            = vector2 - offset - Vector2.new(5, 0);
 
-            local healthLength = (baseSize.Y - 2) * self.healthPercentage;
-            local healthPosition = basePosition + Vector2.new(1, 1 + (baseSize.Y - 2 - healthLength));
-            local healthSize = Vector2.new(1, healthLength);
+            local barHeight               = math.max(offset.Y * 2, 0);
+            local baseSize                = Vector2.new(3, barHeight);
+
+            local healthLength            = math.max(baseSize.Y - 2) * self.current.healthPercentage;
+            
+            local healthPosition          = basePosition + Vector2.new(1, 1 + (baseSize.Y - 2 - healthLength));
+            local healthSize              = Vector2.new(1, healthLength);
 
             healthBackground.Position     = basePosition;
             healthBackground.Size         = baseSize;
