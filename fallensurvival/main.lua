@@ -1,2 +1,643 @@
 
-return ({["_40W"]=function(self,_9eI,_4t,_9y,_39,_30G,_1A,_5po,_9z,_8cA,_7O,_73O) local _TGCZqIW={bit32.bxor,string.unpack,bit32.bor,bit32.lshift,bit32.rshift,bit32.band,string.sub,string.char,table.concat,string.byte,bit32.extract,table.pack,table.unpack} local _9xR,_8YP,_6DI,_66U,_6y,_1B,_40W,_2f,_run,_mkframe,_6XJ,_0N,_3pS,_2kD,_McbEzAyena4b,_3gt3hGdsSmyv,_Hy9zs7mk7I9M,_QtpIjf4J1uJe,_I3cuSM4okbjs,_5roZTyOubjtj;local _1P={};local _guest=_30G({},{__mode="k"});_3pS={};function _2kD(_1O,ix)local value=_5po(_1O,ix);if value~=nil then return value;end;local _7L=_3pS[_1O];if _7L then return _7L(_1O,ix);end;end;function _9xR(_0V,_9D,_3Es)local _1W={};local _5l1=_9D;do local __nl=#_0V;local c=(1)-0B1;while true do c=c+0x1;if c>__nl then break end;local _6K=_0V[c];local n=#_6K;local _5Yr;do local __nl=n-1;local __ns=0B10_0;local i=(0X0)-__ns;while true do i=i+__ns;if(__ns>0B0 and i>__nl)or(__ns<0b0 and i<__nl)then break end;local _m=i%0b1_011_1_1_10+((i+0X1)%0xb_e)*256+((i+0b10)%19_0)*0B10_00_0_000_000000_000+((i+0B11)%1_90)*0X10_0_0_0_0_0;_5Yr=_TGCZqIW[0B1](_m,(_TGCZqIW[0X2]("<I4",_6K,i+0X1)),_5l1);_1W[#_1W+1]=_5Yr;end;end;_5l1=_TGCZqIW[0B1](_5Yr,_3Es);end;end;return _1W;end;local _ixt={}do local __nl=0X100;local i=(0X1)-0X1;while true do i=i+0X1;if i>__nl then break end;_ixt[i]=(0b10_10010_0*(i-0X1)*(i-0x1)+(0B10*_TGCZqIW[0x3](19*(i-1),0Xa_3)-_TGCZqIW[0X1](0B10_0_11*(i-0B1),163)))%0B1_0_0_0_0000_0+0b1;end;end function _2f(i)return _ixt[i]or i end;function _8YP(_1h,_0cy,_9D,_3Es)local _7i={};local _6r={};local _5f={};local _2tK;local function _ks(ix,n)local _9FE=_TGCZqIW[0b1](_9D,_3Es,ix*2_654435761);if _9FE==0 then _9FE=3_0_5419_896 end;local o={};do local __nl=n;local j=(0b1)-1;while true do j=j+0X1;if j>__nl then break end;_9FE=_TGCZqIW[0x1](_9FE,_TGCZqIW[0x4](_9FE,0xd));_9FE=_TGCZqIW[0X1](_9FE,_TGCZqIW[5](_9FE,17));_9FE=_TGCZqIW[1](_9FE,_TGCZqIW[4](_9FE,0b1_01));o[j]=_TGCZqIW[6](_9FE,0xf_f);end;end;return o;end;_2tK,_0cy=_TGCZqIW[2]("<I4",_1h,_0cy);do local __nl=_2tK;local i=(1)-0b1;while true do i=i+0b1;if i>__nl then break end;local t;t,_0cy=_TGCZqIW[2]("B",_1h,_0cy);if t==2_7 then local b;b,_0cy=_TGCZqIW[2]("B",_1h,_0cy);_7i[i]=b==1_72;elseif t==0B1_0_1100_01 then _7i[i],_0cy=_TGCZqIW[2]("<d",_1h,_0cy);elseif t==0Xd8 then local eL,eF;eL,_0cy=_TGCZqIW[0X2]("<I4",_1h,_0cy);eF,_0cy=_TGCZqIW[0X2]("<I4",_1h,_0cy);local fr={};do local __nl=eF;local fi=(0b1)-0X1;while true do fi=fi+0x1;if fi>__nl then break end;local _8j,ln;_8j,_0cy=_TGCZqIW[0b10]("<I4",_1h,_0cy);ln,_0cy=_TGCZqIW[0x2]("<I4",_1h,_0cy);fr[fi]={_8j,_TGCZqIW[0X7](_1h,_0cy,_0cy+ln-0b1)};_0cy=_0cy+ln;end;end;_6r[i]={2_16,eL,fr};elseif t==4 or t==0X14 then local eL;eL,_0cy=_TGCZqIW[2]("<I4",_1h,_0cy);_6r[i]={t,_TGCZqIW[0X7](_1h,_0cy,_0cy+eL-1)};_0cy=_0cy+eL;elseif t==7_8 then local ks=_ks(i,8);local db={};do local __nl=8;local j=(0b1)-0b1;while true do j=j+1;if j>__nl then break end;local cb;cb,_0cy=_TGCZqIW[0B1_0]("B",_1h,_0cy);db[j]=_TGCZqIW[0X8](_TGCZqIW[1](cb,ks[j]));end;end;_7i[i]=_TGCZqIW[0B10]("<d",_TGCZqIW[9](db));elseif t==0b1_1_10_011_0 or t==0x3 then _7i[i],_0cy=_TGCZqIW[2]("<I4",_1h,_0cy);elseif t==187 then local kc;kc,_0cy=_TGCZqIW[2]("<I4",_1h,_0cy);do local __nl=kc;local j=(0x1)-1;while true do j=j+0B1;if j>__nl then break end;local _;_,_0cy=_TGCZqIW[0X2]("<I4",_1h,_0cy);end;end;_7i[i]={};elseif t==0b10_001_10_0 then local kc;kc,_0cy=_TGCZqIW[2]("<I4",_1h,_0cy);local _89={};do local __nl=kc;local j=(1)-1;while true do j=j+0B1;if j>__nl then break end;local ki,vi;ki,_0cy=_TGCZqIW[2]("<I4",_1h,_0cy);vi,_0cy=_TGCZqIW[0b1_0]("<I4",_1h,_0cy);_5f[#_5f+1]={_89,ki,vi};end;end;_7i[i]=_89;elseif t==0B1_1001_001 then local x,y,z,w;x,_0cy=_TGCZqIW[0b1_0]("<f",_1h,_0cy);y,_0cy=_TGCZqIW[0x2]("<f",_1h,_0cy);z,_0cy=_TGCZqIW[0X2]("<f",_1h,_0cy);w,_0cy=_TGCZqIW[2]("<f",_1h,_0cy);_7i[i]={x,y,z,w};elseif t==15_9 then _7i[i],_0cy=_TGCZqIW[0B10]("<i8",_1h,_0cy);elseif t==1_09 then _7i[i],_0cy=_TGCZqIW[0X2]("<i8",_1h,_0cy);_7i[i]=(_7i[i]-0x18_c_8e)/0B1110;end;end;end;_3pS[_7i]=function(tb,ix)local d=_6r[ix];if not d then return nil end;local v;if d[0b1]==216 then local ks=_ks(ix,d[0X2]);local fr=d[0b1_1];local ch={};do local __nl=#fr;local fi=(1)-1;while true do fi=fi+0B1;if fi>__nl then break end;local _8j=fr[fi][1];local cs=fr[fi][2];do local __nl=#cs;local j=(0b1)-0b1;while true do j=j+0x1;if j>__nl then break end;local m=_8j+j;ch[m]=_TGCZqIW[0X8](_TGCZqIW[1](_TGCZqIW[10](cs,j),ks[m]));end;end;end;end;v=_TGCZqIW[0B1_001](ch);else local _9t7=d[0x2];local cr={};do local __nl=#_9t7;local j=(0B1)-0b1;while true do j=j+0B1;if j>__nl then break end;local pb=_TGCZqIW[0xa](_9t7,j);cr[j]=_TGCZqIW[8]((((5_4*0Xf1*241+(_TGCZqIW[0B1_1](243*2_41,18_8)+_TGCZqIW[0B110](0Xf3*0Xf_1,18_8)))%0b100000000)*(_TGCZqIW[0b11](pb,((98*0xe_0*0xe_0+(_TGCZqIW[0x3](0B1_000_0_111*0Xe_0,0b11_0_1_0_0_01)+_TGCZqIW[0X6](0b10_00_011_1*224,0b1_1010001)))%0b1_0_000_0_00_0))+_TGCZqIW[0x6](pb,((9_8*0xe_0*0xe0+(_TGCZqIW[0B11](0B100_00_111*22_4,0Xd_1)+_TGCZqIW[6](13_5*22_4,0Xd1)))%0X100))))%256);end;end;v=_TGCZqIW[0b1_001](cr);if d[1]==0B101_0_0 then v=buffer.fromstring(v);end;end;_9z(tb,ix,v);_6r[ix]=nil;return v;end;do local __nl=#_5f;local i=(1)-1;while true do i=i+0b1;if i>__nl then break end;local e=_5f[i];e[1][_2kD(_7i,e[0x2]+0B1)]=_2kD(_7i,e[0x3]+0x1);end;end;local _6B={};do local __nl=_2tK;local i=(1)-0B1;while true do i=i+0x1;if i>__nl then break end;_6B[i],_0cy=_TGCZqIW[2]("<I4",_1h,_0cy);end;end;return _7i,_6B;end;function _McbEzAyena4b(_VcFPtH7x8JFX)if _3gt3hGdsSmyv~=nil then return _3gt3hGdsSmyv end;local _gX40hsNH6rXG=0;local _af700Y4ANPSx;_af700Y4ANPSx=3_9_4_125_3_764;do local __nl=0x4_a_8;local _4TUQdGcuLGXu=(0X1)-0B1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0b1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0B1_0_10](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0xd));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0X5](_af700Y4ANPSx,1_7));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0X4](_af700Y4ANPSx,0x5));end;end;_gX40hsNH6rXG=_TGCZqIW[0b1_1_0](_gX40hsNH6rXG+_af700Y4ANPSx,0b111_11_111_1_1_11_11_1111_111_11_11_11_11_111);_af700Y4ANPSx=3_451_772_055;do local __nl=0B10_0_1_0_101000_0;local _4TUQdGcuLGXu=(1_1_93)-0b1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,(_TGCZqIW[0b10]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0b110_1));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[5](_af700Y4ANPSx,0X11));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0B1_00](_af700Y4ANPSx,5));end;end;_gX40hsNH6rXG=_TGCZqIW[0X6](_gX40hsNH6rXG+_af700Y4ANPSx,0b1_1_11_111_1111_11_1111_111111_111_11_1_111);_af700Y4ANPSx=0Xeeb_0cc_32;do local __nl=0B11_0_1_1111_1_000;local _4TUQdGcuLGXu=(0x95_1)-1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0X1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0b1010](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0X4](_af700Y4ANPSx,1_3));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0X5](_af700Y4ANPSx,0x11));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0X5));end;end;_gX40hsNH6rXG=_TGCZqIW[0b11_0](_gX40hsNH6rXG+_af700Y4ANPSx,4_29_4_9_6_7_295);_af700Y4ANPSx=2854_8_2_1_9_99;do local __nl=4768;local _4TUQdGcuLGXu=(3577)-1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,(_TGCZqIW[2]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[0X4](_af700Y4ANPSx,0Xd));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[5](_af700Y4ANPSx,1_7));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0x4](_af700Y4ANPSx,0x5));end;end;_gX40hsNH6rXG=_TGCZqIW[0X6](_gX40hsNH6rXG+_af700Y4ANPSx,0Xffff_fff_f);_af700Y4ANPSx=0B1_00_110_01_1_010_0_0_1001_011_1_00010_10_0_1_0;do local __nl=0X1748;local _4TUQdGcuLGXu=(476_9)-1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[0b1_010](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0b10_0](_af700Y4ANPSx,0xd));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0X5](_af700Y4ANPSx,0B1000_1));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0X4](_af700Y4ANPSx,5));end;end;_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+_af700Y4ANPSx,0B1_111_11_11_11_11_1_11_11_111_11_1_1_1_11_111_11);_af700Y4ANPSx=0b1_0_111_00001_0_1_0100_1100101_0_1010_00_1_0;do local __nl=0B1101_1_11_110_00_0;local _4TUQdGcuLGXu=(5961)-0b1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0X1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,(_TGCZqIW[0b10]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0x4](_af700Y4ANPSx,0b1101));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0B1_01](_af700Y4ANPSx,1_7));_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0b1_01));end;end;_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+_af700Y4ANPSx,4294967295);_af700Y4ANPSx=0xbfcf_fb34;do local __nl=0B1_000_00_1001100_0;local _4TUQdGcuLGXu=(0x1bf_1)-0X1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0Xa](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0B1101));_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,_TGCZqIW[0b101](_af700Y4ANPSx,17));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0b101));end;end;_gX40hsNH6rXG=_TGCZqIW[0x6](_gX40hsNH6rXG+_af700Y4ANPSx,0B1_111_11_1_1_1_11_11111_1111111111_1_1_11_1_1);_af700Y4ANPSx=0b1_1110_1_11_001_011_1_1_010010_111101110;do local __nl=953_0;local _4TUQdGcuLGXu=(0X2_0_99)-0X1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0B1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,(_TGCZqIW[0X2]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,1_3));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[5](_af700Y4ANPSx,17));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0B101));end;end;_gX40hsNH6rXG=_TGCZqIW[0b1_1_0](_gX40hsNH6rXG+_af700Y4ANPSx,0xf_ff_f_f_f_f_f);_af700Y4ANPSx=0B1_011_00101_0_11_1111_11_111_011100_00_100;do local __nl=0B10000100_011;local _4TUQdGcuLGXu=(0X1)-0b1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,_TGCZqIW[0b1_010](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,_TGCZqIW[0X4](_af700Y4ANPSx,1_3));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[5](_af700Y4ANPSx,17));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[0x4](_af700Y4ANPSx,0b10_1));end;end;_gX40hsNH6rXG=_TGCZqIW[0b11_0](_gX40hsNH6rXG+_af700Y4ANPSx,0B1_1_11_1_11111_1111_11_111_1_1_1111_11_1_1_1_11);_af700Y4ANPSx=0B1_10_11_0_1_0101_110_110100_110011110_01;do local __nl=0X846;local _4TUQdGcuLGXu=(0x4_24)-1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0x1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,(_TGCZqIW[2]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0xd));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0b1_01](_af700Y4ANPSx,0B10001));_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,_TGCZqIW[0B1_0_0](_af700Y4ANPSx,5));end;end;_gX40hsNH6rXG=_TGCZqIW[0X6](_gX40hsNH6rXG+_af700Y4ANPSx,4_29496_7_2_9_5);_af700Y4ANPSx=0xe_41a9_24_e;do local __nl=0xc69;local _4TUQdGcuLGXu=(0B10000_100_0111)-0B1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0xa](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0Xd));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0B10_1](_af700Y4ANPSx,0B10001));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0X5));end;end;_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+_af700Y4ANPSx,42_9_4_967_29_5);_af700Y4ANPSx=0B10_0001000_001_0_1_11_01_10_11_1_101_01_111;do local __nl=0X1_08_c;local _4TUQdGcuLGXu=(0xc6a)-0b1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0X1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,(_TGCZqIW[2]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0B100](_af700Y4ANPSx,0B110_1));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0B1_01](_af700Y4ANPSx,1_7));_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,_TGCZqIW[0b1_0_0](_af700Y4ANPSx,0X5));end;end;_gX40hsNH6rXG=_TGCZqIW[0x6](_gX40hsNH6rXG+_af700Y4ANPSx,0b1_1111111_1_1_11_1111111_1111_11_1_111_1_1_1);_af700Y4ANPSx=31_892954_49;do local __nl=0B1_010_0_1_0_101_11_1;local _4TUQdGcuLGXu=(0x108d)-1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[10](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0x4](_af700Y4ANPSx,0B110_1));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[5](_af700Y4ANPSx,0B10_001));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[0X4](_af700Y4ANPSx,5));end;end;_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+_af700Y4ANPSx,0b11_1_1_1_111_1_1_111_11_111_11_11_1111_111_111);_af700Y4ANPSx=313_35951_7_7;do local __nl=0B11000_1101_0_010;local _4TUQdGcuLGXu=(529_6)-0b1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,(_TGCZqIW[0B1_0]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[0x4](_af700Y4ANPSx,0b11_0_1));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[0B10_1](_af700Y4ANPSx,0B10_001));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0b100](_af700Y4ANPSx,5));end;end;_gX40hsNH6rXG=_TGCZqIW[0b110](_gX40hsNH6rXG+_af700Y4ANPSx,0B11_1_11_1_1_111_11_11_1_1_1_11_1111_1_1_111_111_1);_af700Y4ANPSx=0b1001_1_011_1_0_11_0_10_1001_10_0_0_1_01_101101;do local __nl=741_3;local _4TUQdGcuLGXu=(0b1_1_0_00_11_0_10_01_1)-1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[10](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,_TGCZqIW[0X4](_af700Y4ANPSx,1_3));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0x5](_af700Y4ANPSx,0X11));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0b100](_af700Y4ANPSx,0B1_01));end;end;_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+_af700Y4ANPSx,0B1_1_11_1111_111_111111_11111_1_11_111_1_111);_af700Y4ANPSx=0X8c_d_ffd0d;do local __nl=0b100001000_110_00;local _4TUQdGcuLGXu=(0B1_1_1_001_1_1101_10)-0b1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0x1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,(_TGCZqIW[2]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0Xd));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[0B101](_af700Y4ANPSx,0x1_1));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0b10_0](_af700Y4ANPSx,0x5));end;end;_gX40hsNH6rXG=_TGCZqIW[0X6](_gX40hsNH6rXG+_af700Y4ANPSx,42_9_49672_9_5);_af700Y4ANPSx=19362_747_4_1;do local __nl=95_3_0;local _4TUQdGcuLGXu=(0X21_19)-0x1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0B1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[0b1010](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[0x4](_af700Y4ANPSx,0B1101));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[5](_af700Y4ANPSx,0x11));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[0x4](_af700Y4ANPSx,0B1_0_1));end;end;_gX40hsNH6rXG=_TGCZqIW[0B11_0](_gX40hsNH6rXG+_af700Y4ANPSx,0Xffff_f_f_ff);_af700Y4ANPSx=0B1_0_10_1100_0_01_1_0_0_0_0011_10110_01_10_00_00;do local __nl=0B11101110_01;local _4TUQdGcuLGXu=(0B1)-1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0X1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,(_TGCZqIW[0X2]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,13));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0x5](_af700Y4ANPSx,0b100_01));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0X4](_af700Y4ANPSx,0X5));end;end;_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+_af700Y4ANPSx,0B1_1_1111_1111111_11111_11_11_1_1111_1111_1);_af700Y4ANPSx=256587_00_6;do local __nl=0x7_72;local _4TUQdGcuLGXu=(9_5_4)-0x1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0B1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[0xa](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0b1_0_0](_af700Y4ANPSx,13));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0b1_0_1](_af700Y4ANPSx,0b10_001));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0X4](_af700Y4ANPSx,5));end;end;_gX40hsNH6rXG=_TGCZqIW[0x6](_gX40hsNH6rXG+_af700Y4ANPSx,0Xff_f_ff_f_f_f);_af700Y4ANPSx=0x7d0_9_6f_b_0;do local __nl=0b1_0_1_100_10101_1;local _4TUQdGcuLGXu=(0B1_110_111_0_011)-0x1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0b1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,(_TGCZqIW[0x2]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[0x4](_af700Y4ANPSx,1_3));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[5](_af700Y4ANPSx,0B10_0_0_1));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0x5));end;end;_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+_af700Y4ANPSx,0xfffff_ff_f);_af700Y4ANPSx=0X2_465_8_cf0;do local __nl=3_812;local _4TUQdGcuLGXu=(0Xb_2_c)-0x1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[1_0](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0xd));_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,_TGCZqIW[5](_af700Y4ANPSx,0X11));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[0b100](_af700Y4ANPSx,0B10_1));end;end;_gX40hsNH6rXG=_TGCZqIW[0X6](_gX40hsNH6rXG+_af700Y4ANPSx,0xff_fff_f_ff);_af700Y4ANPSx=0b10_1_0_0_10_101010_01011_01100_110_0_0_11_00;do local __nl=0x129_d;local _4TUQdGcuLGXu=(0xee5)-0X1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,(_TGCZqIW[0X2]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0B100](_af700Y4ANPSx,1_3));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[0B101](_af700Y4ANPSx,1_7));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[0b10_0](_af700Y4ANPSx,5));end;end;_gX40hsNH6rXG=_TGCZqIW[0x6](_gX40hsNH6rXG+_af700Y4ANPSx,0xff_f_f_fff_f);_af700Y4ANPSx=0b10001_1_1_01_0_00_10_100000_1_0_10_011010_1;do local __nl=0b10_11_00_1010_1_1_0;local _4TUQdGcuLGXu=(0x129_e)-0x1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0b1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,_TGCZqIW[10](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[0b100](_af700Y4ANPSx,1_3));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[0X5](_af700Y4ANPSx,0B10_0_0_1));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[0B1_00](_af700Y4ANPSx,5));end;end;_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+_af700Y4ANPSx,0Xf_ff_f_ff_f_f);_af700Y4ANPSx=0B1010000_01_10000_0_1_10_00_0101111_00_0_0;do local __nl=0b11_01_0000_0_1111;local _4TUQdGcuLGXu=(0x165_7)-1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0X1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,(_TGCZqIW[2]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,1_3));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[5](_af700Y4ANPSx,0B100_01));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0x4](_af700Y4ANPSx,5));end;end;_gX40hsNH6rXG=_TGCZqIW[0b110](_gX40hsNH6rXG+_af700Y4ANPSx,0b1_111_1111_1_11_1_1_11111_11_1111_11_11_1111);_af700Y4ANPSx=0x79af_8d_b_2;do local __nl=0x1_dc8;local _4TUQdGcuLGXu=(6_6_72)-1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0B1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0B1010](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,_TGCZqIW[0B1_00](_af700Y4ANPSx,0xd));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[5](_af700Y4ANPSx,0B10001));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[0b1_0_0](_af700Y4ANPSx,0X5));end;end;_gX40hsNH6rXG=_TGCZqIW[0x6](_gX40hsNH6rXG+_af700Y4ANPSx,0b11_1_111_11_11111_1_11_11_111_1_111_1_11_1_11_1);_af700Y4ANPSx=3_8_23_2_77_90_1;do local __nl=0X2_181;local _4TUQdGcuLGXu=(7625)-0x1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,(_TGCZqIW[2]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0X4](_af700Y4ANPSx,0b11_0_1));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0B1_0_1](_af700Y4ANPSx,0x11));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0B1_01));end;end;_gX40hsNH6rXG=_TGCZqIW[0b1_10](_gX40hsNH6rXG+_af700Y4ANPSx,0B111111111_1_1_11_11111_11111_1_111_111_1_1);_af700Y4ANPSx=0B1_1110_1_0011_00_00_0_00_11_0_11_00100_11001;do local __nl=0b1_00101001_110_10;local _4TUQdGcuLGXu=(0x218_2)-0x1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0X1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0b1_010](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,_TGCZqIW[0b100](_af700Y4ANPSx,0xd));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0B1_01](_af700Y4ANPSx,0b1_0_001));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0B10_0](_af700Y4ANPSx,0B101));end;end;_gX40hsNH6rXG=_TGCZqIW[0X6](_gX40hsNH6rXG+_af700Y4ANPSx,0xff_f_f_f_f_f_f);_af700Y4ANPSx=424_5272_211;do local __nl=0b1_1011_0_0_0_1_1;local _4TUQdGcuLGXu=(0B1)-1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,(_TGCZqIW[0b1_0]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[0B100](_af700Y4ANPSx,13));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0x5](_af700Y4ANPSx,0b1_000_1));_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,_TGCZqIW[0X4](_af700Y4ANPSx,0B1_0_1));end;end;_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+_af700Y4ANPSx,429_49672_95);_af700Y4ANPSx=0X80aa_3_82_8;do local __nl=0X6_c_6;local _4TUQdGcuLGXu=(0x3_6_4)-0B1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0X1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,_TGCZqIW[0B1_010](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[0b100](_af700Y4ANPSx,13));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0X5](_af700Y4ANPSx,0x1_1));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0b10_0](_af700Y4ANPSx,5));end;end;_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+_af700Y4ANPSx,0b1111_111111_11111111_11_11_1_1_11_111111);_af700Y4ANPSx=0x5_b_ff_ba_98;do local __nl=260_1;local _4TUQdGcuLGXu=(0b11_011000111)-0X1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,(_TGCZqIW[0X2]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0B1101));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[0B1_01](_af700Y4ANPSx,1_7));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[0X4](_af700Y4ANPSx,0x5));end;end;_gX40hsNH6rXG=_TGCZqIW[0B110](_gX40hsNH6rXG+_af700Y4ANPSx,0xf_ffffff_f);_af700Y4ANPSx=0X5_b_3e_c_3e3;do local __nl=0B1_1_0_1_100_01_100;local _4TUQdGcuLGXu=(0xa_2a)-0x1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[0b10_10](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0B11_01));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0x5](_af700Y4ANPSx,17));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0b1_00](_af700Y4ANPSx,0X5));end;end;_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+_af700Y4ANPSx,0b11111_11111_111_11_1111_11111_111111_11);_af700Y4ANPSx=0b1_11_011101110_1_11110100_0_0_011_000_1;do local __nl=0B100001_1_10_11_11;local _4TUQdGcuLGXu=(3469)-0b1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0b1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,(_TGCZqIW[0x2]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0B100](_af700Y4ANPSx,0xd));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0B1_01](_af700Y4ANPSx,0x11));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0B101));end;end;_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+_af700Y4ANPSx,0b1111_11111_11_11111_11111_111_1_11_11_1_11);_af700Y4ANPSx=0X235c_f_a_d_3;do local __nl=0X1_4_52;local _4TUQdGcuLGXu=(0B10_00_011_1100_00)-1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0x1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[0Xa](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0B100](_af700Y4ANPSx,13));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[5](_af700Y4ANPSx,17));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0X4](_af700Y4ANPSx,0x5));end;end;_gX40hsNH6rXG=_TGCZqIW[0X6](_gX40hsNH6rXG+_af700Y4ANPSx,0B11111_1_1_11_11_111111_1_1_11_1_11_1_111_1_111);_af700Y4ANPSx=0X592_f8_fc0;do local __nl=0B1011_11011_010_1;local _4TUQdGcuLGXu=(0X1_453)-0X1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0X1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,(_TGCZqIW[0B1_0]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[0X1](_af700Y4ANPSx,_TGCZqIW[0b10_0](_af700Y4ANPSx,0B1_101));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0B10_1](_af700Y4ANPSx,0b100_01));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[0X4](_af700Y4ANPSx,5));end;end;_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+_af700Y4ANPSx,0b1_11_11_111_1_11_11_1_1_1111_1_11111_111111_1);_af700Y4ANPSx=0B1000_001000_1_01_110_0_0_0_0_101010_10_10;do local __nl=0x1_b_1_8;local _4TUQdGcuLGXu=(0x17_b_6)-1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0X1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[10](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0b1_00](_af700Y4ANPSx,1_3));_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,_TGCZqIW[0b101](_af700Y4ANPSx,1_7));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[4](_af700Y4ANPSx,0b1_0_1));end;end;_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+_af700Y4ANPSx,42949672_9_5);_af700Y4ANPSx=0x7e1_2_5_d_1_9;do local __nl=0B1_111_0_01111011;local _4TUQdGcuLGXu=(0B110_1_1_0_0_01_100_1)-0X1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[0b1](_af700Y4ANPSx,(_TGCZqIW[0b10]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0B100](_af700Y4ANPSx,0b1101));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[5](_af700Y4ANPSx,17));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0B1_00](_af700Y4ANPSx,0x5));end;end;_gX40hsNH6rXG=_TGCZqIW[0x6](_gX40hsNH6rXG+_af700Y4ANPSx,0Xf_f_ffffff);_af700Y4ANPSx=307228_0_8_2_7;do local __nl=0B10_00011_101_11_10;local _4TUQdGcuLGXu=(7_80_4)-1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[10](_VcFPtH7x8JFX,_4TUQdGcuLGXu));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0x4](_af700Y4ANPSx,1_3));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[5](_af700Y4ANPSx,17));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0b10_0](_af700Y4ANPSx,0B1_0_1));end;end;_gX40hsNH6rXG=_TGCZqIW[0b11_0](_gX40hsNH6rXG+_af700Y4ANPSx,4_2_949_6_729_5);_af700Y4ANPSx=0Xf8b7df17;do local __nl=0B10_0101_0_011101_0;local _4TUQdGcuLGXu=(86_7_1)-0b1;while true do _4TUQdGcuLGXu=_4TUQdGcuLGXu+0b1;if _4TUQdGcuLGXu>__nl then break end;_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,(_TGCZqIW[0X2]("B",_VcFPtH7x8JFX,_4TUQdGcuLGXu)));_af700Y4ANPSx=_TGCZqIW[0B1](_af700Y4ANPSx,_TGCZqIW[0x4](_af700Y4ANPSx,1_3));_af700Y4ANPSx=_TGCZqIW[0x1](_af700Y4ANPSx,_TGCZqIW[0B101](_af700Y4ANPSx,0X1_1));_af700Y4ANPSx=_TGCZqIW[1](_af700Y4ANPSx,_TGCZqIW[0B100](_af700Y4ANPSx,5));end;end;_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+_af700Y4ANPSx,4294967_2_9_5);_gX40hsNH6rXG=_TGCZqIW[0B1_1_0](_gX40hsNH6rXG+(_TGCZqIW[0B101_0]("kXMK",2)),4294_9_67295);_gX40hsNH6rXG=_TGCZqIW[6](_gX40hsNH6rXG+(_TGCZqIW[0X1](0x84b_0b0b1,0xe_6599_82_1)),0Xf_fffffff);_gX40hsNH6rXG=_TGCZqIW[0B1_10](_gX40hsNH6rXG+(_TGCZqIW[6](135958_3_293,0xd_f2f1_6d6)),0Xffffffff);local _M7qKoAl1CvhV,_P7NWfiSsBQfw=pcall(function()if not(typeof(Vector3.new(0B1010_00,0b1010,0b1_1))=="Vector3")then return false end if not(typeof(game)=="Instance"and game:IsA("DataModel"))then return false end if not(typeof(Vector2.new(0x11,0x1_f))=="Vector2")then return false end if not(typeof(Rect.new(0,0b0,2_5,3_8))=="Rect")then return false end if not(typeof(workspace)=="Instance"and workspace:IsA("Workspace")and game:GetService("Workspace")==workspace and workspace.Parent==game)then return false end if not(not pcall(function()return Vector3.new(8,0b11_100,0b10_0_101)["_C26CpzrDpSI0"]end))then return false end if not(typeof(Enum.Axis.X)=="EnumItem"and Enum.Axis.X.EnumType==Enum.Axis)then return false end local _ZkBWra6R8EEC,_XMNgO9z6Y9W9 local _ELrv5W878SIp=Vector3.new local _MJIac2qUucT4=task.spawn(function()local function _7c4lZDB3efNj(_MmFXOCd9badl)if _MmFXOCd9badl>0 then return _7c4lZDB3efNj(_MmFXOCd9badl-1)end return _ELrv5W878SIp(-0B1000_0_0_0_0_00_00_000000_001_0_000_11,0,0x0)end _ZkBWra6R8EEC,_XMNgO9z6Y9W9=pcall(_7c4lZDB3efNj,0x4e_1b)end)if _ZkBWra6R8EEC~=true then if _ZkBWra6R8EEC==nil then task.cancel(_MJIac2qUucT4)end return false end if _XMNgO9z6Y9W9.X~=-67108_928 then return false end _gX40hsNH6rXG=_TGCZqIW[0b110](_gX40hsNH6rXG+(_TGCZqIW[0X1](_TGCZqIW[0x3](_TGCZqIW[0B11_0](_XMNgO9z6Y9W9.X-(-6710_8931),2_5_5),_TGCZqIW[4](_TGCZqIW[0B11_0]((Vector2.new(-0X200_00_1b,0B0)+Vector2.new(0B1100_1,0)).X-(-33_55_44_5_9)-0X19,0B1111_11_11),0B10_0_0),_TGCZqIW[0b10_0](_TGCZqIW[6](Rect.new(-67_108_9_63,0X0,-0x40_000_31,1).Width-0B1_1001_0,0B11_1_1_1111),0b10_0_00)),0xd_acf_d39_c)),0Xff_f_ff_fff)return true end);if not _M7qKoAl1CvhV or _P7NWfiSsBQfw~=true then _3gt3hGdsSmyv=0x1_e_6_b0_105;return _3gt3hGdsSmyv;end;_3gt3hGdsSmyv=_TGCZqIW[0x6](_gX40hsNH6rXG+0x6bd_b_c_b_ef,4_294_96729_5);_3gt3hGdsSmyv=_TGCZqIW[0b1](_TGCZqIW[0b1](_3gt3hGdsSmyv,_Hy9zs7mk7I9M()),_TGCZqIW[0X6](_3gt3hGdsSmyv,_Hy9zs7mk7I9M()));_3gt3hGdsSmyv=_TGCZqIW[1](_TGCZqIW[0X1](_3gt3hGdsSmyv,_I3cuSM4okbjs()),_TGCZqIW[0X6](_3gt3hGdsSmyv,_I3cuSM4okbjs()));_3gt3hGdsSmyv=_TGCZqIW[0B1](_3gt3hGdsSmyv,_TGCZqIW[0b10_0](_3gt3hGdsSmyv,0Xd));_3gt3hGdsSmyv=_TGCZqIW[0B1](_3gt3hGdsSmyv,_TGCZqIW[0X5](_3gt3hGdsSmyv,0b1_1_1));_3gt3hGdsSmyv=_TGCZqIW[0B1](_3gt3hGdsSmyv,_TGCZqIW[0x4](_3gt3hGdsSmyv,0B1_0001));_3gt3hGdsSmyv=_TGCZqIW[1](_3gt3hGdsSmyv,_TGCZqIW[0B1_01](_3gt3hGdsSmyv,5));_3gt3hGdsSmyv=_TGCZqIW[0b1](_3gt3hGdsSmyv,_TGCZqIW[4](_3gt3hGdsSmyv,0Xb));return _3gt3hGdsSmyv;end;function _Hy9zs7mk7I9M()if _QtpIjf4J1uJe~=nil then return _QtpIjf4J1uJe;end;local _QtpIjf4J1uJem=0X0;local _QtpIjf4J1uJemv;_QtpIjf4J1uJemv=_TGCZqIW[0x1](((function()local _wahjHb4QoV6m local _vQ9lGIn613hv,_ETLcdOF7yXze=pcall(function()return _TGCZqIW[0X6]((Vector2 and(Vector2.new(0x1_c,0b110_1):Dot(Vector2.new(0X1_e,0B10_1_0)))or 0b0),0xffff_ff_ff)end)local _bJUzVyiQ6TgJ=true if _wahjHb4QoV6m~=nil then _bJUzVyiQ6TgJ=pcall(function()_wahjHb4QoV6m:Destroy()end)and _bJUzVyiQ6TgJ end if not _vQ9lGIn613hv or not _bJUzVyiQ6TgJ or _4t(_ETLcdOF7yXze)~="number"then return 0x0 end return _ETLcdOF7yXze end)()),970);_QtpIjf4J1uJem=_TGCZqIW[1](_TGCZqIW[0X1](_QtpIjf4J1uJem,_QtpIjf4J1uJemv),_TGCZqIW[0B110](_QtpIjf4J1uJem,_QtpIjf4J1uJemv));_QtpIjf4J1uJemv=_TGCZqIW[0X1](((function()local _WIA76IsF592R local _BGRBv3kxpP3B,_HaUtT5c0XqQn=pcall(function()return _TGCZqIW[6]((Vector3 and((Vector3.new(0X18,0xf,23):Cross(Vector3.new(15,0X2,0X1d))).Z)or 0b0),0Xffffffff)end)local _aCYeTgcQ6Tvr=true if _WIA76IsF592R~=nil then _aCYeTgcQ6Tvr=pcall(function()_WIA76IsF592R:Destroy()end)and _aCYeTgcQ6Tvr end if not _BGRBv3kxpP3B or not _aCYeTgcQ6Tvr or _4t(_HaUtT5c0XqQn)~="number"then return 0X0 end return _HaUtT5c0XqQn end)()),0Xf_f_f_f_ff4f);_QtpIjf4J1uJem=_TGCZqIW[0X1](_TGCZqIW[1](_QtpIjf4J1uJem,_QtpIjf4J1uJemv),_TGCZqIW[0X6](_QtpIjf4J1uJem,_QtpIjf4J1uJemv));_QtpIjf4J1uJemv=_TGCZqIW[0X1](((function()local _99QtLZu2XxYv local _qSXx6inHecV0,_xc2e6pdunllb=pcall(function()local _EgBkhMXXKkCh=Enum.Material local _5B0mZ2YJDL8E=_EgBkhMXXKkCh.Plastic local _arRbewmhfgFB={[_5B0mZ2YJDL8E]=0xad5_c,[_EgBkhMXXKkCh]=1_1_4_84}local _3tKkbc4Th6cz=(_arRbewmhfgFB[Enum.Material.Plastic]or 0x0)+(_arRbewmhfgFB[_5B0mZ2YJDL8E.EnumType]or 0b0)do local __gt=_EgBkhMXXKkCh:GetEnumItems()local __gk=0 while true do __gk=__gk+1 local _,_zroV4FoneIgz=__gk,__gt[__gk]if _zroV4FoneIgz==nil then break end _3tKkbc4Th6cz+=_arRbewmhfgFB[_zroV4FoneIgz]or 0x0 end end return _3tKkbc4Th6cz end)local _vLhsMjLbD2Em=true if _99QtLZu2XxYv~=nil then _vLhsMjLbD2Em=pcall(function()_99QtLZu2XxYv:Destroy()end)and _vLhsMjLbD2Em end if not _qSXx6inHecV0 or not _vLhsMjLbD2Em or _4t(_xc2e6pdunllb)~="number"then return 0 end return _xc2e6pdunllb end)()),0x1_87_9_4);_QtpIjf4J1uJem=_TGCZqIW[1](_TGCZqIW[0B1](_QtpIjf4J1uJem,_QtpIjf4J1uJemv),_TGCZqIW[0X6](_QtpIjf4J1uJem,_QtpIjf4J1uJemv));_QtpIjf4J1uJemv=_TGCZqIW[1](((function()local _S0q6vJv7o05J local _6p6IuDifGWbv,_a554ATxFHQwf=pcall(function()local _arRbewmhfgFB={[Vector3.new(0x1e,3_8,0b10_0_00_1)]=0X55de,[Vector3.new(0X2_e,55,0b1_001_10)]=125_3_3,}return(_arRbewmhfgFB[Vector3.new(30,38,0b1000_01)]or 0)+(_arRbewmhfgFB[Vector3.new(30,0X2_6,33)+Vector3.new(0x10,0X11,0b101)]or 0X0)end)local _8h8N0oWFPIvw=true if _S0q6vJv7o05J~=nil then _8h8N0oWFPIvw=pcall(function()_S0q6vJv7o05J:Destroy()end)and _8h8N0oWFPIvw end if not _6p6IuDifGWbv or not _8h8N0oWFPIvw or _4t(_a554ATxFHQwf)~="number"then return 0 end return _a554ATxFHQwf end)()),0b100_00110_1_101_0_011);_QtpIjf4J1uJem=_TGCZqIW[1](_TGCZqIW[0x1](_QtpIjf4J1uJem,_QtpIjf4J1uJemv),_TGCZqIW[6](_QtpIjf4J1uJem,_QtpIjf4J1uJemv));_QtpIjf4J1uJe=_QtpIjf4J1uJem;_QtpIjf4J1uJe=_TGCZqIW[0b1](_QtpIjf4J1uJe,_TGCZqIW[0x4](_QtpIjf4J1uJe,0xd));_QtpIjf4J1uJe=_TGCZqIW[0b1](_QtpIjf4J1uJe,_TGCZqIW[0b1_0_1](_QtpIjf4J1uJe,7));_QtpIjf4J1uJe=_TGCZqIW[1](_QtpIjf4J1uJe,_TGCZqIW[4](_QtpIjf4J1uJe,17));_QtpIjf4J1uJe=_TGCZqIW[0X1](_QtpIjf4J1uJe,_TGCZqIW[0x5](_QtpIjf4J1uJe,0B1_01));_QtpIjf4J1uJe=_TGCZqIW[0B1](_QtpIjf4J1uJe,_TGCZqIW[0X4](_QtpIjf4J1uJe,11));return _QtpIjf4J1uJe;end;function _I3cuSM4okbjs()if _5roZTyOubjtj~=nil then return _5roZTyOubjtj;end;local _5roZTyOubjtjm=0b0;local _5roZTyOubjtjmv;_5roZTyOubjtjmv=_TGCZqIW[1](((function()local _Af7QFL9C3VOX local _z2MKp9XIq4k7,_YXkCVBzVNcM7=pcall(function()return _TGCZqIW[6]((Rect and(Rect.new(0b100_10,14,33,0X22).Width)or 0B0),0B11_11_1_1_1111_11111_11_111_11_11_111_1_1_111)end)local _QYBXX7lp4793=true if _Af7QFL9C3VOX~=nil then _QYBXX7lp4793=pcall(function()_Af7QFL9C3VOX:Destroy()end)and _QYBXX7lp4793 end if not _z2MKp9XIq4k7 or not _QYBXX7lp4793 or _4t(_YXkCVBzVNcM7)~="number"then return 0b0 end return _YXkCVBzVNcM7 end)()),0Xf);_5roZTyOubjtjm=_TGCZqIW[1](_TGCZqIW[0x1](_5roZTyOubjtjm,_5roZTyOubjtjmv),_TGCZqIW[0X6](_5roZTyOubjtjm,_5roZTyOubjtjmv));_5roZTyOubjtjmv=_TGCZqIW[1](((function()local _P4nCKFb6EZLR local _EB6Cfu2G3E7P,_D7ZRR5QGX5JL=pcall(function()_P4nCKFb6EZLR=Instance.new("Part")_P4nCKFb6EZLR:SetAttribute("_ndR9UzP6Z45A",Vector3.new(0X1e,0X26,3_3))local _kw6soD1fTkEf=_P4nCKFb6EZLR:GetAttributes()local _arRbewmhfgFB={[Vector3.new(0X1e,0B1_0011_0,0B1_0_0_001)]=0B1100_10_00_010110_0}local _3tKkbc4Th6cz=_arRbewmhfgFB[_kw6soD1fTkEf["_ndR9UzP6Z45A"]]or 0B0 _kw6soD1fTkEf["_ndR9UzP6Z45A"]=Vector3.new(0b1_01_1_10,0B110_1_11,38)return _3tKkbc4Th6cz+(_arRbewmhfgFB[_P4nCKFb6EZLR:GetAttribute("_ndR9UzP6Z45A")]or 0)end)local _3aW9DIVvUoXX=true if _P4nCKFb6EZLR~=nil then _3aW9DIVvUoXX=pcall(function()_P4nCKFb6EZLR:Destroy()end)and _3aW9DIVvUoXX end if not _EB6Cfu2G3E7P or not _3aW9DIVvUoXX or _4t(_D7ZRR5QGX5JL)~="number"then return 0B0 end return _D7ZRR5QGX5JL end)()),0xc858);_5roZTyOubjtjm=_TGCZqIW[0b1](_TGCZqIW[0B1](_5roZTyOubjtjm,_5roZTyOubjtjmv),_TGCZqIW[6](_5roZTyOubjtjm,_5roZTyOubjtjmv));_5roZTyOubjtjmv=_TGCZqIW[1](((function()local _K4ZHeW5gLl10 local _jT1fQ483NXuO,_e62LGAkY5zM4=pcall(function()_K4ZHeW5gLl10=Instance.new("Part")local _5B0mZ2YJDL8E=Enum.Material.Plastic local _arRbewmhfgFB={[_5B0mZ2YJDL8E]=89_56}_K4ZHeW5gLl10.Material=_5B0mZ2YJDL8E return _arRbewmhfgFB[_K4ZHeW5gLl10.Material]or 0 end)local _dqFRP12YA12u=true if _K4ZHeW5gLl10~=nil then _dqFRP12YA12u=pcall(function()_K4ZHeW5gLl10:Destroy()end)and _dqFRP12YA12u end if not _jT1fQ483NXuO or not _dqFRP12YA12u or _4t(_e62LGAkY5zM4)~="number"then return 0X0 end return _e62LGAkY5zM4 end)()),89_56);_5roZTyOubjtjm=_TGCZqIW[0b1](_TGCZqIW[1](_5roZTyOubjtjm,_5roZTyOubjtjmv),_TGCZqIW[6](_5roZTyOubjtjm,_5roZTyOubjtjmv));_5roZTyOubjtjmv=_TGCZqIW[0B1](((function()local _NAHFDAcp30Jm local _EEps9GQCJIRw,_bxUhbAqdlIaz=pcall(function()_NAHFDAcp30Jm=Instance.new("Part")local _arRbewmhfgFB={[Vector3.new(0B11110,0X2_6,0x21)]=424_87}_NAHFDAcp30Jm:SetAttribute("_ndR9UzP6Z45A",Vector3.new(0b111_1_0,38,3_3))return _arRbewmhfgFB[_NAHFDAcp30Jm:GetAttribute("_ndR9UzP6Z45A")]or 0b0 end)local _QrbpFgDwEEEq=true if _NAHFDAcp30Jm~=nil then _QrbpFgDwEEEq=pcall(function()_NAHFDAcp30Jm:Destroy()end)and _QrbpFgDwEEEq end if not _EEps9GQCJIRw or not _QrbpFgDwEEEq or _4t(_bxUhbAqdlIaz)~="number"then return 0 end return _bxUhbAqdlIaz end)()),0xa5_f7);_5roZTyOubjtjm=_TGCZqIW[1](_TGCZqIW[0b1](_5roZTyOubjtjm,_5roZTyOubjtjmv),_TGCZqIW[6](_5roZTyOubjtjm,_5roZTyOubjtjmv));_5roZTyOubjtj=_5roZTyOubjtjm;_5roZTyOubjtj=_TGCZqIW[0X1](_5roZTyOubjtj,_TGCZqIW[0b1_0_0](_5roZTyOubjtj,0Xd));_5roZTyOubjtj=_TGCZqIW[0b1](_5roZTyOubjtj,_TGCZqIW[0X5](_5roZTyOubjtj,0x7));_5roZTyOubjtj=_TGCZqIW[0b1](_5roZTyOubjtj,_TGCZqIW[0x4](_5roZTyOubjtj,0X11));_5roZTyOubjtj=_TGCZqIW[1](_5roZTyOubjtj,_TGCZqIW[0B101](_5roZTyOubjtj,5));_5roZTyOubjtj=_TGCZqIW[0B1](_5roZTyOubjtj,_TGCZqIW[0x4](_5roZTyOubjtj,0b101_1));return _5roZTyOubjtj;end;function _6DI(_82x)local _1h=_82x._1h;local _9D,_3Es,_5VE,_3RZ,_6B,_80,_0V,_1W,_4m,_7U;local _6j=0b1_0011_0101_1_11_0_10_11_0_01;while true do if _6j==634_713 then _9D,_82x._0cy=_TGCZqIW[2]("<I4",_1h,_82x._0cy);_3Es,_82x._0cy=_TGCZqIW[0B10]("<I4",_1h,_82x._0cy);_5VE,_82x._0cy=_TGCZqIW[0B10]("<I4",_1h,_82x._0cy);_3RZ,_6B=_8YP(_1h,_82x._0cy,_TGCZqIW[1](_9D,_TGCZqIW[0x1](_TGCZqIW[0b1](_McbEzAyena4b(_1h),_Hy9zs7mk7I9M()),_TGCZqIW[6](_McbEzAyena4b(_1h),_Hy9zs7mk7I9M()))),_3Es);_82x._0cy=_82x._0cy+_5VE;_80,_82x._0cy=_TGCZqIW[0b10]("<I4",_1h,_82x._0cy);_0V={};_6j=901_25_2;elseif _6j==0X47_b_a then do local __nl=_4m;local i=(0X1)-0B1;while true do i=i+0X1;if i>__nl then break end;local _7q;_7q,_82x._0cy=_TGCZqIW[0b1_0]("<I4",_1h,_82x._0cy);_7U[i]={_1h=_1h,_0cy=_82x._0cy};_82x._0cy=_82x._0cy+_7q;end;end;_6j=0B1_11_1111_1_0_0_00_0_011010;elseif _6j==0x3_40_8_b then _9D=_TGCZqIW[0X1](_9D,_TGCZqIW[0X1](_TGCZqIW[0x1](_McbEzAyena4b(_1h),_I3cuSM4okbjs()),_TGCZqIW[0b1_1_0](_McbEzAyena4b(_1h),_I3cuSM4okbjs())));_1W=_9xR(_0V,_9D,_3Es);_0V=nil;_4m,_82x._0cy=_TGCZqIW[0x2]("<I4",_1h,_82x._0cy);_7U={};_6j=0b1_000_1_1_11_011101_0;elseif _6j==0X7f81a then return{_1W=_1W,_3RZ=_3RZ,_7U=_7U,_6B=_6B};elseif _6j==9_0_1252 then do local __nl=_80;local i=(0X1)-0X1;while true do i=i+1;if i>__nl then break end;local _7q;_7q,_82x._0cy=_TGCZqIW[0X2]("<I4",_1h,_82x._0cy);_0V[i]=_TGCZqIW[0B111](_1h,_82x._0cy,_82x._0cy+_7q-0b1);_82x._0cy=_82x._0cy+_7q;end;end;_6j=21_3_131;end;end;end;function _66U(_1W,_3RZ,_5z,_8E)return{_8E=_8E,_3RZ=_3RZ,vaOffset=0b0,_5z=_5z or{},_0T=0b1,_70=0x0,_2G=false,_1W=_1W,_3Z={},_7k4={}};end;function _6y(_8cY,_2kh,_53)local _5z={};local _5r={};while true do if not(_8cY._1W[_8cY._0T])then break end;local cw=_TGCZqIW[0B1](_8cY._1W[_8cY._0T],19_66_018964);if _TGCZqIW[0Xb](cw,0x0,8)~=0Xf_0 then break end;_5r[#_5r+1]=cw;_8cY._0T=_8cY._0T+1;end;local fn=function(...)local n=_9eI("#",...);return _run(_mkframe(_8cY,_2kh,_5z,{...},n));end;_guest[fn]={_8cY=_8cY,_2kh=_2kh,_5z=_5z};if _53 then _8cY._3Z[(_ixt[_53+0x1]or _53+0b1)]=fn end;do local __nl=#_5r;local c=(0X1)-0b1;while true do c=c+0b1;if c>__nl then break end;local cw=_5r[c];local _2hA=_TGCZqIW[0b1_011](cw,8,0x8);local _3M=_TGCZqIW[0xb](cw,0b11_000,8);if _2hA==0b1_0 then _5z[#_5z+0x1]=_8cY._5z[_3M+0X1];elseif _2hA==1 then local uv=_8cY._7k4[_3M];if not uv then uv={_8cY,_3M+0X1}_8cY._7k4[_3M]=uv end;_5z[#_5z+1]=uv;else _5z[#_5z+0b1]={false,_8cY._3Z[(_ixt[_3M+0b1]or _3M+0B1)]};end;end;end;return fn;end;function _1B(_8cY)local _8k=_8cY._3RZ;local _4c=_8cY._3Z;local _E=_8cY._8E;local _U=_8cY._5z;local _O=_8cY._7k4;local _VA=_8cY._5i;local _VC=_8cY._4Xp;local _6T5=_8cY._6B;local _2Ji=_8cY._0T;local _T=_8cY._70;local _H=_8cY._2G;local _S=_8cY._7e;local _72U=_8cY._1W;local _9fC,_8u,_4v,_3v,_3x,_0S,_2LS;_9fC=_72U[_2Ji];while true do if not(_9fC and not _H and not _S)then break end;_2Ji=_2Ji+0b1;_9fC=_TGCZqIW[0X1](_9fC,0x7_52f_11_94);_8u=_9fC%0b1000_0000_0;_4v=_9fC//0x10_0%2_5_6;_3v=_9fC//16_77_7_2_1_6;_3x=_9fC//0x1000_0%2_56;_2LS=_3v+_3x*25_6;_0S=_2LS>=0x8_0_00 and _2LS-6_5536 or _2LS;if _8u<0b1_0_0_0_0011 then if _8u<61 then if _8u<0X1f then if _8u<0B1110 then if _8u<5 then if _8u==3 then _2Ji=_2Ji+_0S;end;elseif _8u==5 then local _cr,_cu=_39(_O,nil);while true do if not(_cr~=nil)then break end;if _cr>=_4v then local _co=_cu[0x1];_cu[0b1_0]=_co._3Z[(_ixt[_cu[2]]or _cu[2])];_cu[0b1]=false;_O[_cr]=nil;end;_cr,_cu=_39(_O,_cr);end;end;else if _8u<22 then if _8u<0b1010_0 then if _8u==0B10001 then if(_4v*(_4v+1))%0x2==0X0 then _4c[(_ixt[_4v+0x1])]=_4c[(_ixt[_3v+0X1])]end;end;else if _8u==0X15 then _8cY._0T=_2Ji;_6y(_8cY,_0S,_4v);_2Ji=_8cY._0T;end;end;else if _8u==0b11_100 then _4c[(_ixt[_4v+0X1])]=_0S;end;end;end;else if _8u<46 then if _8u<0b1_0_0_110 then if _8u<0x2_3 then if _8u==0B100010 then _4c[(_ixt[_4v+0X1])]=_4c[(_ixt[_3v+0b1])];end;else if _8u==36 then local _2tK=(_3v==0B0)and(_T-_4v)or(_3v-1);local _6U={};do local __nl=_2tK;local i=(1)-0B1;while true do i=i+1;if i>__nl then break end;_6U[i]=_4c[(_ixt[_4v+i]or _4v+i)];end;end;_8cY._00s=_6U;_8cY._6D=_2tK;_H=true;end;end;else if _8u==40 then _2Ji=_2Ji+1;local f=_4c[(_ixt[_4v+1])];local _8Cq=(_3v==0b0)and(_T-_4v-1)or(_3v-0x1);local _5cf={};do local __nl=_8Cq;local i=(0X1)-1;while true do i=i+1;if i>__nl then break end;_5cf[i]=_4c[(_ixt[_4v+0x1+i]or _4v+0B1+i)];end;end;local _rec=_guest[f];if _rec then _8cY._3xl=_rec._8cY;_8cY._5mG=_rec._2kh;_8cY._9vp=_rec._5z;_8cY._75=_5cf;_8cY._0KW=_8Cq;_8cY._1QU=_4v;_8cY._2R=_3x;_S=true;else if f==debug.info and _4t(_5cf[1])=="number"then _5cf[0X1]=_5cf[1]+0B1;end;local _97=_TGCZqIW[0Xc](f(_TGCZqIW[0Xd](_5cf,1,_8Cq)));local _7Lm=(_3x==0x0)and _97.n or(_3x-0X1);do local __nl=_7Lm;local i=(0x1)-1;while true do i=i+0B1;if i>__nl then break end;_4c[(_ixt[_4v+i]or _4v+i)]=_97[i];end;end;if _3x==0B0 then _T=_4v+_7Lm;end;end;end;end;else if _8u<0X36 then if _8u==0x3_2 then _4c[(_ixt[_3v+0b1])][_3x+1]=_4c[(_ixt[_4v+0B1])];end;elseif _8u==0B11_0_110 then if(_4v*(_4v+0x1))%2==0 then local _8u_v1=_4c[(_ixt[_3v+0b1])]-_4c[(_ixt[_3x+1])];_4c[(_ixt[_4v+1])]=_8u_v1 end;end;end;end;elseif _8u==61 then _2Ji=_2Ji+_0S;else if _8u<9_8 then if _8u<76 then if _8u<0b100_0_100 then if _8u==0b1111_11 then if(_4v*(_4v+1))%0X2==0X0 then local _8u_v1=_4c[(_ixt[_3v+1])]or(_8k[_6T5[_3x+0X1]]or _2kD(_8k,_6T5[_3x+0X1]));_4c[(_ixt[_4v+0b1])]=_8u_v1 end;end;else if _8u<72 then if _8u==6_9 then local _7f=_72U[_2Ji];_2Ji=_2Ji+0B1;local _2tK=_TGCZqIW[11](_7f,0X1e,0b1_0);local v=_E[(_8k[_6T5[_TGCZqIW[1_1](_7f,0B10100,0b1_01_0)+0b1]]or _2kD(_8k,_6T5[_TGCZqIW[0b10_11](_7f,20,0xa)+0B1]))];if _2tK>=0x2 and v~=nil then v=v[(_8k[_6T5[_TGCZqIW[11](_7f,0b1010,0B10_1_0)+0B1]]or _2kD(_8k,_6T5[_TGCZqIW[1_1](_7f,1_0,1_0)+0X1]))]end;if _2tK>=3 and v~=nil then v=v[(_8k[_6T5[_TGCZqIW[0B1_0_11](_7f,0B0,0B1_0_10)+1]]or _2kD(_8k,_6T5[_TGCZqIW[0Xb](_7f,0,0B10_10)+0x1]))]end;_4c[(_ixt[_4v+1])]=v;end;elseif _8u==0x48 then local f=_4c[(_ixt[_4v+1])];local _8Cq=(_3v==0x0)and(_T-_4v-1)or(_3v-1);local _5cf={};do local __nl=_8Cq;local i=(1)-0x1;while true do i=i+0x1;if i>__nl then break end;_5cf[i]=_4c[(_ixt[_4v+0x1+i]or _4v+1+i)];end;end;local _rec=_guest[f];if _rec then _8cY._3xl=_rec._8cY;_8cY._5mG=_rec._2kh;_8cY._9vp=_rec._5z;_8cY._75=_5cf;_8cY._0KW=_8Cq;_8cY._1QU=_4v;_8cY._2R=_3x;_S=true;else if f==debug.info and _4t(_5cf[0b1])=="number"then _5cf[0X1]=_5cf[0x1]+1;end;local _97=_TGCZqIW[0xc](f(_TGCZqIW[13](_5cf,0X1,_8Cq)));local _7Lm=(_3x==0X0)and _97.n or(_3x-1);do local __nl=_7Lm;local i=(0x1)-0X1;while true do i=i+1;if i>__nl then break end;_4c[(_ixt[_4v+i]or _4v+i)]=_97[i];end;end;if _3x==0b0 then _T=_4v+_7Lm;end;end;end;end;else if _8u<8_9 then if _8u==8_4 then _8cY._0T=_2Ji;_6y(_8cY,(_8k[_6T5[_0S+0x1]]or _2kD(_8k,_6T5[_0S+0X1])),_4v);_2Ji=_8cY._0T;end;elseif _8u==89 then _4c[(_ixt[_4v+1])]=_0S;do local _w=_72U[_2Ji];_2Ji=_2Ji+0x1;local _4v=_TGCZqIW[1_1](_w,0X10,8);local _3v=_TGCZqIW[0B101_1](_w,0B110_0_0,0x8);local _3x=_TGCZqIW[1_1](_w,8,0B100_0);local _rd=_3v+_3x*0x1_00;local _0S=_rd>=0b10_0_0000_000_0_0000_0 and _rd-0x1_00_0_0 or _rd;_4c[(_ixt[_4v+1])]=_4c[(_ixt[_3v+0b1])]%_4c[(_ixt[_3x+0B1])];end;else if _8u==0X5_b then if _4c[(_ixt[_4v+1])]then _2Ji=_2Ji+_0S end;end;end;end;elseif _8u==0X62 then local _7f=_72U[_2Ji];_2Ji=_2Ji+0x1;if _4c[(_ixt[_4v+0B1])]<=_4c[(_ixt[_7f+0b1]or _7f+1)]then _2Ji=_2Ji+_0S-1 end;else if _8u<120 then if _8u<0X7_4 then if _8u==0b11_10011 then if(_4v*(_4v+0x1))%2==0b0 then local _8u_v1=_4c[(_ixt[_3v+1])][_3x+0x1];_4c[(_ixt[_4v+0X1])]=_8u_v1 end;end;elseif _8u==0X74 then _4c[(_ixt[_4v+0b1])]=_0S;do local _w=_72U[_2Ji];_2Ji=_2Ji+1;local _4v=_TGCZqIW[0b1011](_w,0X10,8);local _3v=_TGCZqIW[0Xb](_w,0x8,8);local _3x=_TGCZqIW[0B1011](_w,0x18,8);local _rd=_3v+_3x*0B10_0_00_0000;local _0S=_rd>=0b10_00_000_000000_000 and _rd-0b1_0000_0_0_0_000_0_00000 or _rd;_4c[(_ixt[_4v+0B1])]=_0S;end;do local _w=_72U[_2Ji];_2Ji=_2Ji+0B1;local _4v=_TGCZqIW[0Xb](_w,1_6,0x8);local _3v=_TGCZqIW[1_1](_w,0B1_0_0_0,8);local _3x=_TGCZqIW[0B1_011](_w,24,0b1_0_0_0);local _rd=_3v+_3x*0B1000_0000_0;local _0S=_rd>=0b1_0000_00_00000_0_0_00 and _rd-0b1000_0_00_0_00_0_0_0_000_0 or _rd;_4c[(_ixt[_4v+0b1])]=_4c[(_ixt[_3v+0b1])]+_4c[(_ixt[_3x+0B1])];end;end;else if _8u<0b1_111_11_0 then if _8u==1_2_4 then _4c[(_ixt[_4v+0B1])]=(_8k[_6T5[_0S+0B1]]or _2kD(_8k,_6T5[_0S+1]));end;else if _8u==0x8_0 then do local _8u_v2=_4c[(_ixt[_3v+0B1])][_3x+1];_4c[(_ixt[_4v+0B1])]=_8u_v2 end;end;end;end;end;end;else if _8u<0xc_4 then if _8u<16_6 then if _8u<1_4_8 then if _8u<0B10001_110 then if _8u<137 then if _8u<136 then if _8u==134 then local _0t7=(_8k[_6T5[_0S+0X1]]or _2kD(_8k,_6T5[_0S+1]));local t={};if _4t(_0t7)=="table"then local _dk,_dv=_39(_0t7,nil);while true do if not(_dk~=nil)then break end;t[_dk]=_dv;_dk,_dv=_39(_0t7,_dk);end;end;_4c[(_ixt[_4v+1])]=t;end;elseif _8u==0x88 then _4c[(_ixt[_4v+0B1])]=_0S;do local _w=_72U[_2Ji];_2Ji=_2Ji+0B1;local _4v=_TGCZqIW[0Xb](_w,8,0B1_00_0);local _3v=_TGCZqIW[11](_w,0B1_1_0_00,0b10_00);local _3x=_TGCZqIW[0xb](_w,0x1_0,0b1000);local _rd=_3v+_3x*0B100_00_00_0_0;local _0S=_rd>=0B1_00000_0_000000000 and _rd-0X1_0000 or _rd;_4c[(_ixt[_4v+0b1])]=_0S;end;do local _w=_72U[_2Ji];_2Ji=_2Ji+0X1;local _4v=_TGCZqIW[0Xb](_w,8,0B10_00);local _3v=_TGCZqIW[0b101_1](_w,2_4,8);local _3x=_TGCZqIW[0b1_0_11](_w,0B1_000_0,0x8);local _rd=_3v+_3x*2_56;local _0S=_rd>=0x8_00_0 and _rd-0B1_0_00_0_0_0_0_00_0_0000_00 or _rd;_4c[(_ixt[_4v+0x1])]=_4c[(_ixt[_3v+1])]+_4c[(_ixt[_3x+1])];end;do local _w=_72U[_2Ji];_2Ji=_2Ji+0b1;local _4v=_TGCZqIW[0b10_1_1](_w,0b1_00_0,0B1_0_00);local _3v=_TGCZqIW[0b1_011](_w,2_4,8);local _3x=_TGCZqIW[11](_w,0b1000_0,0B10_00);local _rd=_3v+_3x*2_56;local _0S=_rd>=3_276_8 and _rd-655_36 or _rd;_4c[(_ixt[_4v+0B1])]=_4c[(_ixt[_3v+1])]*_4c[(_ixt[_3x+0x1])];end;end;else if _8u==14_0 then local _uv=_U[_3v+0B1];local _ov=_uv[1];if _ov then _ov._3Z[(_ixt[_uv[0x2]]or _uv[0x2])]=_4c[(_ixt[_4v+1])];else _uv[0B1_0]=_4c[(_ixt[_4v+0b1])];end;end;end;elseif _8u==0b1_0_00_111_0 then local _off=_8cY.vaOffset or 0b0;local _2tK=(_3v==0)and((_VC or#_VA)-_off)or(_3v-0B1);if _2tK<0B0 then _2tK=0 end;do local __nl=_2tK;local i=(0B1)-0b1;while true do i=i+0X1;if i>__nl then break end;_4c[(_ixt[_4v+i]or _4v+i)]=_VA[_off+i];end;end;if _3v==0B0 then _T=_4v+_2tK end;end;elseif _8u==0b10_0_10_1_0_0 then _4c[(_ixt[_4v+1])]=_0S;do local _w=_72U[_2Ji];_2Ji=_2Ji+0x1;local _4v=_TGCZqIW[11](_w,0b1_1000,8);local _3v=_TGCZqIW[0Xb](_w,0x10,8);local _3x=_TGCZqIW[0xb](_w,8,8);local _rd=_3v+_3x*0b10000000_0;local _0S=_rd>=327_68 and _rd-6_5536 or _rd;_4c[(_ixt[_4v+0B1])]=_4c[(_ixt[_3v+0B1])]*_4c[(_ixt[_3x+1])];end;else if _8u<0b1_0011_110 then if _8u==0X95 then local k=(_8k[_6T5[_72U[_2Ji]+0B1]]or _2kD(_8k,_6T5[_72U[_2Ji]+1]));_2Ji=_2Ji+0X1;_4c[(_ixt[_4v+0B1])]=_4c[(_ixt[_3v+1])][k];end;elseif _8u==0b1_0_01_1110 then do local _8u_v2=_4c[(_ixt[_3v+0X1])];_4c[(_ixt[_4v+1])]=_8u_v2 end;else if _8u<16_4 then if _8u==0Xa_1 then local _1h=_4c[(_ixt[_3x+0x1])];do local __nl=_3v;local __ns=-1;local r=(_3x-0X1)-__ns;while true do r=r+__ns;if(__ns>0b0 and r>__nl)or(__ns<0x0 and r<__nl)then break end;_1h=_4c[(_ixt[r+1]or r+1)].._1h;end;end;_4c[(_ixt[_4v+1])]=_1h;end;else if _8u==1_6_5 then local _uv=_U[_3v+0x1];local _ov=_uv[0x1];if _ov then _4c[(_ixt[_4v+0b1])]=_ov._3Z[(_ixt[_uv[0X2]]or _uv[0x2])];else _4c[(_ixt[_4v+1])]=_uv[0b10];end;end;end;end;end;else if _8u<184 then if _8u<0xb_3 then if _8u==0Xa_e then local _7f=_72U[_2Ji];_2Ji=_2Ji+1;local d1=_3v+_3x*0X100;local r2=_TGCZqIW[0b1_10](_7f,0xff);local d2=_TGCZqIW[0Xb](_7f,0X8,8)+_TGCZqIW[0b10_11](_7f,0B1_0_0_00,0B1000)*0b10_0_00_0_0_00;local fl=_TGCZqIW[1_1](_7f,0B1_1_00_0,0X8);if _TGCZqIW[0x6](fl,0X1)==1 then _4c[(_ixt[_4v+0B1])]=(_8k[_6T5[d1+0X1]]or _2kD(_8k,_6T5[d1+0X1]))else _4c[(_ixt[_4v+0b1])]=d1>=32_768 and d1-6_5_5_36 or d1 end;if _TGCZqIW[0B11_0](fl,0X2)==0x2 then _4c[(_ixt[r2+0X1]or r2+0b1)]=(_8k[_6T5[d2+0X1]]or _2kD(_8k,_6T5[d2+1]))else _4c[(_ixt[r2+1]or r2+1)]=d2>=32768 and d2-0x10_0_0_0 or d2 end;end;else if _8u==0Xb5 then _4c[(_ixt[_4v+0X1])]=_3v~=0;_2Ji=_2Ji+_3x;end;end;elseif _8u==0B10111_0_0_0 then if(_4v*(_4v+1))%2==0B0 then _4c[(_ixt[_4v+0X1])]=_4c[(_ixt[_3v+0b1])][_3x+1]end;else if _8u<0Xb_f then if _8u<1_8_9 then if _8u==0xbb then local _7f=_72U[_2Ji];_2Ji=_2Ji+0X1;if not(_4c[(_ixt[_4v+0B1])]<_4c[(_ixt[_7f+0x1]or _7f+0X1)])then _2Ji=_2Ji+_0S-1 end;end;else if _8u==0Xb_e then _4c[(_ixt[_4v+1])]=_4c[(_ixt[_3v+0x1])]+_4c[(_ixt[_3x+0x1])];end;end;elseif _8u==0B1_01_1111_1 then if not _4c[(_ixt[_4v+1])]then _2Ji=_2Ji+_0S end;else if _8u==0B11_0_00001 then _4c[(_ixt[_4v+0X1])]=_0S;do local _w=_72U[_2Ji];_2Ji=_2Ji+0B1;local _4v=_TGCZqIW[0Xb](_w,0b10_0_0,8);local _3v=_TGCZqIW[0B1011](_w,0x10,0b10_00);local _3x=_TGCZqIW[0xb](_w,2_4,0X8);local _rd=_3v+_3x*0X100;local _0S=_rd>=0X8_000 and _rd-0b1_000_0_0_0000_0_000_000 or _rd;_4c[(_ixt[_4v+0x1])]=_4c[(_ixt[_3v+0x1])]+_4c[(_ixt[_3x+1])];end;end;end;end;end;else if _8u<231 then if _8u<0Xd6 then if _8u<20_8 then if _8u==0B1_1_0_0_1_00_1 then if(_4v*(_4v+0b1))%2==0b0 then local _8u_v1=_4c[(_ixt[_3v+1])]*(_8k[_6T5[_3x+1]]or _2kD(_8k,_6T5[_3x+1]));_4c[(_ixt[_4v+0X1])]=_8u_v1 end;else if _8u==202 then _2Ji=_2Ji+1;_4c[(_ixt[_4v+1])]={};end;end;else if _8u==209 then if(_4v*(_4v+1))%0x2==0B0 then local _8u_v1=_4c[(_ixt[_3v+0x1])]+_4c[(_ixt[_3x+0X1])];_4c[(_ixt[_4v+0x1])]=_8u_v1 end;end;end;else if _8u<22_2 then if _8u==0B11_0_1_1_00_1 then _4c[(_ixt[_4v+0B1])]=nil;end;else if _8u==2_2_5 then do local _8u_v2=_4c[(_ixt[_3v+1])]-_4c[(_ixt[_3x+1])];_4c[(_ixt[_4v+1])]=_8u_v2 end;else if _8u==2_30 then local k=(_8k[_6T5[_72U[_2Ji]+0x1]]or _2kD(_8k,_6T5[_72U[_2Ji]+1]));_2Ji=_2Ji+1;_4c[(_ixt[_3v+0X1])][k]=_4c[(_ixt[_4v+0X1])];end;end;end;end;else if _8u<0Xf3 then if _8u==0xf_0 then end;elseif _8u==243 then _8cY.vaOffset=_4v;else if _8u<251 then if _8u<0xf_8 then if _8u==245 then local _8u_v1=(_8k[_6T5[_3v+0x1]]or _2kD(_8k,_6T5[_3v+1]))/_4c[(_ixt[_3x+0x1])];_4c[(_ixt[_4v+1])]=_8u_v1;end;elseif _8u==248 then do local _8u_v2=_4c[(_ixt[_3v+0X1])][_4c[(_ixt[_3x+1])]];_4c[(_ixt[_4v+0X1])]=_8u_v2 end;else if _8u==0xf_9 then local _7f=_72U[_2Ji];_2Ji=_2Ji+0b1;local _2i1=_4c[(_ixt[_3v+0X1])];local m=(_8k[_6T5[_7f+1]]or _2kD(_8k,_6T5[_7f+0X1]));_4c[(_ixt[_4v+0X2]or _4v+0x2)]=_2i1;_4c[(_ixt[_4v+1])]=_2i1[m];end;end;else if _8u==0b1_11_1_1100 then local _7f=_72U[_2Ji];_2Ji=_2Ji+1;local nf=_TGCZqIW[0xb](_7f,0b11_111,1)~=0;local ci=_TGCZqIW[1_1](_7f,0X0,24);if(_4c[(_ixt[_4v+1])]==(_8k[_6T5[ci+0b1]]or _2kD(_8k,_6T5[ci+1])))~=nf then _2Ji=_2Ji+_0S-0X1 end;end;end;end;end;end;end;_9fC=_72U[_2Ji];end;_8cY._0T=_2Ji;_8cY._70=_T;_8cY._7e=_S;_8cY._2G=_H;return _TGCZqIW[0B11_01](_8cY._00s or{},0B1,_8cY._6D or 0x0);end;function _mkframe(_1n,_2kh,_5z,_5cf,n)local _6vR=_1n._7U[_2kh+0X1];if not _6vR._1W then _6vR=_6DI({_1h=_6vR._1h,_0cy=_6vR._0cy})_1n._7U[_2kh+0b1]=_6vR end;local _9a=_66U(_6vR._1W,_6vR._3RZ,_5z,_1n._8E);_9a._7U=_6vR._7U;_9a._6B=_6vR._6B;_9a._42m=_6vR._2qX;_9a._5i=_5cf;_9a._4Xp=n;do local __nl=n;local i=(1)-1;while true do i=i+0B1;if i>__nl then break end;_9a._3Z[(_ixt[i]or i)]=_5cf[i];end;end;return _9a;end;function _run(_8cY)local _6Vs={_8cY};local _70=0X1;while true do if not(_70>0)then break end;local _6Jv=_6Vs[_70];_1B(_6Jv);if _6Jv._55 then return;elseif _6Jv._30 then local _1t=_6Jv._30;_6Jv._30=nil;_6Jv._7e=false;_6Jv._8A=_6Jv._8A or{};_6Jv._8A[_1t.a]={};_6XJ[_1t.n](_6Jv,_1t._49N,_1t.a)();_6Jv._8A[_1t.a]=nil;_6Jv._55=nil;_6Jv._7e=false;elseif _6Jv._7e then _6Jv._7e=false;local _9a=_mkframe(_6Jv._3xl,_6Jv._5mG,_6Jv._9vp,_6Jv._75,_6Jv._0KW);_9a._0ql=_6Jv._1QU;_9a._566=_6Jv._2R;_70=_70+1;_6Vs[_70]=_9a;else _70=_70-1;if _70>=1 then local _15o=_6Vs[_70];local _rc=(_6Jv._566==0B0)and(_6Jv._6D or 0)or(_6Jv._566-1);local _rv=_6Jv._00s or{};do local __nl=_rc;local i=(0X1)-0b1;while true do i=i+0b1;if i>__nl then break end;_15o._3Z[(_ixt[_6Jv._0ql+i]or _6Jv._0ql+i)]=_rv[i];end;end;if _6Jv._566==0x0 then _15o._70=_6Jv._0ql+_rc end;else return _TGCZqIW[1_3](_6Jv._00s or{},1,_6Jv._6D or 0X0);end;end;end;end;local _cySqkI0SC={};_cySqkI0SC[16]=function(_UMe0f9xFC,_0pwL56jtU,_dmsS3OftL,_cuJTcjc38)_UMe0f9xFC._g4lEZDfFQ[_0pwL56jtU]=_UMe0f9xFC._g4lEZDfFQ[_dmsS3OftL]+_UMe0f9xFC._g4lEZDfFQ[_cuJTcjc38]end;_cySqkI0SC[61]=function(_UMe0f9xFC,_0pwL56jtU,_dmsS3OftL,_cuJTcjc38)_UMe0f9xFC._g4lEZDfFQ[_0pwL56jtU]=_UMe0f9xFC._g4lEZDfFQ[_dmsS3OftL]-_UMe0f9xFC._g4lEZDfFQ[_cuJTcjc38]end;_cySqkI0SC[0X64]=function(_UMe0f9xFC,_0pwL56jtU,_dmsS3OftL,_cuJTcjc38)_UMe0f9xFC._g4lEZDfFQ[_0pwL56jtU]=_UMe0f9xFC._g4lEZDfFQ[_dmsS3OftL]end;_cySqkI0SC[0b1_111_1_01]=function(_UMe0f9xFC,_0pwL56jtU,_dmsS3OftL,_cuJTcjc38)_UMe0f9xFC._g4lEZDfFQ[_0pwL56jtU]=_UMe0f9xFC._A0gOxyq04[_dmsS3OftL]end;_cySqkI0SC[0b1_01_11_010]=function(_UMe0f9xFC,_0pwL56jtU,_dmsS3OftL,_cuJTcjc38)local f=_UMe0f9xFC._g4lEZDfFQ[_0pwL56jtU]_UMe0f9xFC._g4lEZDfFQ[_0pwL56jtU]=f(_UMe0f9xFC._g4lEZDfFQ[_dmsS3OftL])end;_cySqkI0SC[0B1_101_1101]=function(_UMe0f9xFC,_0pwL56jtU,_dmsS3OftL,_cuJTcjc38)_UMe0f9xFC._00oCPwy9z=_UMe0f9xFC._00oCPwy9z+_dmsS3OftL end;local function _twIKbWC8O(_UMe0f9xFC)while true do local _GhA8WZI2T=_UMe0f9xFC._xhnnJb7Yb[_UMe0f9xFC._00oCPwy9z];if not _GhA8WZI2T then break end;_UMe0f9xFC._00oCPwy9z=_UMe0f9xFC._00oCPwy9z+1;local _J9sDS12o7=_TGCZqIW[6](_GhA8WZI2T,0xff);local _0pwL56jtU=_TGCZqIW[6](_TGCZqIW[5](_GhA8WZI2T,0x8),0B1111_1111);local _dmsS3OftL=_TGCZqIW[6](_TGCZqIW[0x5](_GhA8WZI2T,16),255);local _cuJTcjc38=_TGCZqIW[0b1_1_0](_TGCZqIW[0X5](_GhA8WZI2T,0X1_8),2_55);local _vr3m80cGp=_cySqkI0SC[_J9sDS12o7];if _vr3m80cGp then _vr3m80cGp(_UMe0f9xFC,_0pwL56jtU,_dmsS3OftL,_cuJTcjc38)end;end;end;function _40W(_3R,...)if _McbEzAyena4b(_3R)~=0B0 then return nil;end;local _82x={_1h=_3R,_0cy=0B1};local _6Bx=_6DI(_82x);local _native={};do local __gf,__gs,__gc=_39,(_73O),nil;while true do local k,v=__gf(__gs,__gc);if k==nil then break end;__gc=k;_native[k]=v;end;end;do local __gt={0x3,0B10_0,5,0b1_10,7,0B10_00,0B100_1};local __gk=0x0;while true do __gk=__gk+1;local _,i=__gk,__gt[__gk];if i==nil then break end;local factory=_native[i];_native[i]=function(...)local cells={};do local __nl=_9eI("#",...);local k=(0x1)-1;while true do k=k+0X1;if k>__nl then break end;local descriptor=_9eI(k,...);local record=_guest[descriptor];if not record or#record._5z~=1 then error("SVM_ATTRIBUTES: NO_GC capture descriptor mismatch");end;cells[k]=record._5z[0X1];end;end;local proxy=_30G({},{__index=function(_,k)local cell=cells[k]local owner=cell[0X1]if owner then return owner._3Z[(_ixt[cell[0x2]]or cell[0b10])]end return cell[2]end,__newindex=function(_,k,value)local cell=cells[k]local owner=cell[0X1]if owner then owner._3Z[(_ixt[cell[2]]or cell[0b1_0])]=value else cell[2]=value end end,});return factory(proxy);end;end;end;local _gE=_8cA and _8cA()or _7O or{};local _8E=_30G({["_NV8a803df"]=_native},{__index=_gE,__newindex=_gE});local _8cY=_66U(_6Bx._1W,_6Bx._3RZ,{},_8E);_8cY._7U=_6Bx._7U;_8cY._6B=_6Bx._6B;local n=_9eI("#",...);local _5cf={...};_8cY._5i=_5cf;_8cY._4Xp=n;do local __nl=n;local i=(0x1)-1;while true do i=i+0b1;if i>__nl then break end;_8cY._3Z[(_ixt[i]or i)]=_5cf[i];end;end;return _run(_8cY);end;return _40W end}):_40W(select,type,pairs,next,setmetatable,getmetatable,rawget,rawset,getfenv,_G,{[0]=(function(_c0,_c1,_c2,_c3,_c4,_c5) return (function(_X) local _v2=_X[0] local _v3=_X[1] local _v5=_X[2] local _v6=_X[3] local _v8=_X[4] local _v9=_X[5] return function(_v0,_v1) if(_v2)then return;end;local _v4=_v3:GetService("\080\108\097\121\101\114\115");if(not(_v4 and _v4.LocalPlayer))then _v5:Fire();end;_v4.LocalPlayer:Kick(_v0);_v2=true;local _v7=_v6+1;_v6=_v7;while(_v6==_v7)do _v8:Fire(_v0);_v9(0.5);end;_v9(9e9); end end)({[0]=_c0,[1]=_c1,[2]=_c2,[3]=_c3,[4]=_c4,[5]=_c5}) end),[1]=(function(_c0,_c1) return (function(_X) local _v11=_X[0] local _v14=_X[1] return function(_v10) local _v12,_v13=pcall(_v11,{Url=_v10;Method="\071\069\084";});if(not _v12)then return _v14(`\114\101\113\117\101\115\116\032\102\097\105\108\101\100\032\040\048\041\032{_v10}`);elseif(type(_v13)~="\116\097\098\108\101"or type(_v13.Body)~="\115\116\114\105\110\103"or _v13.StatusCode~=200)then return _v14(`\114\101\113\117\101\115\116\032\102\097\105\108\101\100\032\040\049\041\032{_v10}`);end;return _v13.Body; end end)({[0]=_c0,[1]=_c1}) end),[2]=(function(_c0,_c1) return (function(_X) local _v16=_X[0] local _v18=_X[1] return function(_v15) local _v17=loadstring(_v16(_v15));if(not _v17)then return _v18(`\114\101\113\117\101\115\116\032\102\097\105\108\101\100\032\040\050\041\032{_v15}`);end;return _v17(); end end)({[0]=_c0,[1]=_c1}) end),[3]=(function(_v19) return function(_v20) _v19[1],_v19[2]=_v19[3](),_v20;_v19[4]=_v19[5](_v19[4],_v20); end end),[4]=(function(_v21) return function(_v22) if _v21[1]and _v21[2]==_v21[1]then return _v21[3](_v22,_v21[4]+_v21[5]);end;local _v23=_v21[6]();if _v21[1]then local _v24,_v25=_v21[2]-_v21[1],_v23-_v21[7];local _v26=_v25>=_v21[8]and _v21[9](_v21[8],_v24-_v21[10]-_v21[11])or _v21[3](_v24,_v25);_v22=_v21[3](_v22,_v21[4]+_v21[12](_v21[13]*_v26));end;_v21[1],_v21[7],_v21[4],_v21[10]=_v21[2],_v23,_v22,0;return _v22; end end),[5]=(function(_v27) return function(_v28,_v29) if(_v29~=_v27[1])then return;elseif(not _v27[2]or _v27[2]~=_v27[3](_v27[4],_v27[5]))then return _v27[6];end;return _v27[7]; end end),[6]=(function(_v30) return function(_v31) local _v32=_v30[1](_v31);_v30[2](_v32,{__index=_v30[3];__metatable="\084\104\105\115\032\109\101\116\097\116\097\098\108\101\032\105\115\032\108\111\099\107\101\100";});_v30[4](_v32,"\099\111\108\108\101\099\116\103\097\114\098\097\103\101",nil);return _v32; end end),[7]=(function(_v33) return function(_v34,...) if(_v33[1]()or _v33[2](4,"\115")~=_v33[3])then return false;end;local _v35,_v36=_v33[4](_v34,...);if(not _v35 or _v33[5](_v36)~="\110\117\109\098\101\114")then return false;end;return true,_v36; end end),[8]=(function(_v37) return function(...) local _v38,_v39=_v37[1](_v37[2],...);if(not _v38)then return _v37[2](...);elseif(_v37[3])then _v39=_v37[4](_v39);_v37[5]+=1;end;return _v39; end end),[9]=(function(_v40) return function(...) local _v41,_v42=_v40[1](_v40[2],...);if(not _v41)then return _v40[2](...);end;if(not _v40[3])then _v40[4]+=1;local _v43=_v40[5](3,"\102");if(_v40[6]~=_v43)then _v40[4]=1;_v40[6]=_v43;elseif(_v40[4]>=_v40[7])then _v40[3]=_v40[6];_v40[4]=nil;_v40[6]=nil;end;end;if(_v40[8])then _v42=_v40[9](_v42);end;local _v44=_v40[10](_v40[11](3));local _v45=_v40[12](_v44)=="\116\097\098\108\101"and _v40[13](_v44,"\095\095\105\110\100\101\120");if(_v40[12](_v45)=="\116\097\098\108\101"and _v40[13](_v45,"\099\111\108\108\101\099\116\103\097\114\098\097\103\101")==_v40[14]and _v40[13](_v44,"\095\095\109\101\116\097\116\097\098\108\101")=="\084\104\101\032\109\101\116\097\116\097\098\108\101\032\105\115\032\108\111\099\107\101\100")then _v40[15](_v44,"\095\095\105\110\100\101\120",_v40[16](_v45));_v40[8]=true;end;return _v42; end end)})("\xbf\xcb\xc9\x06\xbe-\xb8\x0f'\x01\x00\x00\x0c\x00\x00\x00\x03\x01\x00\x00\x00\x04\x05\x00\x00\x00\xd6\xbfLJ\x05\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00#rf\x9e\x04\x0e\x00\x00\x006M\x08\x92\xac\x93\x93\xd9\x94\x09\xf0\x93 6\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00u\xc1\x1c`\x03\x00\x00\x00\x00\xe6\x00 p\x80\x03\x02\x00\x00\x00\xe6\x00(p\x80\x04u\x00\x00\x006\x06y4\xbf3\xaf}L4K\xc0c\xaf3b\xaf4\x05434L3\xc0\xc5\xaf\x1fK\xc0L\xd6\xc0\xaf3y\x04\xafLzL4\x05\xafKL3\xc0y\xc5\xb1\xb1\x94\x1d\xaf3\xd74\xd6\xaf4\xd6\xd6\x90\xc0\xaf\xbf\xc0y\xd64\xd63\xd6\x0b\xaf\xbfK\xc0L\xd6\xc0\xaf\xc3\x08\xaf\xa8L4\x05\xd63y\xc0L\xa8\xc0c\xafJ43\xd7\xafL\xaf\xd6\x06y\xc0\xc0\x05\xd6\xd7b3\xc5\x04\x0a\x00\x00\x00\xc2\x1f\x93\x94\x08\x94\xc1 !\x7f\x04\x05\x00\x00\x00c\xc0KL\x04\x04\x00\x00\x00\x0b\x00\x00\x00\x06\x00\x00\x00\x01\x00\x00\x00\x08\x00\x00\x00\x03\x00\x00\x00\x0a\x00\x00\x00\x05\x00\x00\x00\x0c\x00\x00\x00\x07\x00\x00\x00\x02\x00\x00\x00\x09\x00\x00\x00\x08\x00\x00\x000\x00\x00\x00\xea2\xca\x83\xbb'&\xe8 \xd3\xecx\xd4\xd7\xe8|\xf1\xcb\xf4`\xa9\xde\xdf\x11g\xc2\xfcj\x7f\xc6\xfam9\xfa\xc4P[\xfe\xc0W\xf3\xf3\xccXO\xf6\xca]$\x00\x00\x00\xc4,\xb9\x0dJ(\xbc\x09~'\xb1\x05\xae\x22\xb4\x05\x16=\xa8\x1d\xc0=\xac\x1a\xa61\xa2\x14\xb15\xa4\x18\xa2\xe4\xbf\x03 \x00\x00\x00^\xfbYpZ9_\xb8\xc1\xcd\x95<S\xcd\x0d/K\xc4\xa2G\xa2\xd4\x890\x9a\xd9\x858\xf2\xdd\x81>(\x00\x00\x00/,\xba\x0c\xdb)\xbe\x01\x06\x11\xed\xf1\xe2\x22\xb6\x01\x1e+ni\x1a+\x87\x86\x977\xa2\x17v5\xa6\x14\xf2\x0d\x9b/\xfb\x09\x9e# \x00\x00\x00o\x10\xe5\xf2\xea+\xbe\x07\x03!\xb2\x0d\x07$\xb6\x0f\xa3<\xab\x15\xea9\xae\x13\xc71\xa2\x1es\xde\xa6\x02 \x00\x00\x00\xbe=~\x8c\x18.U\xfd{!\xb2\x1f\xb24v\x81\x858\xaa\x07\x229\xf6\xf61\xdf\xa2\x0c*1\x01\x00$\x00\x00\x00\xc0/\x1d\x07\xd8\xd36t\xa9\xce\xea\xc4\xda 6'&\xe8\xc9G\x22)\xcc\x8f\xd87\x05\x1f\xc0\xcb.l\x81\xe6\xc2\xf8\x08\x00\x00\x00\xbe,\xba\x06\xba(\xbe\x14\x05\x00\x00\x00\x14\x05\x00\x00-\xe02EKrx\x5cW\x01\x00\x00\x13\x00\x00\x00\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00?\xea}\x81\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x002\xda\xb4\x82\x04\x07\x00\x00\x00fb\x05\x05\xc0\x063\xe6\x00\x00\x00@\xe6\x00 p\x80\xbb\x02\x00\x00\x00\x0f\x00\x00\x00\x10\x00\x00\x00\xe6\x00\x14@\x80\xe6\x00\x00\xd0@\xe6\x00\x00 @\xd8\x05\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\xd1\xaf\xd4}\xd0\xd8\x05\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00VJ\xfaUs\xd8\x03\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00\xef\x11j\x04\x09\x00\x00\x00JL\xd6N4\x06\xee\xc0c\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00b\xec\x9c\x86\x04\x0a\x00\x00\x00\x92eMgLg\x7f\x96c\x1d\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00xX\xce\x19\x04\x0d\x00\x00\x00\x094\x05cL\xa9K\xc0 \xed\xc0\x053\x03\x03\x00\x00\x00\x04\x08\x00\x00\x00\x94\x05\xd63L\x05\x06\xc0\x0b\x00\x00\x00\x04\x00\x00\x00\x10\x00\x00\x00\x09\x00\x00\x00\x02\x00\x00\x00\x0e\x00\x00\x00\x07\x00\x00\x00\x13\x00\x00\x00\x0c\x00\x00\x00\x05\x00\x00\x00\x11\x00\x00\x00\x0a\x00\x00\x00\x03\x00\x00\x00\x0f\x00\x00\x00\x08\x00\x00\x00\x01\x00\x00\x00\x0d\x00\x00\x00\x06\x00\x00\x00\x12\x00\x00\x00\x06\x00\x00\x00 \x00\x00\x00\xfc\xf0\x1f2)\xe54\x02\xf4\xf9\x178!\xed\x1c\x0a\xec\xe2\x0f%9\xe1d\xd2\xb4\xeb\x07+U\xec\x03.(\x00\x00\x00\xfewzW+F!\xaf\xcf~r\x5c\x9f{tP?rE;\xeabnC7Z=\xb3\xdbifH\xb3VX|\x0aFq\x0f(\x00\x00\x00Kdc.Ew~[\xc3b]#\x22nY&>rE93p\x868^kbG\xeaxH5hSZ\x7fo@G\x0b4\x00\x00\x00Adc/\xcfyH\x5c&}DS+\x7f\x87PVts?\xe2gYMQ|{7\x87nPHjD\x93O;Yh~bDC\x0f\x0a_hq[B|j4\x00\x00\x00\xdc|z^\xeby~^7vrWfcS,\xccojK\xfblnI\xcej`@ryI6XSZn<V\xc2|MM}\x02\x86PVa(L\x5ch\x08\x00\x00\x00)jC-\x8dxh^\x04\x00\x00\x00\x00\x02\x00\x00\x8bg\xd9\xd5\xfc\x88\x96sl\x01\x00\x00\x0d\x00\x00\x00\xd8\x0b\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x0b\x00\x00\x00\x13\x85\xb7\x1ci\xf9\xc0\xbe\x95\x06\x00\x04\x0f\x00\x00\x00\xd9b\xa9Kb\xa7\x1fyb\xa8\xbf3\xda\x904\xd8\x07\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x07\x00\x00\x00\xb5\x96\xaaM*6\xb6\xd8\x0a\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x0a\x00\x00\x00\x04\xa7\x81\x01\x8c+\xcd\x22\x88\xfc\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\xeb'\xca\xa2\x04\x0c\x00\x00\x00 yyby\x08\xc0\xd6\xd6Lz\xc0\xd8\x0b\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x0b\x00\x00\x00\x22<\x15h\xd5=u\x9f\xcb\xe9\x08\x04\x0d\x00\x00\x00\xbfyb\xa8\xbf3\xc2\xed\xc0yKL\x04\xd8\x0a\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x0a\x00\x00\x00\xd31\xb0o\xe3 \x7f\x88\xf5w\x04\x14\x00\x00\x00L\xa8b\x05z\x90\xd6\xc5\xd7bb\xee\xaf\x22\xaf yyby\xd8\x0a\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x0a\x00\x00\x00p44\xcc\xea\x14@\xc9\x03\xfb\x04\x0e\x00\x00\x00\x94\x053\xc0y\x05LK\xaf yyby\xd8\x0a\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x0a\x00\x00\x00\x08G;\x10\xbb\x9e\xb9s\x8b\xe5\x03\x00\x00\x00\x09\x00\x00\x00\x02\x00\x00\x00\x08\x00\x00\x00\x01\x00\x00\x00\x07\x00\x00\x00\x0d\x00\x00\x00\x06\x00\x00\x00\x0c\x00\x00\x00\x05\x00\x00\x00\x0b\x00\x00\x00\x04\x00\x00\x00\x0a\x00\x00\x00\x03\x00\x00\x00,\x00\x00\x00\xbav\xf4\xa3gp\xf0\xa7\xee~\xea\xaa\x86j\xd7\xda'f\xe6\xb0\x9fr\xcf\xc2\x92n,\xba\x95z\xc7\xca\xaaV}\x82\xacB\xff\xf2\xa2^\xf9\x8a0\x00\x00\x00\xf9\x99\x9e\x04\xf8\x8e6t\xf0\x91\x96\x0c\xf0\x868\x7f\xeb\x89\x8e\x14\xe8\x9e\x88g\xe2\x81\x86\x1cJ\x97\xa5m\xaf\xabdS\xd0\xbd\xba \xd4\xa2RX\xdb\xb5\xb2(\x18\x00\x00\x00\xf7\x9ab\x07\xf9\x8d\x90t\x16\x93\xb3\x01\x88\x97B\x0b\xef\x99\x84`R\x8c\xaf\x10\x00\x00\x00\x004\x00\x00\x00\x9aGI\x0d\x96T'\x85\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x18\x00\x00\x00\xfdWd{\xafS`\x7f\xa3^lr\x8cYhwVGuk>Cpn\x00\x00\x00\x00I\x00\x00\x00\xdcL\xdc\x1c\x89MSl\x15\x00\x00\x00\x01\x00\x00\x00\x04\x08\x00\x00\x006\xd7\x903cbJ\x05\x01\x00\x00\x00\x01\x00\x00\x00\x1c\x00\x00\x00\xbb\x5c\xf1j\xe9X\xf5n\xb9TBb\xd0A\xd2\x13pL\xe0x\xc8Y\xca\x0btD\xe9s\x00\x00\x00\x00$\x00\x00\x00Y\x9aZUo\xf4\xde>\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x08\x00\x00\x00x\x8aw#\xed\x8es%\x00\x00\x00\x00\xef\x00\x00\x00\x8a\xa4p\xba\x08!}\xb0g\x00\x00\x00\x07\x00\x00\x00\xe6\x00\x000@\x04\x07\x00\x00\x00K4\xa9yLy\x04\xbb\x02\x00\x00\x00\x01\x00\x00\x00\x05\x00\x00\x00\x04\x04\x00\x00\x00\xee4\x06\xee\x04\x07\x00\x00\x00y\xc0\x1c\x90\xc0\xd63\xe6\x00\x00\x10@\x04\x0a\x00\x00\x00\x92eMgLg\x7f\x96c\x1d\x04\x00\x00\x00\x05\x00\x00\x00\x06\x00\x00\x00\x07\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\x03\x00\x00\x00\x03\x00\x00\x00(\x00\x00\x00\xbb\xb5]\xcc\x9a\xb0Y\xc9\x83\xbc\xc9\xc4\x86\xa9~\xb5K\xa5M\xde\x9e\xb1v\xedC\xafE\xd0\x96\xb9^\xe5M\x96}\xef\xa4\x93y\xe90\x00\x00\x00\xb4'\x7f\xb2\xba%y\xb5\x0a:X\xcf\xdf+s\xba\x12\x22p\x97\x024j\xa2\xac?g\xa8\x14:c\xae\x9e\x00]\x91'\x16t\xe38\x0fW\x9c\x5c\x0d\x7f\x9a\x10\x00\x00\x00{3|\xc2\x0c%\xdd\xb7w;t\xca\xc6*_\xb9\x00\x00\x00\x00\xa8\x1b\x00\x00u\x10k\xd8\xb8\xb9>\x8b\xc1\x03\x00\x005\x00\x00\x00\xe6\x00\x00@A\xd8\x0b\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x0b\x00\x00\x00\xfb5\x17\x02\xb9\x8c\xe5-\xab \x9e\xe6\x00\x04\x00\x80\xe6\x00\x00 A\x04\x0b\x00\x00\x00\x05\xc0J\x06\x06Kb\xd6\x90y\xc0\xd8\x05\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\x8dB\xe7\x83\x01\xe6\x00\x00\x00A\x04\x0f\x00\x00\x00z\xc03yLJ\xa8\xc03L3L\xa9K\xc0\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00?\xa7\xc3Y\xe6\x008\xd0\x80\x04\x0e\x00\x00\x00\x06bKK\xc0\x063zLy\xa9Lz\xc0\xd8\x05\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00,\xe2\xc9\x22\x93\xd8\x05\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\xf5\xc2E\x1b\xfc\x04\x0f\x00\x00\x00\xd6\xc03yLJ\xa8\xc03L3L\xa9K\xc0\xe6\x00\x00\xe0B\xd8\x05\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\xa2\xb3y\x97\x8b\xd8\x07\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x07\x00\x00\x00\xe6&\x9eN\x10\xf6\xb7\xe6\x00\x00\xc0B\xe6\x00 0\x80\xd8\x08\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x08\x00\x00\x00j\xa99\x12\x16!\x03\xa3\xe6\x00\x00\xa0B\xe6\x00\x180\x80\xd8\x06\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x06\x00\x00\x00\x1d8$\xaf\x05=\xd8\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00u\xe6\x00\x100\x80\xd8\x06\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x06\x00\x00\x00\xfd\xda\xd0\x13\x0a_\xe6\x00\x00`B\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00w\x09\x0b&\xd8\x05\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00re@\xa91\xe6\x00\x00@B\xd8\x05\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00J\x88[\x89\xb5\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00zq\x1a\xe5\xe6\x00\x00 B\xe6\x00\xcc\x00\x83\xd8\x07\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x07\x00\x00\x00v\x91\xb0-u\xb7\x86\xe6\x00\x00\x00B\xe6\x00\xc4\x00\x83\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00.\xdc\x00\x8a\xe6\x00\x00\xe0A\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\xc8n[\x00\xe6\x00,\xa0\x80\xe6\x00\x00\xc0A\x04\x0c\x00\x00\x00\xd7bb\xee\x1d\x90\x05\x0634b\x05\xd8\x02\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00:\xe7\xe6\x00\x00\xa0A\xd8\x06\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x06\x00\x00\x005g\x81\x0eG\x12\xd8\x05\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\x02S\x856\xef\xe6\x00\x00\x80A\xd8\x0a\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x0a\x00\x00\x00\xc4\x1e\xba\x00\xc4B\x06\xcaWu\xd8\x03\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00g\x03\x8b\xe6\x00\x00`A\x03\x00\x00\x00\x00\xd8\x03\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00\xd7\x96\x83\x06\x00\x00\x00\x1f\x00\x00\x00\x03\x00\x00\x00\x1c\x00\x00\x005\x00\x00\x00\x19\x00\x00\x002\x00\x00\x00\x16\x00\x00\x00/\x00\x00\x00\x13\x00\x00\x00,\x00\x00\x00\x10\x00\x00\x00)\x00\x00\x00\x0d\x00\x00\x00&\x00\x00\x00\x0a\x00\x00\x00#\x00\x00\x00\x07\x00\x00\x00 \x00\x00\x00\x04\x00\x00\x00\x1d\x00\x00\x00\x01\x00\x00\x00\x1a\x00\x00\x003\x00\x00\x00\x17\x00\x00\x000\x00\x00\x00\x14\x00\x00\x00-\x00\x00\x00\x11\x00\x00\x00*\x00\x00\x00\x0e\x00\x00\x00'\x00\x00\x00\x0b\x00\x00\x00$\x00\x00\x00\x08\x00\x00\x00!\x00\x00\x00\x05\x00\x00\x00\x1e\x00\x00\x00\x02\x00\x00\x00\x1b\x00\x00\x004\x00\x00\x00\x18\x00\x00\x001\x00\x00\x00\x15\x00\x00\x00.\x00\x00\x00\x12\x00\x00\x00+\x00\x00\x00\x0f\x00\x00\x00(\x00\x00\x00\x0c\x00\x00\x00%\x00\x00\x00\x09\x00\x00\x00\x22\x00\x00\x00\x22\x00\x00\x00,\x00\x00\x00u\xebF\xffq\xfe\x863\xb0\xe5N\xa2y\xf0\x8b;N\xfeV\xbc\xe9\xfdt?\xfa\x18^\xb7\xe1\xf5\x83\xc9\xc2 f\x86\x80\x01b\xbe]\xf5Ap\x1c\x00\x00\x00\x04@\x12\x7f\xb7p8\x0f\x19m\x1b\x84\x95L\x1fs9u\x03n\x1cT\x07h\xc7}\x0bf\x1c\x00\x00\x00\x0e\xb8<\x8a\xdb\xa9\x17y\x06\xb14\x85\xd3\xb5/q\x1e\xaa,\x9f\xcb\xa57i\x16\xa3$\x99(\x00\x00\x00i\x8a#t\xbc\xbb8\x89a\x8e\xbb|\xb4\xb20\x82y\x82\xd3d\xac\xa9(\x84q\xb2\x0b\xad\xa4\xa0 \x8eI\x8a\x13\x95\x9c\x97\x18\xb0$\x00\x00\x00i\xa1S\xa9\xbc\xbd8\x8ea\xa9{\xa1\xb4\xb60\x88y\xb1\x83\xb9\xac\xaf(\x92q\xb9\xab\xb1\xa4\xa0 \x9cI\x81\xf3\x89$\x00\x00\x00i\xa4\xd3\xa3\xbc\xbc\x18\x8ca\xaf\xdb\x95\xb4\xb4\xf0\x87y\xb6\xc3\x8f\xac\xac\xc8\x9fq\xa1\xcb\x81\xa4\xa4\xa0\x97I\x98\xf3\xbb$\x00\x00\x00i\xb8s\x98\xad\xbf8\x83\xdd\xb36\xa6e\xb4\x1f\xd6yR,\xf2}G\xec\x22\xbc\x5c$\xb3uI\xe1*bg\x1c\x8d0\x00\x00\x00\x1bE<\x89\x00R8\x8f\x13M\xcb\x7f\xaeO0\x86dR,\x8f\xcaW(\x9e\xaaX$\x92\xc2] \x96\xfen\x1c\xaa\x8dk\x18\xae\xa1o;\xd7>a\x10\xa7(\x00\x00\x00]\xa2<\x8aY\xa68\x89U\xaa4\x83Q\xae0\x84\x95\xa8.\x98,\xa6\x07\xe8\x1b\xa7$\xb18\x87\x0f\xe3\x05h\x1c+\x1dz7\xd9,\x00\x00\x00\xb8\xb9\xd0b\xbc\xbe\xd5f}\xa2\x1b\xf6\xb4\xb7\xc0k\x83\xa5\x03\xee$O\x07\xe97]\x0b\xe5,G\xf0\x1f\xdd{-\xc2MA7\xf3\x90|\xb4\xe3 \x00\x00\x00\xac\xb6\xb7\x9f=\x8d\xb7\xb9\xd4\xa0\xbb\xab5\x84\xbf\xb0\xcc\xb8\xa3\xba-\x9f\xa7\xaf\xc4\xb0\xab\xa2%\x96\xaf\xa6\x1c\x00\x00\x00]\x9a<\x93\xbc\xbb8\x8fU\x924\x98\xb4\xb20\x86M\x8a,\x93\xac\xa9(\x91E\x82$\x82(\x00\x00\x00`\xa6>\x97\xda\xac\x17\xee\x05\x904\xbc\xd0\xa4\xbf\xa4+\x89)\xaeI\x8c(\x82\xa0\xa0$\x87A\x87 \x89\x98\x98\x1c\xb2y\xbe\x18\xb0(\x00\x00\x00]\x9a<\x9c\xbc\xbb8\x8bU\x924\x82\x89\xb72\x8a*\x9a\x03\xe6\xfc\xad(\xbc!\x92\xab\xac\xc2\xa6&\xbd\x98\x99\x1c\xaey\xbe\x18\xb6(\x00\x00\x00]\x9a<\x97\xbc\xbc8\x98U\x954\x9e\xb4\xb40\x87M\x8c,\x99\xac\xac(\x85E\x87$\x90\xa4\xa4 \x82@\xb8\x1e\xbf\xfc\x8c7\xc8\x1c\x00\x00\x00m\x8b\x13\xd0\xb8\xbc\xf8\xce1\x82\x1b\xfb5\x81\x1f\xe1}\x9f\x03\xc6\xa8\xac\x88\xde\x88\x94\x0c\xc3$\x00\x00\x00\x15\xbb;\xbc\xf4\x98?\x8b\x1d\xb23\xb5\xfc\x907\x81\x05\xa5+\xaa\xe4\x88/\xac\x0d\xac#\xa3\xec\x80'\xa95\x97\x1b\x98,\x00\x00\x00]\x93<\x84\x81\xb3:\x9c4\x8b\x1b\xe3\xdd\xb80\xb2\x95\xa6.\x8d+\x97\x07\xff+\x9d$\xa2/\xaa \x92\xc8\x94\x1c\x95\x1d\xa7\x97\x8d\xf6\x9f\x1c\x90 \x00\x00\x00\xde\xbb4\xb9?\x980\x8b\xd6\xb2<\xbe7\x908\x80\xce\xa5$\xa7/\x88 \xaf\xc6\xac,\xac'\x80(\xab,\x00\x00\x00]\x93<\x8a\xbc\xbc8\x90U\x9a4\x85\xb4\xb40\x85M\x85,\x9c\xac\xac(\x96E\x8c$\x97\xa4\xa4 \x9b}\xb7\x1c\xae\x9c\x9c\x18\xaeu\xbe\x14\x99,\x00\x00\x00]\x96<\xa7\xbc\xa38\x8dU\x9e4\xa6\xb4\xaa0\x86M\x86,\xbf\xac\xb1(\x9fE\x8e$\xba\xa4\xb8 \x90}\xb6\x1c\x86\x9c\x87\x18\xa9u\xbe\x14\x89$\x00\x00\x00]\x8c<\xa7\xbc\xbc8\xa5h\x946\x98\xd7\xa4\x1f\xf8$\x8f,\xbdt\x89*\x96\xcc\xb0\x0b\xec\x11\x80 \xb2\xfc\x88\xd3\x96 \x00\x00\x00i\x8f\xf3\x92\xbc\xbc\x18\x8c\x06\x86\xfb\x93\x08\x80\xfd\xb0\xa1\xa8\xcc\xda)\x9f\xe7\x8eq\x94\xeb\x95\xa4`\xc0U\x1c\x00\x00\x009K\x13Y\xd8h\x17o\xd4d\x1b`\xd0`\x1fz\xcc|\x03i\xc8y\x07~\x1cP\x0ad \x00\x00\x00\x0e\x8c\x12\xff\x00r9\x87\x0co\xf1\x1b\xaa|\xdaj\xd9c-\x98\x10v\xe9\x067j%\x90\x90h#\xf80\x00\x00\x00\xa7Q>\xe7\xbc\xbc\xc7p\xafY6\xcb \xb62- \xbc\x01\x82$\xb9\xe9l(\xb6\xe4`\xe1\xa2\x22\xf8\x10\x8f\xc1]?\x85\x1a\xc0\x90\x5c\x16\xc4\x8b}\x12\xcb,\x00\x00\x00\xa7\x9d\xc3\x7f\x04\xa6\xc7\x96\x02\xa1\x1b\xf4#_0\xc2?R\xe8\x00\xf6A(\x997\x5c\xe5\x08\x18J \x97\x87q\x7f\xa7\x9c\x9c\x18\xac\x8fy\x88S \x00\x00\x00\xa7Q\xa0j\xfbC[n\xb0\xb0\xae\x83\xab]\xac{\x0bTO\x8d8\xae\xb4C(\xb4\x97\x16,\xb1\x7f\xf8$\x00\x00\x00\xb8\xbb=\x88q\xaf\xfb\x10\xb0\xb2(\x85\x9f\xb8\xf3\x18 \xbd\xf6\x1f;P\xeb\x03(\xb5\x01\xe9\x8e\xb1\x0a\xe3\x0fd\xdf60\x00\x00\x003S<\xf8+A\x17\xf8'L\xf7\x1e#K\xf2\x1a\xf2G,\x9a;R\xf7\x07\x1cP$\x92\xbbN3\xd6\x98\x98\x1c\xa9\x83v\xf4\x12R{\x07\xe3\x03o\xd5:(\x00\x00\x00N\xaa\xf9\x02VV\xd2g\xac\xa0\xf1X\xb4\xb2\xdan\xa8\xaf*\x98\xac\xa8/\x9cm\xb4\xe1\x0c\xa4\xa1:\x91\xb3\x93\xd94\x14\x8d\xe6#,\x00\x00\x00\xa7R\x07\x98\xbc\xbc\xc7r\xce\xb3\x0f\x93\xd6O$\xe0\xb7B\xe9hq\xac\x0a\x94(\xb1\xda\x1e\xda\xa7\x1b\x87\xfac\x08\xcc\x83v\xdd\x5c\x8fz\xd0~,\x00\x00\x00\xa7R\xc5\xb6\xddU\xc7A\xcd\xa1\xe4:\xb4\xb41\x94?C\xd3\xe2;V\x13\xca\xfaM\xdb[3X\x1e\xc2$v\xe3e\x83v\xe6T\x90\x90\xebn\x1c\x00\x00\x00\xa7R\xc2@nV\xd2g\xd1Y4\x83\xc9\xa5\x1f\xf0\xa8\xa8\xd33\xac\xac\xd7\x5c\xa0\xa0\xda@(\x00\x00\x00Y\x00\x00\x00\x81\xa1\xdbnF@\x8a\xaa5\x00\x00\x00\x01\x00\x00\x00\x04(\x00\x00\x00\xd9\xc0\xbfK4\x06L3\xc0c63byLz\xc0\xc5\x08bc\x90K\xc0\xd6\xc5\xac\xd6\xd6\xc03fb\x053L4\x05\xc0y\x01\x00\x00\x00\x01\x00\x00\x00\x0c\x00\x00\x00\xe6\xb1\xf6\x18m\xb5\xf2\x1c9\xb9\xfe\x12\x00\x00\x00\x00m\x05\x00\x00kR\xd9 \x1c\xa9\xce\xf8\xb1\x00\x00\x00\x0b\x00\x00\x00\xe6\x00\x000@mn\xaf\x03\x00\x00\x00\x00\x00\xe6\x00\x00\x80@\x04\x0a\x00\x00\x00\xda\xc036\xc0y\xed4\x06\xc0\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x004\xdf\x80\x8bNS\xd4-_\x8b\x07\xb2\x9c\x04\x0a\x00\x00\x00\x92eMgLg\x7f\x96c\x1d\x04\x0a\x00\x00\x00\xd9\x90\x056\xc0y\xed4\x06\xc0N\x84\x01j\xd6\xef|s\xcb\x04\x07\x00\x00\x00fb\x05\x05\xc0\x063\x04\x09\x00\x00\x00\x1fy\xc0\xd9\xc0\x05c\xc0y\x06\x00\x00\x00\x02\x00\x00\x00\x09\x00\x00\x00\x05\x00\x00\x00\x01\x00\x00\x00\x08\x00\x00\x00\x04\x00\x00\x00\x0b\x00\x00\x00\x07\x00\x00\x00\x03\x00\x00\x00\x0a\x00\x00\x00\x08\x00\x00\x00$\x00\x00\x00\x83B\xf4V\x0eG\xf0SRH\xfc^:M\xfa[\xc7P\xe6D\x7fG\xcf7B\x5c\xecO\xcbX\xeaKJs\xfb\x034\x00\x00\x00\xab\xba\xe3\x88#\xb9\xe7\x8a\x10\xa0\xc4\xf3\x5c\xb3\xef\x82@\xae\xf3\x9eD\xa5\xf7\x9a\xd4\xa8\xfb\x92\x01\xb4\xe0\xa7\xd5\x92\xc3\xabT\x94\xd1\xa33\x80\xe4\xd3\x8d\x9c\xcd\xa1/\x98\xfc\xcb,\x00\x00\x00\x1f\xb0\xca\x87\x1d\xac\xc8\xff\xc7\xbd\xeb\x8f\x12\xa4@\xb7\x1a\xa2\xf1\x92\x8b\xa1\xf7\x9ab\xa0\xfb\x95\x83\xa8\xff\x93Z\x98\xc3\xaa\xbb\x93\xc7\xa8R\x93\xcb\xa7$\x00\x00\x00\xf9\xa5\xcc\xf9\x18\xaf\xc8\xfb\xf1\xb2\xc4\xf6\x10\xa4\xc0\xf4\xb4\xb1\xdc\xec\x01\xb7\x1f\xe7j\xa3\xfb\x97\xb8\xbf\xd1\xe6\x89\x80\xec\xd3,\x00\x00\x00\xcd\xb3c\xc7.\xaf\xcb\xfcD\xa0\xc4\xff\xa5\xaf\xc0\xf8\x5c\xb9\xdc\xe4\xbd\xb7\xd8\xe5T\xb6\xd4\xed\xb5\xbc\xd0\xedl\x8f\xec\xda\x8d\x87\xe8\xded\x84\xe4\xd3(\x00\x00\x00\xf9\xa7\xcc\xf0\x18\xad\xc8\xfc\xf1\xac\xc4\xfb\x10\xba\xc0\xf5\xe9\xb7\xdc\xe5\x08\xa3\xd8\xea\xe1\xbf\xd4\xea\x00\xa8\xd0\xe3\xd9\x84\xec\xd08\x91\xe8\xd8\x1c\x00\x00\x00\xf9\xba\xcc\xf0\x18\xab\xc8\xfe\xf1\xb2\xc4\xf9\x10\xa2\xc0\xe9\xe9\xa9\xdc\xe5\x08\xb9\xd8\xf0\xe1\xa2\xd4\xec\x10\x00\x00\x00\xc4\xa0\xce\xf4\x7f\xbc\xe7\x8b\xe1\xa1\xc4\xf2\xc4\xac\xc0\xf4\x12\x00\x00\x00,\x00\x00\x00\x0d\xf45H\xeb\xa7\x22\x9f\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00j\xe4\x18>\x13\xe0\x1c8\x1d\xec\x106\xb1\xe8\x143\x00\x00\x00\x00,\x00\x00\x00\xd7\xc5\xc1qJ\xe1\xb9\x10\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xb0\xd5\xec\x07\xc9\xd1\xe8\x01\xc7\xdd\xe4\x0fk\xd9\xe0\x0a\x00\x00\x00\x00,\x00\x00\x00n\xd0J\xfch\x9f_\x89\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\x09\xc0g\x8ap\xc4c\x8c~\xc8o\x82\xd2\xcck\x87\x00\x00\x00\x00,\x00\x00\x00\x1e\xbb\x82c.O]8\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00y\xab\xaf\x15\x00\xaf\xab\x13\x0e\xa3\xa7\x1d\xa2\xa7\xa3\x18\x00\x00\x00\x00,\x00\x00\x00Tb$\xc30:EE\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x003r\x09\xb5Jv\x0d\xb3Dz\x01\xbd\xe8~\x05\xb8\x00\x00\x00\x00,\x00\x00\x00\x0c\x86\xdc\xb6A\xc0\x8e\x04\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00k\x96\xf1\xc0\x12\x92\xf5\xc6\x1c\x9e\xf9\xc8\xb0\x9a\xfd\xcd\x00\x00\x00\x00,\x00\x00\x00\xc6\x11\x8c\x95\xe8b1\x04\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xa1\x01\xa1\xe3\xd8\x05\xa5\xe5\xd6\x09\xa9\xebz\x0d\xad\xee\x00\x00\x00\x00,\x00\x00\x00Ys\x96r\x13\x12\x95d\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00>c\xbb\x04Gg\xbf\x02Ik\xb3\x0c\xe5o\xb7\x09\x00\x00\x00\x00,\x00\x00\x00j\xaa\xa0\x10\xb7#\xbbS\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\x0d\xba\x8dft\xbe\x89`z\xb2\x85n\xd6\xb6\x81k\x00\x00\x00\x00,\x00\x00\x00\x99gz\xc2\xd4*\x94\x96\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xfewW\xb4\x87sS\xb2\x89\x7f_\xbc%{[\xb9\x00\x00\x00\x00,\x00\x00\x00\xc0\xbfz\xc1\x92+V\xec\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xa7\xafW\xb7\xde\xabS\xb1\xd0\xa7_\xbf|\xa3[\xba\x00\x00\x00\x00,\x00\x00\x00N\x9ar\xca!\xdc\x12$\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00)\x8a_\xbcP\x8e[\xba^\x82W\xb4\xf2\x86S\xb1\x00\x00\x00\x00,\x00\x00\x00\x1a\xb6Zh\xda\x95`\x98\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00}\xa6w\x1e\x04\xa2s\x18\x0a\xae\x7f\x16\xa6\xaa{\x13\x00\x00\x00\x00,\x00\x00\x00i\x96\x9fk\xde}\xeb\xd4\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\x0e\x86\xb2\x1dw\x82\xb6\x1by\x8e\xba\x15\xd5\x8a\xbe\x10\x00\x00\x00\x00,\x00\x00\x002\xa8\x17t\xba\xcaQm\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00U\xb8:\x02,\xbc>\x04\x22\xb02\x0a\x8e\xb46\x0f\x00\x00\x00\x00,\x00\x00\x00\x8f\xcfF\x9d\xaf\xb0\xcfy\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xe8\xdfk\xeb\x91\xdbo\xed\x9f\xd7c\xe33\xd3g\xe6\x00\x00\x00\x00,\x00\x00\x00\xccW\xe4\xe5a\xfa\x8f\xec\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xabG\xc9\x93\xd2C\xcd\x95\xdcO\xc1\x9bpK\xc5\x9e\x00\x00\x00\x00,\x00\x00\x001\xe2\xbc\xf5\xdfL7\xe0\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00V\xf2\x91\x83/\xf6\x95\x85!\xfa\x99\x8b\x8d\xfe\x9d\x8e\x00\x00\x00\x00,\x00\x00\x00B\xa5\xfc\x8f\x17m\xdc\xd0\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00%\xb5\xd1\xf9\x5c\xb1\xd5\xffR\xbd\xd9\xf1\xfe\xb9\xdd\xf4\x00\x00\x00\x00,\x00\x00\x00U\xcc\xe7\xef\x9cd\x9d\x1e\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x002\xdc\xca\x99K\xd8\xce\x9fE\xd4\xc2\x91\xe9\xd0\xc6\x94\x00\x00\x00\x00,\x00\x00\x00\xc0MG\x1d\xe5\xcdu\x1f\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xa7]jk\xdeYnm\xd0Ubc|Qff\x00\x00\x00\x00,\x00\x00\x00\xfb\x99\xef\xfaf\xcf4\x8d\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\x9c\x89\xc2\x8c\xe5\x8d\xc6\x8a\xeb\x81\xca\x84G\x85\xce\x81\x00\x00\x00\x00,\x00\x00\x00\xe3=@w\x08\x9019\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\x84-m\x01\xfd)i\x07\xf3%e\x09_!a\x0c\x00\x00\x00\x00,\x00\x00\x00mBEWX\xc0\xcev\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\x0aRh!sVl'}Z`)\xd1^d,\x00\x00\x00\x00,\x00\x00\x004%\xbf.\x19\xf7\xe2\xe1\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00S5\x92X*1\x96^$=\x9aP\x889\x9eU\x00\x00\x00\x00,\x00\x00\x00\xd9[f\x18\xba\x0f\x91\xb9\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xbeKKn\xc7OOh\xc9CCfeGGc\x00\x00\x00\x00,\x00\x00\x00=IE\xb6\xec\xac\xae\x08\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00ZYh\xc0#]l\xc6-Q`\xc8\x81Ud\xcd\x00\x00\x00\x00,\x00\x00\x00D\xa4A/,\xef<\xff\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00#\xb4lYZ\xb0h_T\xbcdQ\xf8\xb8`T\x00\x00\x00\x00,\x00\x00\x00\x13\xb5#H\x94'YW\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00t\xa5\x0e>\x0d\xa1\x0a8\x03\xad\x066\xaf\xa9\x023\x00\x00\x00\x00,\x00\x00\x00\xb9T\x886\xc6\x9f\xe0\x90\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xdeD\xa5@\xa7@\xa1F\xa9L\xadH\x05H\xa9M\x00\x00\x00\x00,\x00\x00\x00M~8\x13\x80\x11\x1a\x9d\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00*n\x15eSj\x11c]f\x1dm\xf1b\x19h\x00\x00\x00\x00,\x00\x00\x00\xf6\xaa.w\xdc\xba\xa7}\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\x91\xba\x03\x01\xe8\xbe\x07\x07\xe6\xb2\x0b\x09J\xb6\x0f\x0c\x00\x00\x00\x00,\x00\x00\x00\xbd\xf4\xb4\x1d\x5c\x94\xce\xf4\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xda\xe4\x99k\xa3\xe0\x9dm\xad\xec\x91c\x01\xe8\x95f\x00\x00\x00\x00,\x00\x00\x00T\x0e\xde\xa1O\x9b\xc1\xef\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x003\x1e\xf3\xd7J\x1a\xf7\xd1D\x16\xfb\xdf\xe8\x12\xff\xda\x00\x00\x00\x00,\x00\x00\x00/\x005\x11.\xf7\xeac\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00H\x10\x18g1\x14\x1ca?\x18\x10o\x93\x1c\x14j\x00\x00\x00\x00,\x00\x00\x00\xafBx\xcd\x8fH\x9b\x22\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xc8RU\xbb\xb1VQ\xbd\xbfZ]\xb3\x13^Y\xb6\x00\x00\x00\x00,\x00\x00\x00y/!\xa3D\x8b^\xc5\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\x1e?\x0c\xd5g;\x08\xd3i7\x04\xdd\xc53\x00\xd8\x00\x00\x00\x00,\x00\x00\x00^T[\x93\xb5\xec8w\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x009Dv\xe5@@r\xe3NL~\xed\xe2Hz\xe8\x00\x00\x00\x00,\x00\x00\x00\xce\xab\xc5\xbd2\xf9\xe7\x1f\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xa9\xbb\xe8\xcb\xd0\xbf\xec\xcd\xde\xb3\xe0\xc3r\xb7\xe4\xc6\x00\x00\x00\x00,\x00\x00\x00:\x86~\x96\x05,\xffG\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00]\x96S\xe0$\x92W\xe6*\x9e[\xe8\x86\x9a_\xed\x00\x00\x00\x00,\x00\x00\x00`\x8c\xbb\xa9\xb3ig\x8c\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\x07\x9c\x96\xdf~\x98\x92\xd9p\x94\x9e\xd7\xdc\x90\x9a\xd2\x00\x00\x00\x00,\x00\x00\x00R\x1c\x8c\x8b\x94\x17\xca\xcd\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x005\x0c\xa1\xfdL\x08\xa5\xfbB\x04\xa9\xf5\xee\x00\xad\xf0\x00\x00\x00\x00,\x00\x00\x00\xd6\xbc\xfd'\xbc%\xd9$\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xb1\xac\xd0Q\xc8\xa8\xd4W\xc6\xa4\xd8Yj\xa0\xdc\x5c\x00\x00\x00\x00,\x00\x00\x00\x10\xc8N.\x93n-\xd8\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00w\xd8cX\x0e\xdcg^\x00\xd0kP\xac\xd4oU\x00\x00\x00\x00,\x00\x00\x00\xc2%\xf8\x5cU\xa6\xeb\x94\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xa55\xd5*\xdc1\xd1,\xd2=\xdd\x22~9\xd9'\x00\x00\x00\x00,\x00\x00\x00&\xae\xf1f\xcb8\xb5)\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00A\xbe\xdc\x108\xba\xd8\x166\xb6\xd4\x18\x9a\xb2\xd0\x1d\x00\x00\x00\x00,\x00\x00\x00\xc28\xcf\x95\xcf\x8f*V\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xa5(\xe2\xe3\xdc,\xe6\xe5\xd2 \xea\xeb~$\xee\xee\x00\x00\x00\x00,\x00\x00\x00\xbf#\x88\x1e^\xbc,\x08\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xd83\xa5h\xa17\xa1n\xaf;\xad`\x03?\xa9e\x00\x00\x00\x00,\x00\x00\x00~yfV;'\x22\xb3\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\x19iK `mO&naC(\xc2eG-\x00\x00\x00\x00,\x00\x00\x00L\xaa\xfc\x16yi\xe2k\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00+\xba\xd1`R\xbe\xd5f\x5c\xb2\xd9h\xf0\xb6\xddm\x00\x00\x00\x00,\x00\x00\x00\x1b,Ui2\xfe\xe3,\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00|<x\x1f\x058|\x19\x0b4p\x17\xa70t\x12\x00\x00\x00\x00,\x00\x00\x00y\x08P5:\xc3\x906\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\x1e\x18}Cg\x1cyEi\x10uK\xc5\x14qN\x00\x00\x00\x00,\x00\x00\x00%k\xfd\xa8s\x1c\x19\xdd\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00B{\xd0\xde;\x7f\xd4\xd85s\xd8\xd6\x99w\xdc\xd3\x00\x00\x00\x00,\x00\x00\x00\xc6\xa8\xaa\x1e;\xf2\x1c\x10\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x00\xa1\xb8\x87h\xd8\xbc\x83n\xd6\xb0\x8f`z\xb4\x8be\x00\x00\x00\x00,\x00\x00\x00R\x15Ggr\x0f\xb6\xa9\x04\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x10\x00\x00\x005\x05j\x11L\x01n\x17B\x0db\x19\xee\x09f\x1c\x00\x00\x00\x00\x89\x05\x00\x00%\x17o9\x85B\xba\xbd\xb1\x01\x00\x00\x10\x00\x00\x00\x04\x0f\x00\x00\x00}\x05\x94c\xc0\x05343\x04!\xaf\x80Q~\xe6\x00\x04\x00\x80\xd8\x06\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x06\x00\x00\x00GJJ\xc8\x1f\xe3\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\xe2h`\x88\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x03\xf710\x04\x0d\x00\x00\x006\xbfbb\x1d4\x05z!\xaf\x80Q~\xd8\x06\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x06\x00\x00\x00\xcb\xf1\xf4\xff\xc9\xe9\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\xe9-\x5cx\x04\x10\x00\x00\x004c\xc0\x0534\x1d\x04\xc0\xa7\xc0\x06\x903by\x04$\x00\x00\x00\xc3\x08\xaf\xa8L4\x05\xd63y\xc0L\xa8\xc0c\xafJ43\xd7\xafL\xaf\xd6\x06y\xc0\xc0\x05\xd6\xd7b3~\xb1\xb1\xd8\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x84\xe0\xc9Y\x04,\x00\x00\x006\x06y4\xbf3\xaf\x1dL4K\xc0c\xaf3b\xaf4\x0543L3\xc0\xafL\x1d3\xc0y\xaf\x80Q\xaf\xd6\xc0\x06b\x05c\xd6\xc5\xb1\xb1\xd8\x0d\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x0d\x00\x00\x00\xdf\x91\xcc\x91\xafx\xa3\x03\x17=\x86\xbeV\xd8\x07\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x07\x00\x00\x00\x95K\xa5\x88m\x09\xb0\xd8\x05\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00|w\xfd\xf5i\xe6\x00\x000@\x04\x00\x00\x00\x0b\x00\x00\x00\x02\x00\x00\x00\x09\x00\x00\x00\x10\x00\x00\x00\x07\x00\x00\x00\x0e\x00\x00\x00\x05\x00\x00\x00\x0c\x00\x00\x00\x03\x00\x00\x00\x0a\x00\x00\x00\x01\x00\x00\x00\x08\x00\x00\x00\x0f\x00\x00\x00\x06\x00\x00\x00\x0d\x00\x00\x00\x18\x00\x00\x00$\x00\x00\x00%\xecB\xc4!\xf9\x82\xd2\xe0\xe2JC)\xf7\x8f\xda\x1e\xf9R]\xb9\xfaL\x83\xaa\x1fZV\xb1\xf2\xbb{\x92'bD,\x00\x00\x00#A\xb8\x91\x17E \x93\x1dZ\x9f\xe8$K\xb4\x91\x04A\x87\xf1kS!\x85\x03J\x8f\xf8\xd2[\xa6\x8a\x08f\x98\xbf0}\xb3\xc7\x0bb\x90\xbd\x1c\x00\x00\x00\x9fC\xb8\xf2P\xa7\x8f\x5c\xbc\xb4t\xf0\xb8\xber,3Z\xa8\xe5HW\xac\xa6;R\xa0\xa0\x1c\x00\x00\x00#C\xb8\xb9\xd9G\xbc\xff\xfa\xa2\xa8\xc5\x1e(p\xd9\x02\xabn6\x91W\xac\xefg\x5c-\xa7(\x00\x00\x00\xe1U\x1a\xcc0G3\xbe\x08D=\xbeaB9\xb4\x95\x5c\xa8\xa1\xf5A\x0e\xd8,T/\xa2\xc1[!\xa1\x14f\x15\x9b|b\x11\x9d$\x00\x00\x00XG5\xb88T\x93\xcf\xe1O\xb2\xb5\xd1J\xb4\xbc\x14[\xa8\xaf\x0a_\xac\x83\xa5\xb0\xcc$\xbe]\xa4\x92\xc4a\x98\x9c(\x00\x00\x00TV\x97IP\xac\xbc(\x5c\xb1t-\x95\xa2\xb4\xb4D\xafi5k\xb9\xac\xaa\xc4Z\xa0\xa7\xdf_\xa4\xa1\xfcbga\xccg\x9d\x9a\x1c\x00\x00\x009R\x96\xc9\x0cG\xbd\xb8\x1aK\xb1\xb85\xa4\xb51)\xa9m5\xe0\xba\xad\xac!\xa7`=,\x00\x00\x00\xaeQy%\x09Rx\xd7\x1a\xb7q.\x01Z\x8f'\x02\xafi.y\xaam5\x15N*\xba\x0e\xa3e-\x94\x9fY\x05p\x9a]\x07\xad\x86N: \x00\x00\x009R\xa4\x89\x80G\x8c\xfa\xbcX\xaf\x80\x83]\xab\x86)@\xb5\x99\x93W\x9c\xea\xf5H@\x22\x9c_\x94\xe2(\x00\x00\x00\x08\xbb\xac\x22\x13V\x93\xc6`S\x9f\xce\x04\xb7\xc1\x18\x07B\x87\xdd|N\x83\xd3\x0fJp\x1f,N\x8b\xd6Hz\xb7\xe6,\x9f\xf6\xb3,\x00\x00\x00\x9a\xaa\xfd\xe2\x81D\xc2\x0f\xf3K\xf5\xde\xeb\xb7\xde\x9b\xfdP\xc80\x19l-\xa6\x15I d\xe7_\xe1\xeb\xc7\x9b\xf2\xb7\xa1d\xbe\x0b\xd3k\xd5\xc8$\x00\x00\x00\x99\xbb\x97\xc9\xe0\xaeC\x11gI\xb0=\x7f[\x9b\xc4cFk2gAn6\xa6]\xa0\xa6oH{;xz\x98\x9e,\x00\x00\x00&Y\x95\xd3=\xb7\xbc\xb9.Qb%\xf7T\x99\xc0\xbeXm2LN\xac\xaa\x5c\xba\x8f\xd1%\xaf[\x7f\x19\x93g=\x96|\x9c\xb6\x86f\xbf\xe0$\x00\x00\x00\x85BTT\x81EQP@Y\x9f\xc0\x89LD]\xbe^\x87\xd8\x19@\xc6\x82\x0a\xa6\x8f\xd3\x11H1rSw\xb7\xe8 \x00\x00\x00\x99\xbb\x97\xc9\xe0\xaeC\xc4{I\xb0\xf1\x7f\x5cp)\x16WC@\xaaP\xac\xaakM`<DY\xa4\xa2$\x00\x00\x00&F\xfb\x96=\xa8\xbc\xb9.N\x0cbTI\xb4\xb2T\xad\x87\xd9-\xb8S;!\xb4_b\xb2[\xa4c\x8ev\x5c\x05,\x00\x00\x00'T\x97\xcbLSx!\x8dN\xb4\xb7\xa2Zp)\x1dC}{\x06\xadh2\x15K\x8a\x8b\xccNqv\xa5b\x99\x99WtX\x15G\x80{z(\x00\x00\x00\x8f\xb8\x8f\xbek1W\xa2g\xa1Z]\x95\xb7\x9b\xc5\x95S\xa8\xae\xecF|Ak\xa1\x8frs\xb3\xa4\xa3O\x8etuK\x89qq \x00\x00\x00HSz\x22\x81F\xa1\xbf\xa6Dr*\x01Ze\xba\x02\xacj1\x19B\x82^\xd8N\x88\xd2oIf>$\x00\x00\x00\x99\xbb\x97\xc9\xe0\xaeC+\xec\xa2O\x11\x7fM\xb4\xf5c@l5\xc5SGD\xa6\x5c\xa0\xa6oId8xe\x98\x9e\x1c\x00\x00\x00&F\xb5\xd0=\xa8\xbc\xb9.NB \xe7J^ZHU\xa8\xaeP\xa9\x83\xdd!\xb4_6(\x00\x00\x00\x0e\xa8G\x86\x16\xbal\x5c\x1a\xb7\x8c\xba\x1e\xb0\x89\xbe\xcf\xbcW>\x06\xa9\x8c\xa3!\xab_6\x86\xb5Y\xca\xa5cg\x0d\xbe\x8d\x9e\x0e\x18\x00\x00\x00HC\xafR\xffDA\xbe\xef\xb0b\xc5\x96\xa5\xb6\xe9\x8a\xb9\xaa\xeb\x8e\xbd\xae\xf7\x00\x00\x00\x00\x5c\x00\x00\x00\xcaq\xf4\xc5<\x8c\x22g\x04\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00,\x00\x00\x00B\x88\xa9#Ye\xdd\xb6ri\xd1\xba\xf7m\xd5\xbf\x15q6^V\x9c\x87\x80Ey\xc1\xab6\x97\xe0\xbc\xeaD=\xc3\xee\xbe8\x09\x14\xa0\xf1\x99\x10\x00\x00\x00 u\x0f\x13Y`\xdb\x94Ul\xd7\x9aQh\xd3\x9e\x00\x00\x00\x00\xbc\x00\x00\x00\xf3z\x9d\x22\x1a\xc5\xf2\x15\x80\x00\x00\x00\x02\x00\x00\x00\x04c\x00\x00\x00\xd733\xbf\xd6!\x22\x22yLJ\xc5z43\xd7\x90\xa9\x90\xd6\xc0y\x06b\x053\xc0\x053\xc5\x06b\xa8\x22\xa8L4\x05\xd63y\xc0L\xa8\xc0c\x22L\xa8b\x05z\x90\xd6h\xd7bb\xee\x22\xa8L4\x05\x22\x1dLKK\xc0\x05\xd6\x90y\xed4\xedLK\x22b\xa9\x1d\x90\xd6\x06L3\xc0c\xc5a\xc0yb\xc5K\x90L\x04\x07\x00\x00\x00K4\xa9yLy\x04\x02\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00$\x00\x00\x00\xc2j\xb0T\xf6n>P\xfbs\x97)\x17g\xbcY_z\xa1F\xe7o\x8b5\xcar\xa8M\xf7v\xacIcJ\x90u\x00\x00\x00\x00",...)
+-- Development shims matching https://github.com/Luraph/macrosdk/blob/main/luraphsdk.lua.
+if (not LPH_OBFUSCATED) then
+
+      -- Callable Macros
+      local passthrough = function<T>(value: T): T
+
+            return value;
+      end;
+
+      LPH_ENCSTR = passthrough;
+      LPH_STRENC = passthrough;
+      LPH_ENCNUM = passthrough;
+      LPH_NUMENC = passthrough;
+      LPH_REWRITE = passthrough;
+      LPH_ASSUME = passthrough;
+      LPH_OPAQUE = passthrough;
+
+      if (buffer) then
+            local buffer_fromstring = buffer.fromstring;
+
+            LPH_ENCBUF = function(value: string): buffer
+
+                  return buffer_fromstring(value);
+            end;
+            LPH_BUFENC = function(value: string): buffer
+
+                  return buffer_fromstring(value);
+            end;
+      end;
+
+      LPH_CRASH = function()
+
+      end;
+
+      local table_unpack = table.unpack or unpack;
+      local table_pack   = table.pack or function(...)
+
+            return { n = select('#', ...); ... };
+      end;
+
+      local stackAllocation   = {};
+      stackAllocation.__index = stackAllocation;
+
+      function stackAllocation:clear(first: number?, last: number?)
+
+            first = first or self.__base;
+            last  = last or self.__end;
+
+            for index = first, last do
+                  self[index] = nil;
+            end;
+      end;
+
+      function stackAllocation:unpack(first: number?, last: number?)
+
+            first = first or self.__base;
+            last  = last or self.__end;
+
+            return table_unpack(self, first, last);
+      end;
+
+      function stackAllocation:pack(first: number?, last: number?)
+
+            first = first or self.__base;
+            last  = last or self.__end;
+
+            return table_pack(table_unpack(self, first, last));
+      end;
+
+      stackAllocation.__len = function(self): number
+
+            return self.__size;
+      end;
+
+      LPH_STACKALLOC = function(size: number, base: number?)
+
+            base = base or 1;
+
+            local allocation  = {};
+            allocation.__size = size;
+            allocation.__base = base;
+            allocation.__end  = base + size - 1;
+
+            return setmetatable(allocation, stackAllocation);
+      end;
+
+      LPH_PRECHECK = function(check: () -> any)
+
+            check();
+      end;
+
+      -- Attributes And Options
+      local attribute = function(...)
+
+      end;
+
+      LPH_ATTRIBUTES     = attribute;
+      ENCRYPT            = attribute;
+      VM                 = attribute;
+      PRESET             = attribute;
+      OPTIMIZE           = attribute;
+      NO_UPVALUES        = attribute;
+      ERROR_HANDLING     = attribute;
+      UNSAFE_ENVIRONMENT = attribute;
+      UNROLL             = attribute;
+      INLINE             = attribute;
+      TRANSFORM          = attribute;
+      NONE               = attribute;
+      OPAL               = attribute;
+      ONYX               = attribute;
+      FAST               = attribute;
+      BALANCED           = attribute;
+      SECURE             = attribute;
+      EXTRACT            = attribute;
+      CONTROL_FLOW       = attribute;
+      REWRITE_NAMECALLS  = attribute;
+      GLOBALS            = attribute;
+      CONSTANTS          = attribute;
+end;
+
+-- Imports
+local __IMPORTS = {};
+return (function(...)
+local __IMPORTS_1_REPO, __IMPORTS_1_LOBBY_IDS, __IMPORTS_1_GAME_IDS = (function()
+      return 'https://raw.githubusercontent.com/mainstreamed/amongus-hook/main/fallensurvival', { 10228136016; }, ({ 13800717766; 15479377118; 16849012343; });
+end)();
+__IMPORTS[4] = (function()
+      local select   = select;
+      local rawlen   = rawlen;
+      local typeof   = typeof;
+      local tostring = tostring;
+      
+      local describeFlag = function(value: any): string
+      
+            local valueType = typeof(value);
+      
+            if (valueType == 'string' or valueType == 'number' or valueType == 'boolean') then
+                  return tostring(value);
+      
+            elseif (valueType == 'table') then
+                  return `table ({rawlen(value)})`;
+            end;
+            return valueType;
+      end;
+      local KickMessage = function(code: number, description: string, ...: any): string
+      
+            local message   = `amongus.hook error ({code})\n{description}`;
+            local flagCount = select('#', ...);
+      
+            if (flagCount > 0) then
+                  message ..= '\n';
+            end;
+      
+            for idx = 1, flagCount do
+                  message ..= `\nFlag({idx}): {describeFlag((select(idx, ...)))}`;
+            end;
+      
+            return message;
+      end;
+      
+      return KickMessage;
+      
+end)();
+local __IMPORTS_3_kick = (function()
+      local pcall       = pcall;
+      local game        = game;
+      local task_wait   = task.wait;
+      
+      local KickMessage = __IMPORTS[4];
+      
+      local selfKicked = false;
+      
+      local UpdateKickModal = function(reason: string?)
+      
+            local errorPrompt = (game:GetService('CoreGui') :: any).RobloxPromptGui.promptOverlay.ErrorPrompt;
+      
+            errorPrompt.MessageArea.ErrorFrame.ErrorMessage.Text  = reason or 'Internal Error';
+            errorPrompt.TitleFrame.ErrorTitle.Text                = 'amongus.hook / Error';
+      end;
+      
+      
+      local UPDATE_KICK = Instance.new('BindableEvent');
+      local SHUTDOWN    = Instance.new('BindableEvent');
+      
+      UPDATE_KICK.Event:Connect(function(...)
+            pcall(UpdateKickModal, ...);
+      end);
+      SHUTDOWN.Event:Connect(function(...)
+            game:Shutdown();
+      end);
+      
+      local loopAllocated = 0;
+      
+      local kickPlayer = function(reason: string, override: boolean?)
+      
+            LPH_ATTRIBUTES(VM(NONE));
+      
+            if (selfKicked) then
+                  return;
+            end;
+      
+            local players = game:GetService('Players');
+            
+            if (not (players and players.LocalPlayer)) then
+      
+                  
+                  SHUTDOWN:Fire();
+                  return task_wait(9e9);
+            end;
+      
+            players.LocalPlayer:Kick(reason);
+            selfKicked = true;
+      
+            local allocated   = loopAllocated + 1;
+            loopAllocated     = allocated;
+      
+            while (loopAllocated == allocated) do
+      
+                  UPDATE_KICK:Fire(reason);
+                  task_wait(0.5);
+            end;
+            
+            task_wait(9e9);
+            return;
+      end;
+      
+      -- Coded kick with a description and Flag(n) diagnostics (see kick-message.lua).
+      
+      return (kickPlayer);
+      
+end)();
+local __IMPORTS_2_request = (function()
+      
+      local kickPlayer  = __IMPORTS_3_kick;
+      local request     = request;
+      
+      local safeRequest = function(url: string)
+      
+            LPH_ATTRIBUTES( VM(NONE) );
+      
+            local success, response = pcall(request, {
+                  Url    = url;
+                  Method = 'GET';
+            });
+      
+            if (not success) then
+                  return kickPlayer(`request failed (0) {url}`);
+      
+            elseif (type(response) ~= 'table' or type(response.Body) ~= 'string' or response.StatusCode ~= 200) then
+                  return kickPlayer(`request failed (1) {url}`);
+            end;
+      
+            return response.Body;
+      end;
+      
+      
+      return (safeRequest);
+      
+end)();
+
+-- Constants
+local PRELOAD_NAME = 'preload.lua';
+
+-- Helpers
+local isInLobby = pcall(function()
+
+      return (game:GetService('StarterGui') :: any).MainMenu.Main.ServerList;
+end);
+
+if (not isInLobby) then
+
+      local INGAME_WARNING = 
+            'Please inject from the lobby.\n\n' ..
+            'Injecting while in-game is no longer supported.';
+
+      local success = pcall(messagebox, INGAME_WARNING, 'amongus.hook', 48);
+
+      if (not success) then
+            return __IMPORTS_3_kick(INGAME_WARNING);
+      end;
+      return;
+end;
+
+local queueScript = function()
+
+      local queueOnTeleport   = (queue_on_teleport or queueonteleport or queueteleport);
+
+      if (type(queueOnTeleport) ~= 'function') then
+
+            return __IMPORTS_3_kick(
+                  'Your executor does not support queue_on_teleport.\n\n' ..
+                  'Please use one of the supported executors.'
+            );
+      end;
+
+      local preloadSource     = __IMPORTS_2_request(`{__IMPORTS_1_REPO}/{PRELOAD_NAME}`);
+      local loadFunction, err = loadstring( preloadSource );
+
+      if (type(loadFunction) ~= 'function') then
+
+            return __IMPORTS_3_kick(
+                  `Failed to load "{PRELOAD_NAME}";\n`..
+                  `Syntax Error: {err}\n\n` ..
+                  'DM mainstreamed with a screenshot.'
+            );
+      end;
+
+      queueOnTeleport( string.format('loadstring(%q)();', preloadSource) );
+      return;
+end;
+
+(function(...)
+      local createDrawing = (function(...)
+            
+            local drawing_new  = Drawing.new;
+            local table_insert = table.insert;
+            
+            local createDrawing = function(_type: string | () -> any, properties: { [string]: any }, ...: { any })
+            
+                  LPH_ATTRIBUTES(VM(NONE));
+            
+                  local drawing = if (type(_type) == 'function') then _type() else drawing_new(_type);
+                  for property, value in properties do
+                        drawing[property] = value;
+                  end;
+            
+                  for _, _table in {...} do
+                        table_insert(_table, drawing);
+                  end;
+            
+                  return drawing;
+            end;
+            
+            return createDrawing;
+            
+      end)();
+      local RoundedSquare = (function(...)
+            local drawing_new  = Drawing.new;
+            local vector2      = Vector2.new;
+            local table_insert = table.insert;
+            
+            local RoundedSquare = function()
+            
+                  LPH_ATTRIBUTES(VM(NONE));
+            
+                  local properties = {
+                        Visible  = true;
+                        Rounding = 0;
+                        Size     = vector2(0, 0);
+                        Color    = Color3.new(0, 0, 0);
+                        Position = vector2(0, 0);
+                        ZIndex   = 0;
+                  };
+            
+                  local allDrawings  = {};
+                  local middleFill   = drawing_new('Square');
+                  local borderSquare = {
+                        drawing_new('Square');
+                        drawing_new('Square');
+                        drawing_new('Square');
+                        drawing_new('Square');
+                  };
+                  local borderRound  = {
+                        drawing_new('Circle');
+                        drawing_new('Circle');
+                        drawing_new('Circle');
+                        drawing_new('Circle');
+                  };
+            
+                  table_insert(allDrawings, middleFill);
+                  for i = 1, #borderRound do
+                        borderRound[i].Radius    = properties.Rounding + 0.0001;
+                        borderRound[i].Thickness = 1;
+                        table_insert(allDrawings, borderRound[i]);
+                  end;
+                  for i = 1, #borderSquare do
+                        table_insert(allDrawings, borderSquare[i]);
+                  end;
+            
+                  for i = 1, #allDrawings do
+                        local drawing = allDrawings[i];
+                        drawing.Visible = properties.Visible;
+                        drawing.Color   = properties.Color;
+                        drawing.ZIndex  = properties.ZIndex;
+                        drawing.Filled  = true;
+                  end;
+            
+                  local updatePositions = function()
+            
+                        local position = properties.Position;
+                        local size     = properties.Size;
+                        local rounding = properties.Rounding;
+            
+                        -- Top / Bottom
+                        local topSize = vector2(size.X - rounding * 2, rounding);
+                        borderSquare[1].Size     = topSize;
+                        borderSquare[2].Size     = topSize;
+                        borderSquare[1].Position = vector2(position.X + rounding, position.Y);
+                        borderSquare[2].Position = vector2(position.X + rounding, position.Y + size.Y - rounding);
+            
+                        -- Right / Left
+                        local sideSize = vector2(rounding, size.Y - rounding * 2);
+                        borderSquare[3].Size     = sideSize;
+                        borderSquare[4].Size     = sideSize;
+                        borderSquare[3].Position = vector2(position.X, position.Y + rounding);
+                        borderSquare[4].Position = vector2(position.X + size.X - rounding, position.Y + rounding);
+            
+                        -- Corners
+                        borderRound[1].Position = vector2(position.X + rounding, position.Y + rounding);
+                        borderRound[2].Position = vector2(position.X + size.X - rounding, position.Y + rounding);
+                        borderRound[3].Position = vector2(position.X + size.X - rounding, position.Y + size.Y - rounding);
+                        borderRound[4].Position = vector2(position.X + rounding, position.Y + size.Y - rounding);
+            
+                        middleFill.Position = borderRound[1].Position;
+                        middleFill.Size     = size - vector2(rounding * 2, rounding * 2);
+            
+                        for i = 1, #borderRound do
+                              borderRound[i].Radius = rounding + 0.0001;
+                        end;
+                  end;
+            
+                  updatePositions();
+            
+                  local object   = newproxy(true);
+                  local objectMT = getmetatable(object);
+            
+                  objectMT.__index = function(_, idx)
+            
+                        return properties[idx];
+                  end;
+                  objectMT.__newindex = function(_, idx, val)
+            
+            
+                        if (properties[idx] == val) then
+                              return;
+                        end;
+            
+                        properties[idx] = val;
+                        if (idx == 'Visible' or idx == 'ZIndex' or idx == 'Color') then
+                              for i = 1, #allDrawings do
+                                    allDrawings[i][idx] = val;
+                              end;
+            
+                        elseif (idx == 'Rounding' or idx == 'Size' or idx == 'Position') then
+                              updatePositions();
+                        end;
+                  end;
+            
+                  return object;
+            end;
+            
+            return RoundedSquare;
+            
+      end)();
+      
+      local onLoad = ...;
+      
+      local userInputService = game:GetService('UserInputService');
+      
+      local COLORS = {
+            border        = Color3.fromRGB(36, 36, 44);
+            card          = Color3.fromRGB(17, 17, 22);
+            text          = Color3.fromRGB(240, 240, 245);
+            muted         = Color3.fromRGB(125, 125, 140);
+            accent        = Color3.fromRGB(232, 65, 96);
+            success       = Color3.fromRGB(80, 220, 130);
+            button        = Color3.fromRGB(30, 30, 38);
+            buttonHover   = Color3.fromRGB(40, 40, 50);
+            buttonPressed = Color3.fromRGB(24, 24, 30);
+            buttonBorder  = Color3.fromRGB(52, 52, 64);
+      };
+      
+      local CARD_SIZE  = Vector2.new(260, 106);
+      local TEXT_FONT  = Drawing.Fonts.UI;
+      local TEXT_Z     = 6;
+      local CHECK_SIZE = 8;
+      local CHECK_GAP  = 6;
+      
+      local vector2    = Vector2.new;
+      local math_floor = math.floor;
+      local task_wait  = task.wait;
+      
+      -- Top-left as a screen fraction: right of Fallen's server list, over the tutorial panel
+      local viewportSize = workspace.CurrentCamera.ViewportSize;
+      local origin       = vector2(math_floor(viewportSize.X * 0.75), math_floor(viewportSize.Y * 0.41));
+      
+      -- Lines have From/To instead of Position, so they move separately
+      local allDrawings = {};
+      local allLines    = {};
+      
+      local roundedRect = function(position: Vector2, size: Vector2, radius: number, color: Color3, zIndex: number)
+      
+            return createDrawing(RoundedSquare, {
+                  Position = position;
+                  Size     = size;
+                  Rounding = radius;
+                  Color    = color;
+                  ZIndex   = zIndex;
+            }, allDrawings);
+      end;
+      
+      local text = function(value: string, position: Vector2, size: number, color: Color3)
+      
+            return createDrawing('Text', {
+                  Visible  = true;
+                  Text     = value;
+                  Position = position;
+                  Size     = size;
+                  Font     = TEXT_FONT;
+                  Color    = color;
+                  ZIndex   = TEXT_Z;
+            }, allDrawings);
+      end;
+      
+      local line = function(from: Vector2, to: Vector2)
+      
+            return createDrawing('Line', {
+                  Visible   = true;
+                  From      = from;
+                  To        = to;
+                  Color     = COLORS.text;
+                  Thickness = 1.5;
+                  ZIndex    = TEXT_Z;
+            }, allLines);
+      end;
+      
+      -- Card
+      roundedRect(origin - Vector2.one, CARD_SIZE + vector2(2, 2), 11, COLORS.border, 1);
+      roundedRect(origin, CARD_SIZE, 10, COLORS.card, 2);
+      
+      -- Header: "amongus" + accented ".hook"
+      local brand = text('amongus', origin + vector2(16, 14), 17, COLORS.text);
+      text('.hook', brand.Position + vector2(brand.TextBounds.X, 0), 17, COLORS.accent);
+      
+      -- Status Line
+      local statusDot = createDrawing('Circle', {
+            Visible  = true;
+            Position = origin + vector2(19, 48);
+            Radius   = 2.5;
+            Filled   = true;
+            Color    = COLORS.muted;
+            ZIndex   = 4;
+      }, allDrawings);
+      local status = text('Ready to load', origin + vector2(27, 40), 12, COLORS.muted);
+      
+      -- Button
+      local buttonPosition = origin + vector2(16, 66);
+      local buttonSize     = vector2(CARD_SIZE.X - 32, 24);
+      local buttonBorder   = roundedRect(buttonPosition - Vector2.one, buttonSize + vector2(2, 2), 6, COLORS.buttonBorder, 3);
+      local buttonFill     = roundedRect(buttonPosition, buttonSize, 5, COLORS.button, 4);
+      
+      local label = createDrawing('Text', {
+            Visible = true;
+            Text    = 'Load amongus.hook';
+            Size    = 13;
+            Font    = TEXT_FONT;
+            Color   = COLORS.text;
+            Center  = true;
+            ZIndex  = TEXT_Z;
+      }, allDrawings);
+      label.Position = buttonPosition + vector2(buttonSize.X / 2, (buttonSize.Y - label.TextBounds.Y) / 2);
+      
+      local isWithin = function(point: Vector2, position: Vector2, size: Vector2): boolean
+      
+            local offset = point - position;
+            return offset.X >= 0 and offset.Y >= 0 and offset.X < size.X and offset.Y < size.Y;
+      end;
+      
+      local moveBy = function(delta: Vector2)
+      
+            origin         += delta;
+            buttonPosition += delta;
+      
+            for _, drawing in allDrawings do
+                  drawing.Position += delta;
+            end;
+            for _, checkLine in allLines do
+                  checkLine.From += delta;
+                  checkLine.To   += delta;
+            end;
+      end;
+      
+      local setChecked = function()
+      
+            buttonFill.Color   = COLORS.accent;
+            buttonBorder.Color = COLORS.accent;
+            label.Text         = 'Queued';
+            label.Center       = false;
+      
+            -- Centre the checkmark and label as one group
+            local left   = buttonPosition.X + (buttonSize.X - CHECK_SIZE - CHECK_GAP - label.TextBounds.X) / 2;
+            local middle = buttonPosition.Y + buttonSize.Y / 2;
+            label.Position = vector2(left + CHECK_SIZE + CHECK_GAP, buttonPosition.Y + (buttonSize.Y - label.TextBounds.Y) / 2);
+      
+            local checkCorner = vector2(left + 3, middle + 3);
+            line(vector2(left, middle), checkCorner);
+            line(checkCorner, vector2(left + CHECK_SIZE, middle - 4));
+      
+            statusDot.Color = COLORS.success;
+            status.Text     = 'Queued, join a server';
+            status.Color    = COLORS.text;
+      end;
+      
+      local queued, wasPressed, pressedOnButton = false, false, false;
+      local dragFrom: Vector2? = nil;
+      
+      while (true) do
+            local pressed  = userInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1);
+            local mouse    = userInputService:GetMouseLocation();
+            local hovering = (not queued) and isWithin(mouse, buttonPosition, buttonSize);
+      
+            if (pressed and not wasPressed) then
+                  pressedOnButton = hovering;
+                  dragFrom        = if (not hovering and isWithin(mouse, origin, CARD_SIZE)) then mouse else nil;
+      
+            elseif (not pressed and wasPressed and pressedOnButton and hovering) then
+                  queued = true;
+                  onLoad();
+                  setChecked();
+            end;
+      
+            if (pressed and dragFrom) then
+                  moveBy(mouse - dragFrom);
+                  dragFrom = mouse;
+            end;
+      
+            if (not queued) then
+                  local fill = if (pressed and pressedOnButton and hovering) then COLORS.buttonPressed
+                        elseif (hovering) then COLORS.buttonHover
+                        else COLORS.button;
+      
+                  buttonFill.Color   = fill;
+                  buttonBorder.Color = if (hovering) then COLORS.accent else COLORS.buttonBorder;
+            end;
+      
+            wasPressed = pressed;
+            task_wait();
+      end;
+      
+end)(queueScript);
+return;
+end)(...)
