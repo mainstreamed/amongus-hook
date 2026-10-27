@@ -2,7 +2,7 @@ local supportedGames    = {}
 
 supportedGames.FALLEN = {
 
-      placeIDs          = { 13800717766; 15479377118; 16849012343; };
+      placeIDs          = { 13800717766; 15479377118; 16849012343; 10228136016; };
       gitPath           = 'fallensurvival';
 
       gameName          = 'Fallen Survival';
