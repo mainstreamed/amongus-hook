@@ -18,7 +18,7 @@ supportedGames.TRIDENT = {
       gitPath           = 'tridentsurvival';
 
       gameName          = 'Trident Survival';
-      status            = 'Undetected';
+      status            = 'Broken';
       executors         = { 'Wave'; 'Swift'; 'Velocity'; 'Potassium'; 'Seliware'; 'Volcano'; 'Volt'; };
       customMessage     = {
 
