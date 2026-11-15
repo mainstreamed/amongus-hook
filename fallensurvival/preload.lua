@@ -234,9 +234,10 @@ local __IMPORTS_2_hold, __IMPORTS_2_release = (function()
       -- Imports
       
       -- Helpers
-      local GetService = function(name: string)
+      -- FindService, not GetService: GetService creates a missing service, which the game can detect.
+      local FindService = function(name: string)
       
-            local success, service = pcall(game.GetService, game, name);
+            local success, service = pcall(game.FindService, game, name);
       
             if (not success) then
                   return nil;
@@ -245,8 +246,17 @@ local __IMPORTS_2_hold, __IMPORTS_2_release = (function()
       end;
       
       -- Constants
-      local CORE_GUI          = GetService('CoreGui');
-      local CORE_PACKAGES     = GetService('CorePackages');
+      -- Starter containers hold templates; their clones land in Players / Workspace and get held there.
+      local SKIPPED_SERVICES  = {};
+      
+      for _, name in { 'CoreGui'; 'CorePackages'; 'StarterPlayer'; 'StarterGui'; 'StarterPack'; } do
+      
+            local service = FindService(name);
+      
+            if (service) then
+                  SKIPPED_SERVICES[service] = true;
+            end;
+      end;
       
       -- Variables
       local scriptsEnabled    = false;
@@ -280,8 +290,8 @@ local __IMPORTS_2_hold, __IMPORTS_2_release = (function()
       local RunOnInstance = function(instance: Instance)
       
             if (
-                  instance.ClassName ~= 'LocalScript'
-                  and instance.ClassName ~= 'Script'
+                  instance.ClassName ~= 'LocalScript' and
+                  instance.ClassName ~= 'Script'
             ) then
                   return;
             end;
@@ -298,7 +308,7 @@ local __IMPORTS_2_hold, __IMPORTS_2_release = (function()
       
             for _, service in game:GetChildren() do
                   
-                  if (service == CORE_GUI or service == CORE_PACKAGES) then
+                  if (SKIPPED_SERVICES[service]) then
                         continue;
                   end;
       
@@ -367,7 +377,7 @@ end);
 
 if ( success and not table.find(__IMPORTS_1_GAME_IDS, placeId)) then
 
-      return; -- Incorrect Game;
+      return false; -- Incorrect Game;
 end;
 
 -- Constants
@@ -377,7 +387,8 @@ do -- Load Script
 
       __IMPORTS_2_hold();
 
-      local internalSource     = __IMPORTS_5_request(`{__IMPORTS_1_REPO}/{INTERNAL_PRELOAD}`);      
+      local internalSource     = __IMPORTS_5_request(`{__IMPORTS_1_REPO}/{INTERNAL_PRELOAD}`);
+      
 
       local loadFunction, err = loadstring( internalSource );
       
@@ -393,5 +404,5 @@ do -- Load Script
       loadFunction( __IMPORTS_2_release );
 end;
 
-return;
+return true;
 end)(...)
